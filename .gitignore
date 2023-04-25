@@ -1,0 +1,7 @@
+*~
+*/*~
+*/*.git*
+*.DS_Store*
+*/*smoke*txt
+*/pipeline_creation.response.json
+*/pipeline_creation.response_error.json
