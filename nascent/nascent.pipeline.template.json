@@ -1,0 +1,64 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"]
+    }
+  },
+  "parameters": {
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": [""]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "multiqc_title": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset to check pipeline function'"]
+    },
+    "genome": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'R64-1-1'"]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "assay_type": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["CoPRO"]
+    }
+  }
+}

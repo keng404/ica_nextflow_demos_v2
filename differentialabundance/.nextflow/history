@@ -1,0 +1,1 @@
+2023-04-25 14:52:14	-	silly_colden	-	7318dbb5d83367b21360fb2ef69d6012	3dd8e347-f9ad-440d-9fea-92f9b6b97cb8	nextflow run main.nf -c nextflow.ica.config --input input.csv

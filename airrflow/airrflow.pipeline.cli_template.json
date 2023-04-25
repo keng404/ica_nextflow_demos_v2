@@ -1,0 +1,114 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"],
+      "value": ["fil.d8fce2788d1742b4770008d9b69989fe", "fil.4a9683175d024ee076ff08d9b69989fe", "fil.7ada6d7dd92c4b4dabb708d9adf63314", "fil.5f94dbdbb6ef48a276fb08d9b69989fe", "fil.73757fcedc5449c2667408db4590b257", "fil.0b509a016e6342fc665108db4590b257"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"],
+      "value": ["fol.5fdfe88dcb8c49b26c5608db45944288", "fol.f3b86f73b6014d376c4e08db45944288", "fol.33f1065294f54f38665208db4590b257", "fol.933687215d914866664b08db4590b257", "fol.ef6236261a154c866c1208db45944288", "fol.f5598b6375df4951663b08db4590b257", "fol.c07f2d44e84d4e48663008db4590b257", "fol.febe11cfb8c24f9b662908db4590b257"]
+    }
+  },
+  "parameters": {
+    "subworkflow": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["bcellmagic"]
+    },
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["'s3://nf-core-awsmegatests/airrflow/input_data/pcr_umi/metadata_pcr_umi_airr.tsv'"]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset to check pipeline function'"]
+    },
+    "cprimers": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'s3://nf-core-awsmegatests/airrflow/input_data/pcr_umi/cprimers.fasta'"]
+    },
+    "vprimers": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'s3://nf-core-awsmegatests/airrflow/input_data/pcr_umi/vprimers.fasta'"]
+    },
+    "imgtdb_base": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/airrflow/database-cache/imgtdb_base.zip'"]
+    },
+    "igblast_base": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/airrflow/database-cache/igblast_base.zip'"]
+    },
+    "library_generation_method": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'specific_pcr_umi'"]
+    },
+    "cprimer_position": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'R1'"]
+    },
+    "index_file": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "umi_length": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["15"]
+    },
+    "umi_start": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["0"]
+    },
+    "umi_position": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'R1'"]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    }
+  }
+}

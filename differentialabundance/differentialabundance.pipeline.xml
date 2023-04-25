@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="differentialabundance pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>Path to comma-separated file containing information about the samples in the experiment.
+You will need to create a design file with information about the samples in your experiment before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with 3 columns, and a header row. See [usage docs](https://nf-co.re/differentialabundance/usage#samplesheet-input).</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="contrasts" minValues="1" maxValues="1" classification="USER">
+          <label>contrasts</label>
+          <description>A CSV file describing sample contrasts
+This file is used to define groups of samples from 'input' to compare.  It must contain at least the columns 'variable', 'reference', 'target' and 'blocking', where 'variable' is a column in the input sample sheet, 'reference' and 'target' are values in that column, and blocking is a colon-separated list of additional 'blocking' variables (can be an empty string)</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="matrix" minValues="1" maxValues="1" classification="USER">
+          <label>matrix</label>
+          <description>TSV-format abundance matrix
+For example an expression matrix output from the nf-core/rnaseq workflow. There must be a column in this matrix for every row in the input sample sheet.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="study_name" minValues="1" maxValues="1" classification="USER">
+          <label>study_name</label>
+          <description>A string to identify results in the output directory
+Also used as an identifier in some processes</description>
+          <stringType/>
+          <value>study</value>
+        </parameter>
+        <parameter code="study_type" minValues="1" maxValues="1" classification="USER">
+          <label>study_type</label>
+          <description>A string identifying the technology used to produce the data
+Currently only 'rnaseq' may be specified. In future options like 'affy_array' are possible.</description>
+          <optionsType>
+            <option>rnaseq</option>
+          </optionsType>
+          <value>rnaseq</value>
+        </parameter>
+        <parameter code="control_features" minValues="1" maxValues="1" classification="USER">
+          <label>control_features</label>
+          <description>A text file listing technical features (e.g. spikes)
+One feature per row. Note that by default these features will just be stripped from matrices prior to internal processing. To actually use them in e.g. normalisation, set --sizefactors_from_controls</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="sizefactors_from_controls" minValues="1" maxValues="1" classification="USER">
+          <label>sizefactors_from_controls</label>
+          <description>When set, use the control features in scaling/ normalisation
+Use supplied control features in normalistion/ scaling operations?</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="report_file" minValues="1" maxValues="1" classification="USER">
+          <label>report_file</label>
+          <description>Rmd report template from which to create the pipeline report</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="logo_file" minValues="1" maxValues="1" classification="USER">
+          <label>logo_file</label>
+          <description>A logo to display in the report instead of the generic pipeline logo</description>
+          <stringType/>
+          <value>docs/images/nf-core-differentialabundance_logo_light.png</value>
+        </parameter>
+        <parameter code="css_file" minValues="1" maxValues="1" classification="USER">
+          <label>css_file</label>
+          <description>CSS to use to style the output, in lieu of the default nf-core styling</description>
+          <stringType/>
+          <value>assets/nf-core_style.css</value>
+        </parameter>
+        <parameter code="citations_file" minValues="1" maxValues="1" classification="USER">
+          <label>citations_file</label>
+          <description>A markdown file containing citations to include in the fiinal report</description>
+          <stringType/>
+          <value>CITATIONS.md</value>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Full test dataset to check pipeline function'</value>
+        </parameter>
+        <parameter code="gtf" minValues="0" maxValues="1" classification="USER">
+          <label>gtf</label>
+          <description>Configure params.gtf</description>
+          <stringType/>
+          <value>'https://ftp.ensembl.org/pub/release-81/gtf/mus_musculus/Mus_musculus.GRCm38.81.gtf.gz'</value>
+        </parameter>
+        <parameter code="gsea_run" minValues="0" maxValues="1" classification="USER">
+          <label>gsea_run</label>
+          <description>Configure params.gsea_run</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="gsea_gene_sets" minValues="0" maxValues="1" classification="USER">
+          <label>gsea_gene_sets</label>
+          <description>Configure params.gsea_gene_sets</description>
+          <stringType/>
+          <value>'https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/genomics/mus_musculus/gene_set_analysis/mh.all.v2022.1.Mm.symbols.gmt'</value>
+        </parameter>
+        <parameter code="genome" minValues="1" maxValues="1" classification="USER">
+          <label>genome</label>
+          <description>Select Genome:</description>
+          <optionsType>
+            <option>GRCh37</option>
+            <option>GRCh38</option>
+            <option>GRCm38</option>
+            <option>TAIR10</option>
+            <option>EB2</option>
+            <option>UMD3.1</option>
+            <option>WBcel235</option>
+            <option>CanFam3.1</option>
+            <option>GRCz10</option>
+            <option>BDGP6</option>
+            <option>EquCab2</option>
+            <option>EB1</option>
+            <option>Galgal4</option>
+            <option>Gm01</option>
+            <option>Mmul_1</option>
+            <option>IRGSP-1.0</option>
+            <option>CHIMP2.1.4</option>
+            <option>Rnor_5.0</option>
+            <option>Rnor_6.0</option>
+            <option>R64-1-1</option>
+            <option>EF2</option>
+            <option>Sbi1</option>
+            <option>Sscrofa10.2</option>
+            <option>AGPv3</option>
+            <option>hg38</option>
+            <option>hg19</option>
+            <option>mm10</option>
+            <option>bosTau8</option>
+            <option>ce10</option>
+            <option>canFam3</option>
+            <option>danRer10</option>
+            <option>dm6</option>
+            <option>equCab2</option>
+            <option>galGal4</option>
+            <option>panTro4</option>
+            <option>rn6</option>
+            <option>sacCer3</option>
+            <option>susScr3</option>
+          </optionsType>
+          <value>GRCh38</value>
+        </parameter>
+      </tool>
+    </step>
+    <step execution="MANDATORY" code="observations_options">
+      <label>observations_options</label>
+      <description>observations_options parameters</description>
+      <tool code="observations_options parameters">
+        <label>observations_options</label>
+        <description>observations_options parameters</description>
+        <parameter code="observations_id_col" minValues="1" maxValues="1" classification="USER">
+          <label>observations_id_col</label>
+          <description>Column in the samples sheet to be used as the primary sample identifier</description>
+          <stringType/>
+          <value>sample</value>
+        </parameter>
+        <parameter code="observations_type" minValues="1" maxValues="1" classification="USER">
+          <label>observations_type</label>
+          <description>Type of observation
+This is used in reporting to refer to the observations. Frequently this is 'sample' (e.g. in RNA-seq experiments), but it may also be desirable to refer to 'pool', or 'individual'.</description>
+          <stringType/>
+          <value>sample</value>
+        </parameter>
+      </tool>
+    </step>
+    <step execution="MANDATORY" code="features_options">
+      <label>features_options</label>
+      <description>features_options parameters</description>
+      <tool code="features_options parameters">
+        <label>features_options</label>
+        <description>features_options parameters</description>
+        <parameter code="features_id_col" minValues="1" maxValues="1" classification="USER">
+          <label>features_id_col</label>
+          <description>Feature ID attribute in the GTF file (e.g. the gene_id field)</description>
+          <stringType/>
+          <value>gene_id</value>
+        </parameter>
+        <parameter code="features_name_col" minValues="1" maxValues="1" classification="USER">
+          <label>features_name_col</label>
+          <description>Feature name attribute in the GTF file (e.g. the gene symbol field)</description>
+          <stringType/>
+          <value>gene_name</value>
+        </parameter>
+        <parameter code="features_type" minValues="1" maxValues="1" classification="USER">
+          <label>features_type</label>
+          <description>Type of feature we have, often 'gene'</description>
+          <stringType/>
+          <value>gene</value>
+        </parameter>
+      </tool>
+    </step>
+    <step execution="MANDATORY" code="filtering">
+      <label>filtering</label>
+      <description>filtering parameters</description>
+      <tool code="filtering parameters">
+        <label>filtering</label>
+        <description>filtering parameters</description>
+        <parameter code="filtering_min_abundance" minValues="1" maxValues="1" classification="USER">
+          <label>filtering_min_abundance</label>
+          <description>Minimum abundance value</description>
+          <integerType/>
+          <value>1</value>
+        </parameter>
+      </tool>
+    </step>
+    <step execution="MANDATORY" code="exploratory_analysis">
+      <label>exploratory_analysis</label>
+      <description>exploratory_analysis parameters</description>
+      <tool code="exploratory_analysis parameters">
+        <label>exploratory_analysis</label>
+        <description>exploratory_analysis parameters</description>
+        <parameter code="exploratory_clustering_method" minValues="1" maxValues="1" classification="USER">
+          <label>exploratory_clustering_method</label>
+          <description>Clustering method used in dendrogram creation</description>
+          <stringType/>
+          <value>ward.D2</value>
+        </parameter>
+        <parameter code="exploratory_cor_method" minValues="1" maxValues="1" classification="USER">
+          <label>exploratory_cor_method</label>
+          <description>Correlation method used in dendrogram creation</description>
+          <stringType/>
+          <value>spearman</value>
+        </parameter>
+        <parameter code="exploratory_n_features" minValues="1" maxValues="1" classification="USER">
+          <label>exploratory_n_features</label>
+          <description>Number of features selected before certain exploratory analyses</description>
+          <integerType/>
+          <value>500</value>
+        </parameter>
+        <parameter code="exploratory_main_variable" minValues="1" maxValues="1" classification="USER">
+          <label>exploratory_main_variable</label>
+          <description>How should the main grouping variable be selected? 'auto_pca', 'contrasts', or a valid column name from the observations table.
+Some plots are only generated once, with a single sample grouping, this option defines how that sample grouping is selected. It should be 'auto_pca' (variable selected from the sample sheet with the most association with the first principal component), 'contrasts' (pick the variable associated with the first contrast), or a value specifying a specific column in the observations.</description>
+          <stringType/>
+          <value>auto_pca</value>
+        </parameter>
+      </tool>
+    </step>
+    <step execution="MANDATORY" code="differential_analysis">
+      <label>differential_analysis</label>
+      <description>differential_analysis parameters</description>
+      <tool code="differential_analysis parameters">
+        <label>differential_analysis</label>
+        <description>differential_analysis parameters</description>
+        <parameter code="differential_file_suffix" minValues="1" maxValues="1" classification="USER">
+          <label>differential_file_suffix</label>
+          <description>The suffix associated tabular differential results tables</description>
+          <stringType/>
+          <value>.deseq2.results.tsv</value>
+        </parameter>
+        <parameter code="differential_feature_id_column" minValues="1" maxValues="1" classification="USER">
+          <label>differential_feature_id_column</label>
+          <description>The feature identifier column in differential results tables</description>
+          <stringType/>
+          <value>gene_id</value>
+        </parameter>
+        <parameter code="differential_fc_column" minValues="1" maxValues="1" classification="USER">
+          <label>differential_fc_column</label>
+          <description>The fold change column in differential results tables</description>
+          <stringType/>
+          <value>log2FoldChange</value>
+        </parameter>
+        <parameter code="differential_qval_column" minValues="1" maxValues="1" classification="USER">
+          <label>differential_qval_column</label>
+          <description>The q value column in differential results tables.</description>
+          <stringType/>
+          <value>padj</value>
+        </parameter>
+        <parameter code="differential_min_fold_change" minValues="1" maxValues="1" classification="USER">
+          <label>differential_min_fold_change</label>
+          <description>Minimum fold change used to calculate differential feature numbers</description>
+          <integerType/>
+          <value>2</value>
+        </parameter>
+        <parameter code="differential_max_qval" minValues="1" maxValues="1" classification="USER">
+          <label>differential_max_qval</label>
+          <description>Maximum q value used to calculate differential feature numbrers</description>
+          <floatType/>
+          <value>0.05</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

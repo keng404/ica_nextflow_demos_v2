@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="hicar pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="project_dir" format="UNKNOWN" type="DIRECTORY" required="true" multiValue="true">
+      <label>project_dir</label>
+      <description>directory with additional files/input to run pipeline --- other files in your github project</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>Path to comma-separated file containing information about the samples in the experiment.
+You will need to create a design file with information about the samples in your experiment before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with 3 columns, and a header row. See [usage docs](https://nf-co.re/hicar/usage#samplesheet-input).</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="method" minValues="1" maxValues="1" classification="USER">
+          <label>method</label>
+          <description>Metho for the experiment.
+It can be HiCAR, HiChIP, ChIA-PET, PLAC-Seq. If it is not HiCAR, user may want to define the anchor peaks. Otherwise, the anchor peaks will be called by R2 reads.</description>
+          <stringType/>
+          <value>HiCAR</value>
+        </parameter>
+        <parameter code="anchor_peaks" minValues="1" maxValues="1" classification="USER">
+          <label>anchor_peaks</label>
+          <description>Path to anchor peaks
+The anchor peaks can be a narrowPeak or broadPeak.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="multiqc_title" minValues="1" maxValues="1" classification="USER">
+          <label>multiqc_title</label>
+          <description>MultiQC report title. Printed as page header, used for filename if not otherwise specified.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Full test dataset to check pipeline function'</value>
+        </parameter>
+        <parameter code="maps_cutoff_counts" minValues="0" maxValues="1" classification="USER">
+          <label>maps_cutoff_counts</label>
+          <description>Configure params.maps_cutoff_counts</description>
+          <integerType/>
+          <value>6</value>
+        </parameter>
+        <parameter code="maps_cutoff_fold_change" minValues="0" maxValues="1" classification="USER">
+          <label>maps_cutoff_fold_change</label>
+          <description>Configure params.maps_cutoff_fold_change</description>
+          <integerType/>
+          <value>2</value>
+        </parameter>
+        <parameter code="maps_cutoff_fdr" minValues="0" maxValues="1" classification="USER">
+          <label>maps_cutoff_fdr</label>
+          <description>Configure params.maps_cutoff_fdr</description>
+          <integerType/>
+          <value>2</value>
+        </parameter>
+        <parameter code="qval_thresh" minValues="0" maxValues="1" classification="USER">
+          <label>qval_thresh</label>
+          <description>Configure params.qval_thresh</description>
+          <floatType/>
+          <value>0.05</value>
+        </parameter>
+        <parameter code="genome" minValues="0" maxValues="1" classification="USER">
+          <label>genome</label>
+          <description>Configure params.genome</description>
+          <stringType/>
+          <value>'GRCh38'</value>
+        </parameter>
+        <parameter code="ucscname" minValues="0" maxValues="1" classification="USER">
+          <label>ucscname</label>
+          <description>Configure params.ucscname</description>
+          <stringType/>
+          <value>'hg38'</value>
+        </parameter>
+        <parameter code="snow_type" minValues="0" maxValues="1" classification="USER">
+          <label>snow_type</label>
+          <description>Configure params.snow_type</description>
+          <stringType/>
+          <value>FORK</value>
+        </parameter>
+        <parameter code="juicer_jvm_params" minValues="0" maxValues="1" classification="USER">
+          <label>juicer_jvm_params</label>
+          <description>Configure params.juicer_jvm_params</description>
+          <stringType/>
+          <value>'-Xms2g -Xmx32g'</value>
+        </parameter>
+        <parameter code="ica_smoke_test" minValues="0" maxValues="1" classification="USER">
+          <label>ica_smoke_test</label>
+          <description>Boolean to trigger smoke test:</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="phyloplace pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="project_dir" format="UNKNOWN" type="DIRECTORY" required="true" multiValue="true">
+      <label>project_dir</label>
+      <description>directory with additional files/input to run pipeline --- other files in your github project</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>Path to comma-separated file containing information about the samples in the experiment.
+You will need to create a design file with information about the samples in your experiment before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with at least five columns, and a header row. See [usage docs](https://nf-co.re/phyloplace/usage#samplesheet-input).</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="id" minValues="1" maxValues="1" classification="USER">
+          <label>id</label>
+          <description>Name of analysis</description>
+          <stringType/>
+          <value>placement</value>
+        </parameter>
+        <parameter code="alignmethod" minValues="1" maxValues="1" classification="USER">
+          <label>alignmethod</label>
+          <description>Method used to align query sequences with.
+Query sequences will be aligned to the reference alignment using either HMMER or MAFFT, except when an hmm profile is provided (--hmmfile; implies that --alignmethod is set to 'hmmer'), in which case both the reference and query sequences will be aligned with the profile (reference sequences must not be aligned, i.e. must not contain '-' characters).</description>
+          <optionsType>
+            <option>hmmer</option>
+            <option>mafft</option>
+          </optionsType>
+          <value>hmmer</value>
+        </parameter>
+        <parameter code="queryseqfile" minValues="1" maxValues="1" classification="USER">
+          <label>queryseqfile</label>
+          <description>Fasta file with query sequences</description>
+          <stringType/>
+          <value>queries.faa</value>
+        </parameter>
+        <parameter code="refseqfile" minValues="1" maxValues="1" classification="USER">
+          <label>refseqfile</label>
+          <description>File with reference sequences. Any format supported by HMMER tools.
+If the sequences are not aligned, you need to provide an alignment option, e.g. --hmmfile.</description>
+          <stringType/>
+          <value>reference.alnfaa</value>
+        </parameter>
+        <parameter code="hmmfile" minValues="1" maxValues="1" classification="USER">
+          <label>hmmfile</label>
+          <description>HMM file. If provided, will be used to align both the reference and query sequences.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="refphylogeny" minValues="1" maxValues="1" classification="USER">
+          <label>refphylogeny</label>
+          <description>Newick file with aligned reference sequences.</description>
+          <stringType/>
+          <value>reference.newick</value>
+        </parameter>
+        <parameter code="model" minValues="1" maxValues="1" classification="USER">
+          <label>model</label>
+          <description>Evolutionary model to use for placement, e.g. 'LG'.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="taxonomy" minValues="1" maxValues="1" classification="USER">
+          <label>taxonomy</label>
+          <description>Tab-separated file with taxonomy assignments of reference sequences.
+The first column should consist of names of reference sequences, the second of taxonomy strings, e.g. 'Bacteria;Proteobacteria;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia;Escherichia coli'.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="multiqc_title" minValues="1" maxValues="1" classification="USER">
+          <label>multiqc_title</label>
+          <description>MultiQC report title. Printed as page header, used for filename if not otherwise specified.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Full test dataset to check pipeline function'</value>
+        </parameter>
+        <parameter code="ica_smoke_test" minValues="0" maxValues="1" classification="USER">
+          <label>ica_smoke_test</label>
+          <description>Boolean to trigger smoke test:</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

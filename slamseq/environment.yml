@@ -1,0 +1,19 @@
+# You can use this file to create a conda environment for this pipeline:
+#   conda env create -f environment.yml
+name: nf-core-slamseq-1.0.0
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - conda-forge::python=3.7.3
+  - conda-forge::markdown=3.1.1
+  - conda-forge::pymdown-extensions=6.0
+  - conda-forge::pygments=2.5.2
+  - trim-galore=0.6.5
+  - multiqc=1.8
+  - slamdunk=0.4.3
+  - r-gridextra=2.3
+  - r-ggrepel=0.8.2
+  - bioconductor-deseq2=1.22.1
+  - r-kernsmooth=2.23_16

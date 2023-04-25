@@ -1,0 +1,102 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"],
+      "value": ["fil.d8fce2788d1742b4770008d9b69989fe", "fil.4a9683175d024ee076ff08d9b69989fe", "fil.7ada6d7dd92c4b4dabb708d9adf63314", "fil.5f94dbdbb6ef48a276fb08d9b69989fe", "fil.05b876cb36554e015da508db45a409a8", "fil.05b876cb36554e015da508db45a409a8", "fil.7199a820dfe74bc1691c08db4590b257"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"],
+      "value": ["fol.a7d1f1dbd64b436a691f08db4590b257", "fol.812eec3a6a5240cb6ee008db45944288", "fol.3b6f46108adb4fe8691608db4590b257", "fol.bca48d1b6b2f4112690f08db4590b257", "fol.aca5fbc52d4d486d6ed308db45944288", "fol.25371c80e8604c836ec508db45944288"]
+    }
+  },
+  "parameters": {
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/clipseq/metadata_full.csv'"]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["./results"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset to check pipeline function'"]
+    },
+    "smrna_org": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'human'"]
+    },
+    "fasta": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'s3://nf-core-awsmegatests/clipseq/input_data/reference/GRCh38.primary_assembly.genome.fa.gz'"]
+    },
+    "gtf": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'s3://nf-core-awsmegatests/clipseq/input_data/reference/gencode.v37.primary_assembly.annotation.gtf.gz'"]
+    },
+    "move_umi": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'NNNNNNNNN'"]
+    },
+    "umi_separator": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'_'"]
+    },
+    "peakcaller": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'icount,paraclu,pureclip,piranha'"]
+    },
+    "pureclip_iv": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'chr1;chr2'"]
+    },
+    "motif": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "genome": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["GRCh38"]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    }
+  }
+}

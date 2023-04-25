@@ -1,0 +1,1 @@
+2023-04-25 14:34:56	-	gloomy_watson	-	77e36ae54eac7ad95f6ec068fb7b2941	2bc38f9a-83a1-4bce-ba1f-1fdaa9a15897	nextflow run main.nf -c nextflow.ica.config --input input.csv

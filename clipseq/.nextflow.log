@@ -1,0 +1,86 @@
+Apr-25 14:39:55.465 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -c nextflow.ica.config --input input.csv
+Apr-25 14:39:55.529 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.3
+Apr-25 14:39:55.549 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/keng/nf-core-v2/clipseq/nextflow.config
+Apr-25 14:39:55.554 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /Users/keng/nf-core-v2/clipseq/nextflow.ica.config
+Apr-25 14:39:55.555 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/clipseq/nextflow.config
+Apr-25 14:39:55.556 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/clipseq/nextflow.ica.config
+Apr-25 14:39:55.581 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 14:39:56.455 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:39:56.465 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 14:39:56.467 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 14:39:56.470 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 14:39:56.475 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:39:56.742 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:39:56.967 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 14:39:57.107 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:39:57.109 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:39:57.204 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:39:57.371 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=1 by probing script field
+Apr-25 14:39:57.388 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [distraught_lichterman] DSL1 - revision: 766aa86ac8
+Apr-25 14:39:57.390 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/.nextflow/plugins; core-plugins: nf-amazon@1.7.2,nf-azure@0.13.2,nf-console@1.0.3,nf-ga4gh@1.0.3,nf-google@1.1.4,nf-sqldb@0.4.0,nf-tower@1.4.0
+Apr-25 14:39:57.391 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Apr-25 14:39:57.404 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 14:39:57.405 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 14:39:57.407 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 14:39:57.416 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Apr-25 14:39:57.450 [main] DEBUG nextflow.Session - Session uuid: 57b57feb-0d5d-4061-ae58-51c03ef0808a
+Apr-25 14:39:57.451 [main] DEBUG nextflow.Session - Run name: distraught_lichterman
+Apr-25 14:39:57.453 [main] DEBUG nextflow.Session - Executor pool size: 8
+Apr-25 14:39:57.473 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.04.3 build 5703
+  Created: 18-05-2022 19:22 UTC 
+  System: Linux 5.15.49-linuxkit
+  Runtime: Groovy 3.0.10 on OpenJDK 64-Bit Server VM 17.0.3+6-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 1@c77d945402bb [172.17.0.2]
+  CPUs: 8 - Mem: 13.2 GB (1 GB) - Swap: 2 GB (1.9 GB)
+Apr-25 14:39:57.508 [main] DEBUG nextflow.Session - Work-dir: /Users/keng/nf-core-v2/clipseq/work [fuseblk]
+Apr-25 14:39:57.525 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Apr-25 14:39:57.535 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Apr-25 14:39:57.579 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Apr-25 14:39:57.588 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Apr-25 14:39:57.696 [main] DEBUG nextflow.Session - Session start invoked
+Apr-25 14:39:57.701 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /Users/keng/nf-core-v2/clipseq/results/pipeline_info/execution_trace.txt
+Apr-25 14:39:57.727 [main] DEBUG nextflow.Session - Using default localLib path: /Users/keng/nf-core-v2/clipseq/lib
+Apr-25 14:39:57.735 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/clipseq/lib
+Apr-25 14:39:57.738 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/clipseq/lib/nfcore_external_java_deps.jar
+Apr-25 14:40:01.555 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Apr-25 14:40:01.570 [main] INFO  nextflow.Nextflow - 
+
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;35m  nf-core/clipseq v1.0.0[0m
+-[2m----------------------------------------------------[0m-
+
+Apr-25 14:40:01.827 [main] WARN  nextflow.Nextflow - Found unexpected parameters:
+* --enable_conda: false
+* --conda_enabled: false
+* --ica_smoke_test: false
+Apr-25 14:40:01.828 [main] INFO  nextflow.Nextflow - - [2mIgnore this warning: params.schema_ignore_params = "enable_conda,conda_enabled,ica_smoke_test" [0m
+Apr-25 14:40:01.830 [main] WARN  nextflow.Nextflow - There is no smRNA available for species 'null'; pre-mapping will be skipped. Currently available options are: human, mouse, rat, fruitfly, zebrafish, yeast. Alternative you can supply your own smRNA fasta using --smrna_fasta
+Apr-25 14:40:01.838 [main] DEBUG nextflow.Session - Session aborted -- Cause: /Users/keng/nf-core-v2/clipseq/input.csv
+Apr-25 14:40:01.846 [main] ERROR nextflow.cli.Launcher - /Users/keng/nf-core-v2/clipseq/input.csv
+java.nio.file.NoSuchFileException: /Users/keng/nf-core-v2/clipseq/input.csv
+	at nextflow.file.FileHelper.checkIfExists(FileHelper.groovy:1036)
+	at nextflow.file.FileHelper$checkIfExists$1.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)
+	at nextflow.Nextflow.file(Nextflow.groovy:159)
+	at nextflow.Nextflow$file.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
+	at Script_e5d06d1a.runScript(Script_e5d06d1a:67)
+	at nextflow.script.BaseScript.runDsl1(BaseScript.groovy:164)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:217)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:220)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:212)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:120)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:337)
+	at nextflow.cli.Launcher.run(Launcher.groovy:480)
+	at nextflow.cli.Launcher.main(Launcher.groovy:639)

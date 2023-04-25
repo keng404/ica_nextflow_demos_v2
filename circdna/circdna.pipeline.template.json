@@ -1,0 +1,136 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"]
+    }
+  },
+  "parameters": {
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": [""]
+    },
+    "input_format": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["FASTQ"]
+    },
+    "bam_sorted": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "save_sorted_bam": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "multiqc_title": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset to check pipeline function'"]
+    },
+    "max_cpus": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["2"]
+    },
+    "max_memory": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'6.GB'"]
+    },
+    "max_time": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'6.h'"]
+    },
+    "fasta": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/circdna/reference/genome.fa'"]
+    },
+    "circle_identifier": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'circexplorer2,circle_finder,circle_map_realign,circle_map_repeats,unicycler'"]
+    },
+    "igenomes_ignore": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "skip_markduplicates": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "mosek_license_dir": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["https://raw.githubusercontent.com/nf-core/test-datasets/circdna/mosek/mosek.lic"]
+    },
+    "aa_data_repo": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["data_repo"]
+    },
+    "reference_build": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["GRCh38"]
+    },
+    "genome": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["GRCh38"]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    }
+  }
+}

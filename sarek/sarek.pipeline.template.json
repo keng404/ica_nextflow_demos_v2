@@ -1,0 +1,88 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"]
+    }
+  },
+  "parameters": {
+    "step": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["mapping"]
+    },
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": [""]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset to check pipeline function'"]
+    },
+    "tools": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'strelka,mutect2,freebayes,ascat,manta,cnvkit,tiddit,controlfreec,vep'"]
+    },
+    "split_fastq": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["20000000"]
+    },
+    "intervals": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'s3://nf-core-awsmegatests/sarek/input/S07604624_Padded_Agilent_SureSelectXT_allexons_V6_UTR.bed'"]
+    },
+    "wes": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "nucleotides_per_second": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["100000"]
+    },
+    "genome": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["GATK.GRCh38"]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    }
+  }
+}

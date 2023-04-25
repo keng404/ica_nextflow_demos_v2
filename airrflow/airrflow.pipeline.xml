@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="airrflow pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="project_dir" format="UNKNOWN" type="DIRECTORY" required="true" multiValue="true">
+      <label>project_dir</label>
+      <description>directory with additional files/input to run pipeline --- other files in your github project</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="subworkflow" minValues="1" maxValues="1" classification="USER">
+          <label>subworkflow</label>
+          <description>Specify the subworkflow to be executed.</description>
+          <optionsType>
+            <option>bcellmagic</option>
+            <option>reveal</option>
+          </optionsType>
+          <value>bcellmagic</value>
+        </parameter>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>Path to a tsv file providing paths to the fastq files for each sample and the necessary metadata for the analysis.
+The input file includes important sample metadata and the path to the R1 and R2 fastq files, and index read file (I), if available. The file should include the following columns, separated with tabs, with exactly these header names:
+
+bash
+ID Source Treatment Extraction_time Population R1 R2 I1
+QMKMK072AD Patient_2 Drug_treatment baseline p sample_S8_L001_R1_001.fastq.gz sample_S8_L001_R2_001.fastq.gz sample_S8_L001_I1_001.fastq.gz
+
+
+This metadata will then be automatically annotated in a column with the same header in the tables outputed by the pipeline. Where:
+
+- ID: sample ID.
+- Source: patient or organism code.
+- Treatment: treatment condition applied to the sample.
+- Extraction_time: time of cell extraction for the sample.
+- Population: B-cell population (e.g. naive, double-negative, memory, plasmablast).
+- R1: path to fastq file with first mates of paired-end sequencing.
+- R2: path to fastq file with second mates of paired-end sequencing.
+- I1: path to fastq with illumina index and UMI (unique molecular identifier) barcode (optional column)
+
+Specify the path for your input file like this:
+
+bash
+--input 'path/to/metadata/metadata_sheet.tsv'</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Full test dataset to check pipeline function'</value>
+        </parameter>
+        <parameter code="cprimers" minValues="0" maxValues="1" classification="USER">
+          <label>cprimers</label>
+          <description>Configure params.cprimers</description>
+          <stringType/>
+          <value>'s3://nf-core-awsmegatests/airrflow/input_data/pcr_umi/cprimers.fasta'</value>
+        </parameter>
+        <parameter code="vprimers" minValues="0" maxValues="1" classification="USER">
+          <label>vprimers</label>
+          <description>Configure params.vprimers</description>
+          <stringType/>
+          <value>'s3://nf-core-awsmegatests/airrflow/input_data/pcr_umi/vprimers.fasta'</value>
+        </parameter>
+        <parameter code="imgtdb_base" minValues="0" maxValues="1" classification="USER">
+          <label>imgtdb_base</label>
+          <description>Configure params.imgtdb_base</description>
+          <stringType/>
+          <value>'https://raw.githubusercontent.com/nf-core/test-datasets/airrflow/database-cache/imgtdb_base.zip'</value>
+        </parameter>
+        <parameter code="igblast_base" minValues="0" maxValues="1" classification="USER">
+          <label>igblast_base</label>
+          <description>Configure params.igblast_base</description>
+          <stringType/>
+          <value>'https://raw.githubusercontent.com/nf-core/test-datasets/airrflow/database-cache/igblast_base.zip'</value>
+        </parameter>
+        <parameter code="library_generation_method" minValues="0" maxValues="1" classification="USER">
+          <label>library_generation_method</label>
+          <description>Configure params.library_generation_method</description>
+          <stringType/>
+          <value>'specific_pcr_umi'</value>
+        </parameter>
+        <parameter code="cprimer_position" minValues="0" maxValues="1" classification="USER">
+          <label>cprimer_position</label>
+          <description>Configure params.cprimer_position</description>
+          <stringType/>
+          <value>'R1'</value>
+        </parameter>
+        <parameter code="index_file" minValues="0" maxValues="1" classification="USER">
+          <label>index_file</label>
+          <description>Configure params.index_file</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="umi_length" minValues="0" maxValues="1" classification="USER">
+          <label>umi_length</label>
+          <description>Configure params.umi_length</description>
+          <integerType/>
+          <value>15</value>
+        </parameter>
+        <parameter code="umi_start" minValues="0" maxValues="1" classification="USER">
+          <label>umi_start</label>
+          <description>Configure params.umi_start</description>
+          <integerType/>
+          <value>0</value>
+        </parameter>
+        <parameter code="umi_position" minValues="0" maxValues="1" classification="USER">
+          <label>umi_position</label>
+          <description>Configure params.umi_position</description>
+          <stringType/>
+          <value>'R1'</value>
+        </parameter>
+        <parameter code="ica_smoke_test" minValues="0" maxValues="1" classification="USER">
+          <label>ica_smoke_test</label>
+          <description>Boolean to trigger smoke test:</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

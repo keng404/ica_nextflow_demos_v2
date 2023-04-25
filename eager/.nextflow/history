@@ -1,0 +1,1 @@
+2023-04-25 14:52:30	-	sleepy_darwin	-	4c126fbbc30866464d6929d3410d8a4a	ae3194a8-2adb-45bb-9fb1-a78eba401c19	nextflow run main.nf -c nextflow.ica.config --input input.csv

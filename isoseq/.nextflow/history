@@ -1,0 +1,1 @@
+2023-04-25 15:30:39	-	golden_elion	-	84c342be907b48b5efe8727ceba65040	afb2cce3-74ae-4363-ab64-036c0714f2e1	nextflow run main.nf -c nextflow.ica.config --input input.csv

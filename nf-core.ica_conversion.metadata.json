@@ -1,0 +1,338 @@
+{
+  "airrflow": {
+    "name": ["airrflow"],
+    "github_link": ["nf-core/airrflow"],
+    "release_branch": ["2.4.0"],
+    "description": ["B-cell and T-cell Adaptive Immune Receptor Repertoire (AIRR) sequencing analysis pipeline using the Immcantation framework"],
+    "tags": ["airr", "b-cell", "immcantation", "immunorepertoire", "repseq"]
+  },
+  "ampliseq": {
+    "name": ["ampliseq"],
+    "github_link": ["nf-core/ampliseq"],
+    "release_branch": ["2.4.1"],
+    "description": ["Amplicon sequencing analysis workflow using DADA2 and QIIME2"],
+    "tags": ["16s", "18s", "amplicon-sequencing", "edna", "illumina", "iontorrent", "its", "metabarcoding", "metagenomics", "microbiome", "pacbio", "qiime2", "rrna", "taxonomic-classification", "taxonomic-profiling"]
+  },
+  "atacseq": {
+    "name": ["atacseq"],
+    "github_link": ["nf-core/atacseq"],
+    "release_branch": ["2.0"],
+    "description": ["ATAC-seq peak-calling, QC and differential analysis pipeline"],
+    "tags": ["atac-seq", "chromatin-accessibiity"]
+  },
+  "bacass": {
+    "name": ["bacass"],
+    "github_link": ["nf-core/bacass"],
+    "release_branch": ["2.0.0"],
+    "description": ["Simple bacterial assembly and annotation pipeline"],
+    "tags": ["assembly", "bacterial-genomes", "denovo", "denovo-assembly", "genome-assembly", "hybrid-assembly", "nanopore", "nanopore-sequencing"]
+  },
+  "bactmap": {
+    "name": ["bactmap"],
+    "github_link": ["nf-core/bactmap"],
+    "release_branch": ["1.0.0"],
+    "description": ["A mapping-based pipeline for creating a phylogeny from bacterial whole genome sequences"],
+    "tags": ["bacteria", "bacterial", "bacterial-genome-analysis", "genomics", "mapping", "phylogeny", "tree"]
+  },
+  "cageseq": {
+    "name": ["cageseq"],
+    "github_link": ["nf-core/cageseq"],
+    "release_branch": ["1.0.2"],
+    "description": ["CAGE-sequencing analysis pipeline with trimming, alignment and counting of CAGE tags."],
+    "tags": ["cage", "cage-seq", "cageseq-data", "gene-expression", "rna"]
+  },
+  "chipseq": {
+    "name": ["chipseq"],
+    "github_link": ["nf-core/chipseq"],
+    "release_branch": ["2.0.0"],
+    "description": ["ChIP-seq peak-calling, QC and differential analysis pipeline."],
+    "tags": ["chip", "chip-seq", "chromatin-immunoprecipitation", "macs2", "peak-calling"]
+  },
+  "circdna": {
+    "name": ["circdna"],
+    "github_link": ["nf-core/circdna"],
+    "release_branch": ["1.0.1"],
+    "description": ["Pipeline for the identification of extrachromosomal circular DNA (ecDNA) from Circle-seq, WGS, and ATAC-seq data that were generatedfrom cancer and other eukaryotic cells."],
+    "tags": ["circle-seq", "circular", "dna", "ecdna", "genomics"]
+  },
+  "clipseq": {
+    "name": ["clipseq"],
+    "github_link": ["nf-core/clipseq"],
+    "release_branch": ["1.0.0"],
+    "description": ["CLIP sequencing analysis pipeline for QC, pre-mapping, genome mapping, UMI deduplication, and multiple peak-calling options."],
+    "tags": ["clip", "clip-seq", "peak-calling", "rna-rbp-interactions"]
+  },
+  "coproid": {
+    "name": ["coproid"],
+    "github_link": ["nf-core/coproid"],
+    "release_branch": ["1.1.1"],
+    "description": ["Coprolite host Identification pipeline"],
+    "tags": ["adna", "ancient-dna", "coprolite", "microbiome"]
+  },
+  "crisprseq": {
+    "name": ["crisprseq"],
+    "github_link": ["nf-core/crisprseq"],
+    "release_branch": ["1.0"],
+    "description": ["A pipeline for the analysis of CRISPR edited next generation sequencing (NGS) data. CRISPR gene knockouts (KO), CRISPR knock-ins (KI), base editing (BE) and prime editing (PE) experiments"],
+    "tags": ["crispr", "crispr-analysis", "crispr-cas", "ngs"]
+  },
+  "cutandrun": {
+    "name": ["cutandrun"],
+    "github_link": ["nf-core/cutandrun"],
+    "release_branch": ["3.0"],
+    "description": ["Analysis pipeline for CUT&RUN and CUT&TAG experiments that includes QC, support for spike-ins, IgG controls, peak calling and downstream analysis."],
+    "tags": ["cutandrun", "cutandrun-seq", "cutandtag", "cutandtag-seq"]
+  },
+  "deepvariant": {
+    "name": ["deepvariant"],
+    "github_link": ["nf-core/deepvariant"],
+    "release_branch": ["1.0"],
+    "description": [" Please consider using/contributing to https://github.com/nf-core/sarek "],
+    "tags": ["deep-variant", "dna", "google", "variant-calling"]
+  },
+  "demultiplex": {
+    "name": ["demultiplex"],
+    "github_link": ["nf-core/demultiplex"],
+    "release_branch": ["1.0.0"],
+    "description": ["Demultiplexing pipeline for sequencing data"],
+    "tags": ["bases2fastq", "bcl2fastq", "demultiplexing", "elementbiosciences", "illumina"]
+  },
+  "diaproteomics": {
+    "name": ["diaproteomics"],
+    "github_link": ["nf-core/diaproteomics"],
+    "release_branch": ["1.2.4"],
+    "description": ["Automated quantitative analysis of DIA proteomics mass spectrometry measurements."],
+    "tags": ["data-independent-proteomics", "dia-proteomics", "openms", "proteomics"]
+  },
+  "differentialabundance": {
+    "name": ["differentialabundance"],
+    "github_link": ["nf-core/differentialabundance"],
+    "release_branch": ["1.0.0"],
+    "description": ["Differential abundance analysis for feature/ observation matrices from platforms such as RNA-seq "],
+    "tags": []
+  },
+  "dualrnaseq": {
+    "name": ["dualrnaseq"],
+    "github_link": ["nf-core/dualrnaseq"],
+    "release_branch": ["1.0.0"],
+    "description": ["Analysis of Dual RNA-seq data - an experimental method for interrogating host-pathogen interactions through simultaneous RNA-seq."],
+    "tags": ["dualrna-seq", "host-pathogen", "quantification", "readmapping", "rna-seq"]
+  },
+  "eager": {
+    "name": ["eager"],
+    "github_link": ["nf-core/eager"],
+    "release_branch": ["2.4.6"],
+    "description": ["A fully reproducible and state-of-the-art ancient DNA analysis pipeline"],
+    "tags": ["adna", "ancient-dna-analysis", "ancientdna", "genome", "metagenomics", "pathogen-genomics", "population-genetics"]
+  },
+  "epitopeprediction": {
+    "name": ["epitopeprediction"],
+    "github_link": ["nf-core/epitopeprediction"],
+    "release_branch": ["2.1.0"],
+    "description": ["A bioinformatics best-practice analysis pipeline forepitope prediction and annotation"],
+    "tags": ["epitope", "epitope-prediction", "mhc-binding-prediction"]
+  },
+  "fetchngs": {
+    "name": ["fetchngs"],
+    "github_link": ["nf-core/fetchngs"],
+    "release_branch": ["1.9"],
+    "description": ["Pipeline to fetch metadata and raw FastQ files from public and private databases"],
+    "tags": ["ddbj", "download", "ena", "fastq", "geo", "sra", "synapse"]
+  },
+  "funcscan": {
+    "name": ["funcscan"],
+    "github_link": ["nf-core/funcscan"],
+    "release_branch": ["1.0.0"],
+    "description": ["(Meta-)genome screening for functional and natural product gene sequences"],
+    "tags": ["amp", "amr", "antibiotic-resistance", "antimicrobial-peptides", "antimicrobial-resistance-genes", "arg", "assembly", "bgc", "biosynthetic-gene-clusters", "contigs", "function", "metagenomics", "natural-products", "screening", "secondary-metabolites"]
+  },
+  "hgtseq": {
+    "name": ["hgtseq"],
+    "github_link": ["nf-core/hgtseq"],
+    "release_branch": ["1.0.0"],
+    "description": ["A pipeline to investigate horizontal gene transfer from NGS data"],
+    "tags": ["bwa-mem", "bwa-mem2", "fastqc", "genomics-visualization", "ggbio", "horizontal-gene-transfer", "kraken2", "krona", "multiqc", "ngs", "samtools", "taxonomies", "tidyverse"]
+  },
+  "hic": {
+    "name": ["hic"],
+    "github_link": ["nf-core/hic"],
+    "release_branch": ["1.3.0"],
+    "description": ["Analysis of Chromosome Conformation Capture data (Hi-C)"],
+    "tags": ["chromosome-conformation-capture", "hi-c"]
+  },
+  "hicar": {
+    "name": ["hicar"],
+    "github_link": ["nf-core/hicar"],
+    "release_branch": ["1.0.0"],
+    "description": ["Pipeline for HiCAR data, a robust and sensitive multi-omic co-assay for simultaneous measurement of transcriptome, chromatin accessibility and cis-regulatory chromatin contacts."],
+    "tags": ["atac", "atac-seq", "hic", "hicar", "multi-omics", "transcriptome"]
+  },
+  "hlatyping": {
+    "name": ["hlatyping"],
+    "github_link": ["nf-core/hlatyping"],
+    "release_branch": ["2.0.0"],
+    "description": ["Precision HLA typing from next-generation sequencingdata"],
+    "tags": ["dna", "hla", "hla-typing", "immunology", "optitype", "personalized-medicine", "rna"]
+  },
+  "imcyto": {
+    "name": ["imcyto"],
+    "github_link": ["nf-core/imcyto"],
+    "release_branch": ["1.0.0"],
+    "description": ["Image Mass Cytometry analysis pipeline"],
+    "tags": ["cytometry", "image-analysis", "image-processing", "image-segmentation"]
+  },
+  "isoseq": {
+    "name": ["isoseq"],
+    "github_link": ["nf-core/isoseq"],
+    "release_branch": ["1.1.1"],
+    "description": ["Genome annotation with PacBio Iso-Seq. Takes raw subreads as input, generate Full Length Non Chemiric (FLNC) sequences and produce a bed annotation. "],
+    "tags": ["isoseq", "isoseq-3", "rna", "tama", "ultra"]
+  },
+  "mag": {
+    "name": ["mag"],
+    "github_link": ["nf-core/mag"],
+    "release_branch": ["2.2.1"],
+    "description": ["Assembly and binning of metagenomes"],
+    "tags": ["annotation", "assembly", "binning", "long-read-sequencing", "metagenomes", "metagenomics", "nanopore", "nanopore-sequencing"]
+  },
+  "metaboigniter": {
+    "name": ["metaboigniter"],
+    "github_link": ["nf-core/metaboigniter"],
+    "release_branch": ["1.0.1"],
+    "description": ["Pre-processing of mass spectrometry-based metabolomics data with quantification and identification based on MS1 and MS2 data."],
+    "tags": ["identification", "mass-spectrometry", "metabolomics", "ms1", "ms2", "quantification"]
+  },
+  "methylseq": {
+    "name": ["methylseq"],
+    "github_link": ["nf-core/methylseq"],
+    "release_branch": ["2.3.0"],
+    "description": ["Methylation (Bisulfite-Sequencing) analysis pipelineusing Bismark or bwa-meth + MethylDackel"],
+    "tags": ["bisulfite-sequencing", "dna-methylation", "methyl-seq"]
+  },
+  "mhcquant": {
+    "name": ["mhcquant"],
+    "github_link": ["nf-core/mhcquant"],
+    "release_branch": ["2.4.0"],
+    "description": ["Identify and quantify MHC eluted peptides from mass spectrometry raw data"],
+    "tags": ["mass-spectrometry", "mhc", "openms", "peptides", "proteomics"]
+  },
+  "mnaseseq": {
+    "name": ["mnaseseq"],
+    "github_link": ["nf-core/mnaseseq"],
+    "release_branch": ["1.0.0"],
+    "description": ["MNase-seq analysis pipeline using BWA and DANPOS2."],
+    "tags": ["mnase-seq", "nucleosome", "nucleosome-maps", "nucleosome-positioning"]
+  },
+  "nanoseq": {
+    "name": ["nanoseq"],
+    "github_link": ["nf-core/nanoseq"],
+    "release_branch": ["3.0.0"],
+    "description": ["Nanopore demultiplexing, QC and alignment pipeline"],
+    "tags": ["alignment", "demultiplexing", "nanopore", "qc"]
+  },
+  "nascent": {
+    "name": ["nascent"],
+    "github_link": ["nf-core/nascent"],
+    "release_branch": ["2.0.0"],
+    "description": ["Nascent Transcription Processing Pipeline"],
+    "tags": ["gro-seq", "nascent", "pro-seq", "rna", "transcription", "tss"]
+  },
+  "neutronstar": {
+    "name": ["neutronstar"],
+    "github_link": ["nf-core/neutronstar"],
+    "release_branch": ["1.0.0"],
+    "description": ["De novo assembly pipeline for 10X linked-reads usingSupernova"],
+    "tags": ["10x-genomics", "10xgenomics", "denovo-assembly", "genome-assembly", "linked-reads", "supernova"]
+  },
+  "pgdb": {
+    "name": ["pgdb"],
+    "github_link": ["nf-core/pgdb"],
+    "release_branch": ["1.0.0"],
+    "description": ["The ProteoGenomics database generation workflow creates different protein databases for ProteoGenomics data analysis."],
+    "tags": ["cosmic", "gnomad", "protein-databases", "proteogenomics", "proteomics", "pypgatk"]
+  },
+  "phyloplace": {
+    "name": ["phyloplace"],
+    "github_link": ["nf-core/phyloplace"],
+    "release_branch": ["1.0.0"],
+    "description": ["nf-core/phyloplace is a bioinformatics best-practiceanalysis pipeline that performs phylogenetic placement with EPA-NG."],
+    "tags": ["evolution", "evolutionary-tree", "phylogenetic-placement", "phylogenetics", "sequence-classification", "taxonomy-assignment"]
+  },
+  "proteinfold": {
+    "name": ["proteinfold"],
+    "github_link": ["nf-core/proteinfold"],
+    "release_branch": ["1.0.0"],
+    "description": ["Protein 3D structure prediction pipeline"],
+    "tags": ["alphafold2", "protein-fold-prediction", "protein-folding", "protein-sequences", "protein-structure"]
+  },
+  "proteomicslfq": {
+    "name": ["proteomicslfq"],
+    "github_link": ["nf-core/proteomicslfq"],
+    "release_branch": ["1.0.0"],
+    "description": ["Proteomics label-free quantification (LFQ) analysis pipeline"],
+    "tags": ["label-free-quantification", "openms", "proteomics"]
+  },
+  "quantms": {
+    "name": ["quantms"],
+    "github_link": ["nf-core/quantms"],
+    "release_branch": ["1.0"],
+    "description": ["Quantitative mass spectrometry workflow. Currently supports proteomics experiments with complex experimental designs for DDA-LFQ, DDA-Isobaric and DIA-LFQ quantification."],
+    "tags": ["dia", "lfq", "mass-spec", "mass-spectrometry", "openms", "proteogenomics", "proteomics", "tmt"]
+  },
+  "rnafusion": {
+    "name": ["rnafusion"],
+    "github_link": ["nf-core/rnafusion"],
+    "release_branch": ["2.1.0"],
+    "description": ["RNA-seq analysis pipeline for detection gene-fusions"],
+    "tags": ["fusion", "fusion-genes", "gene-fusion", "rna", "rna-seq"]
+  },
+  "rnaseq": {
+    "name": ["rnaseq"],
+    "github_link": ["nf-core/rnaseq"],
+    "release_branch": ["3.10"],
+    "description": ["RNA sequencing analysis pipeline using STAR, RSEM, HISAT2 or Salmon with gene/isoform counts and extensive quality control."],
+    "tags": ["rna", "rna-seq"]
+  },
+  "rnavar": {
+    "name": ["rnavar"],
+    "github_link": ["nf-core/rnavar"],
+    "release_branch": ["1.0.0"],
+    "description": ["gatk4 RNA variant calling pipeline"],
+    "tags": ["gatk4", "rna", "rnaseq", "variant-calling", "worflow"]
+  },
+  "sarek": {
+    "name": ["sarek"],
+    "github_link": ["nf-core/sarek"],
+    "release_branch": ["3.1.1"],
+    "description": ["Analysis pipeline to detect germline or somatic variants (pre-processing, variant calling and annotation) from WGS / targeted sequencing"],
+    "tags": ["annotation", "cancer", "gatk4", "genomics", "germline", "pre-processing", "somatic", "target-panels", "variant-calling", "whole-exome-sequencing", "whole-genome-sequencing"]
+  },
+  "scrnaseq": {
+    "name": ["scrnaseq"],
+    "github_link": ["nf-core/scrnaseq"],
+    "release_branch": ["2.1.0"],
+    "description": ["A single-cell RNAseq pipeline for 10X genomics data"],
+    "tags": []
+  },
+  "slamseq": {
+    "name": ["slamseq"],
+    "github_link": ["nf-core/slamseq"],
+    "release_branch": ["1.0.0"],
+    "description": ["SLAMSeq processing and analysis pipeline"],
+    "tags": ["differential-expression", "quantseq", "slamseq", "transcriptomics"]
+  },
+  "smrnaseq": {
+    "name": ["smrnaseq"],
+    "github_link": ["nf-core/smrnaseq"],
+    "release_branch": ["2.1.0"],
+    "description": ["A small-RNA sequencing analysis pipeline"],
+    "tags": ["small-rna", "smrna-seq"]
+  },
+  "viralrecon": {
+    "name": ["viralrecon"],
+    "github_link": ["nf-core/viralrecon"],
+    "release_branch": ["2.5"],
+    "description": ["Assembly and intrahost/low-frequency variant callingfor viral samples"],
+    "tags": ["amplicon", "artic", "assembly", "covid-19", "covid19", "illumina", "long-read-sequencing", "metagenomics", "nanopore", "ont", "oxford-nanopore", "sars-cov-2", "variant-calling", "viral", "virus"]
+  }
+}

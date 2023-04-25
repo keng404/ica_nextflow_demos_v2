@@ -1,0 +1,100 @@
+Apr-25 17:06:45.109 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -c nextflow.ica.config --input input.csv
+Apr-25 17:06:45.171 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.3
+Apr-25 17:06:45.190 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/keng/nf-core-v2/viralrecon/nextflow.config
+Apr-25 17:06:45.195 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /Users/keng/nf-core-v2/viralrecon/nextflow.ica.config
+Apr-25 17:06:45.196 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/viralrecon/nextflow.config
+Apr-25 17:06:45.197 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/viralrecon/nextflow.ica.config
+Apr-25 17:06:45.220 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 17:06:46.064 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 17:06:46.075 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 17:06:46.077 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 17:06:46.080 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 17:06:46.085 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 17:06:46.366 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 17:06:46.371 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 17:06:46.372 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 17:06:46.448 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 17:06:46.526 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 17:06:46.668 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 17:06:46.670 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 17:06:46.761 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 17:06:46.764 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 17:06:46.765 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 17:06:46.841 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 17:06:46.904 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Apr-25 17:06:46.935 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [tiny_davinci] DSL2 - revision: 6168b226aa
+Apr-25 17:06:46.937 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/.nextflow/plugins; core-plugins: nf-amazon@1.7.2,nf-azure@0.13.2,nf-console@1.0.3,nf-ga4gh@1.0.3,nf-google@1.1.4,nf-sqldb@0.4.0,nf-tower@1.4.0
+Apr-25 17:06:46.938 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Apr-25 17:06:46.951 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 17:06:46.952 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 17:06:46.954 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 17:06:46.973 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Apr-25 17:06:47.011 [main] DEBUG nextflow.Session - Session uuid: da537de2-252f-49b0-9c18-0ec18ecf7303
+Apr-25 17:06:47.012 [main] DEBUG nextflow.Session - Run name: tiny_davinci
+Apr-25 17:06:47.014 [main] DEBUG nextflow.Session - Executor pool size: 8
+Apr-25 17:06:47.037 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.04.3 build 5703
+  Created: 18-05-2022 19:22 UTC 
+  System: Linux 5.15.49-linuxkit
+  Runtime: Groovy 3.0.10 on OpenJDK 64-Bit Server VM 17.0.3+6-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 1@1be7fcf00991 [172.17.0.2]
+  CPUs: 8 - Mem: 13.2 GB (1 GB) - Swap: 2 GB (1.9 GB)
+Apr-25 17:06:47.070 [main] DEBUG nextflow.Session - Work-dir: /Users/keng/nf-core-v2/viralrecon/work [fuseblk]
+Apr-25 17:06:47.095 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Apr-25 17:06:47.106 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Apr-25 17:06:47.171 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Apr-25 17:06:47.180 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Apr-25 17:06:47.284 [main] DEBUG nextflow.Session - Session start invoked
+Apr-25 17:06:47.289 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /Users/keng/nf-core-v2/viralrecon/null/pipeline_info/execution_trace_2023-04-25_17-06-46.txt
+Apr-25 17:06:47.312 [main] DEBUG nextflow.Session - Using default localLib path: /Users/keng/nf-core-v2/viralrecon/lib
+Apr-25 17:06:47.324 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/viralrecon/lib
+Apr-25 17:06:47.326 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/viralrecon/lib/nfcore_external_java_deps.jar
+Apr-25 17:06:48.382 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Apr-25 17:06:48.397 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `genomes` -- Initialise it to a default value eg. `params.genomes = some_value`
+Apr-25 17:06:48.668 [main] WARN  nextflow.Nextflow - Found unexpected parameters:
+* --igenomes_ignore: false
+* --conda_enabled: false
+* --ica_smoke_test: false
+Apr-25 17:06:48.670 [main] INFO  nextflow.Nextflow - - [2mIgnore this warning: params.schema_ignore_params = "igenomes_ignore,conda_enabled,ica_smoke_test" [0m
+Apr-25 17:06:48.684 [main] INFO  nextflow.Nextflow - 
+
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;35m  nf-core/viralrecon v2.5[0m
+-[2m----------------------------------------------------[0m-
+[1mCore Nextflow options[0m
+  [0;34mrunName        : [0;32mtiny_davinci[0m
+  [0;34mcontainerEngine: [0;32mdocker[0m
+  [0;34mlaunchDir      : [0;32m/Users/keng/nf-core-v2/viralrecon[0m
+  [0;34mworkDir        : [0;32m/Users/keng/nf-core-v2/viralrecon/work[0m
+  [0;34mprojectDir     : [0;32m/Users/keng/nf-core-v2/viralrecon[0m
+  [0;34muserName       : [0;32mroot[0m
+  [0;34mprofile        : [0;32mstandard[0m
+  [0;34mconfigFiles    : [0;32m/Users/keng/nf-core-v2/viralrecon/nextflow.config, /Users/keng/nf-core-v2/viralrecon/nextflow.ica.config[0m
+
+[1mInput/output options[0m
+  [0;34minput          : [0;32minput.csv[0m
+  [0;34moutdir         : [0;32mout[0m
+
+[1mGeneric options[0m
+  [0;34mtracedir       : [0;32mnull/pipeline_info[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+-[2m----------------------------------------------------[0m-
+If you use nf-core/viralrecon for your analysis please cite:
+
+* The pipeline
+  https://doi.org/10.5281/zenodo.3901628
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/viralrecon/blob/master/CITATIONS.md
+-[2m----------------------------------------------------[0m-
+Apr-25 17:06:48.686 [main] ERROR nextflow.Nextflow - Platform not specified with e.g. '--platform illumina'. Valid options: illumina, nanopore.

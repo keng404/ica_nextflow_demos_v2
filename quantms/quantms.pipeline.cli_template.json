@@ -1,0 +1,54 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"],
+      "value": ["fil.d8fce2788d1742b4770008d9b69989fe", "fil.4a9683175d024ee076ff08d9b69989fe", "fil.7ada6d7dd92c4b4dabb708d9adf63314", "fil.5f94dbdbb6ef48a276fb08d9b69989fe", "fil.ba6d172bec8b43875db408db45a409a8", "fil.ba6d172bec8b43875db408db45a409a8", "fil.4db7e60b243840ed59b408db45a409a8", "fil.b32cb304665e48be597808db45a409a8"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"],
+      "value": ["fol.d5cb4a793ad94dfaa54408db459ecc74", "fol.41dd242bef704deaa53a08db459ecc74", "fol.3c7c06c5f5c946f1597a08db45a409a8", "fol.270d3cf2bfaa45d3a4f008db459ecc74", "fol.9351597df4dc483ba4db08db459ecc74", "fol.3bf5c975ff304250595c08db45a409a8", "fol.72228b1520684882a4ca08db459ecc74", "fol.efa8f6869efa4790595808db45a409a8"]
+    }
+  },
+  "parameters": {
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": [""]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["'./results'"]
+    },
+    "multiqc_title": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "root_folder": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "local_input_type": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "database": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["'/url/path/to/your/proteindatabase.fasta'"]
+    }
+  }
+}

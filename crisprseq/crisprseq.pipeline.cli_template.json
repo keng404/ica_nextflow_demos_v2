@@ -1,0 +1,66 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"],
+      "value": ["fil.d8fce2788d1742b4770008d9b69989fe", "fil.4a9683175d024ee076ff08d9b69989fe", "fil.7ada6d7dd92c4b4dabb708d9adf63314", "fil.5f94dbdbb6ef48a276fb08d9b69989fe", "fil.6f40a14217c945885da608db45a409a8", "fil.6f40a14217c945885da608db45a409a8", "fil.24f3efa5d3ff4c6b6f5108db45944288", "fil.47eaa3bf326347e86f1808db45944288"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"],
+      "value": ["fol.c2364a74a5ec4ae36f5d08db45944288", "fol.5c10654369aa4ec56f5908db45944288", "fol.9c261f6c34584e326f5508db45944288", "fol.a58cf09a26f44bcd695908db4590b257", "fol.68503dc4b30a49b36f1a08db45944288", "fol.00c374f7a4aa4525693a08db4590b257", "fol.39f745ab2750499e6f0a08db45944288", "fol.ac40166df5374df56f0308db45944288", "fol.f7ffca36abfc46e96efb08db45944288", "fol.bc242dd72a764e90692a08db4590b257"]
+    }
+  },
+  "parameters": {
+    "aligner": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["'minimap2'"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset to check pipeline function'"]
+    },
+    "genome": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["GRCh38"]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/crisprseq/testdata-edition/samplesheet_test_full.csv'"]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "multiqc_title": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    }
+  }
+}

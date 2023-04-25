@@ -1,0 +1,105 @@
+Apr-25 16:37:48.607 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -c nextflow.ica.config --input input.csv
+Apr-25 16:37:48.662 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.3
+Apr-25 16:37:48.680 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/keng/nf-core-v2/rnavar/nextflow.config
+Apr-25 16:37:48.684 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /Users/keng/nf-core-v2/rnavar/nextflow.ica.config
+Apr-25 16:37:48.685 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/rnavar/nextflow.config
+Apr-25 16:37:48.686 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/rnavar/nextflow.ica.config
+Apr-25 16:37:48.704 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 16:37:49.525 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:37:49.535 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 16:37:49.538 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 16:37:49.541 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 16:37:49.545 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:37:49.839 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:37:49.844 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:37:49.845 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:37:49.913 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:37:50.435 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 16:37:50.517 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:37:50.519 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:37:50.592 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:37:50.594 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:37:50.596 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:37:50.688 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:37:50.963 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Apr-25 16:37:50.977 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [trusting_lichterman] DSL2 - revision: af83ead239
+Apr-25 16:37:50.979 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/.nextflow/plugins; core-plugins: nf-amazon@1.7.2,nf-azure@0.13.2,nf-console@1.0.3,nf-ga4gh@1.0.3,nf-google@1.1.4,nf-sqldb@0.4.0,nf-tower@1.4.0
+Apr-25 16:37:50.983 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Apr-25 16:37:50.994 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 16:37:50.995 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 16:37:50.997 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 16:37:51.006 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Apr-25 16:37:51.040 [main] DEBUG nextflow.Session - Session uuid: 2913710e-8910-4da8-8864-b7c9f78171a7
+Apr-25 16:37:51.042 [main] DEBUG nextflow.Session - Run name: trusting_lichterman
+Apr-25 16:37:51.043 [main] DEBUG nextflow.Session - Executor pool size: 8
+Apr-25 16:37:51.064 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.04.3 build 5703
+  Created: 18-05-2022 19:22 UTC 
+  System: Linux 5.15.49-linuxkit
+  Runtime: Groovy 3.0.10 on OpenJDK 64-Bit Server VM 17.0.3+6-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 1@a71d32d008aa [172.17.0.2]
+  CPUs: 8 - Mem: 13.2 GB (1 GB) - Swap: 2 GB (1.9 GB)
+Apr-25 16:37:51.099 [main] DEBUG nextflow.Session - Work-dir: /Users/keng/nf-core-v2/rnavar/work [fuseblk]
+Apr-25 16:37:51.114 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Apr-25 16:37:51.124 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Apr-25 16:37:51.176 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Apr-25 16:37:51.184 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Apr-25 16:37:51.287 [main] DEBUG nextflow.Session - Session start invoked
+Apr-25 16:37:51.291 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /Users/keng/nf-core-v2/rnavar/results/pipeline_info/execution_trace_2023-04-25_16-37-50.txt
+Apr-25 16:37:51.310 [main] DEBUG nextflow.Session - Using default localLib path: /Users/keng/nf-core-v2/rnavar/lib
+Apr-25 16:37:51.320 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/rnavar/lib
+Apr-25 16:37:51.322 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/rnavar/lib/nfcore_external_java_deps.jar
+Apr-25 16:37:52.312 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Apr-25 16:37:52.584 [main] WARN  nextflow.Nextflow - Found unexpected parameters:
+* --conda_enabled: false
+* --ica_smoke_test: false
+Apr-25 16:37:52.585 [main] INFO  nextflow.Nextflow - - [2mIgnore this warning: params.schema_ignore_params = "conda_enabled,ica_smoke_test" [0m
+Apr-25 16:37:52.597 [main] INFO  nextflow.Nextflow - 
+
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;35m  nf-core/rnavar v1.0.0[0m
+-[2m----------------------------------------------------[0m-
+[1mCore Nextflow options[0m
+  [0;34mrunName        : [0;32mtrusting_lichterman[0m
+  [0;34mcontainerEngine: [0;32mdocker[0m
+  [0;34mlaunchDir      : [0;32m/Users/keng/nf-core-v2/rnavar[0m
+  [0;34mworkDir        : [0;32m/Users/keng/nf-core-v2/rnavar/work[0m
+  [0;34mprojectDir     : [0;32m/Users/keng/nf-core-v2/rnavar[0m
+  [0;34muserName       : [0;32mroot[0m
+  [0;34mprofile        : [0;32mstandard[0m
+  [0;34mconfigFiles    : [0;32m/Users/keng/nf-core-v2/rnavar/nextflow.config, /Users/keng/nf-core-v2/rnavar/nextflow.ica.config[0m
+
+[1mInput/output options[0m
+  [0;34minput          : [0;32minput.csv[0m
+  [0;34moutdir         : [0;32mout[0m
+
+[1mReference genome options[0m
+  [0;34mgenome         : [0;32mGRCh38[0m
+  [0;34mfasta          : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/NCBI/GRCh38/Sequence/WholeGenomeFasta/genome.fa[0m
+  [0;34mgtf            : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/NCBI/GRCh38/Annotation/Genes/genes.gtf[0m
+  [0;34mread_length    : [0;32m150[0m
+
+[1mAlignment options[0m
+  [0;34mstar_index     : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/NCBI/GRCh38/Sequence/STARIndex/[0m
+  [0;34mstar_twopass   : [0;32mtrue[0m
+
+[1mGeneric options[0m
+  [0;34mtracedir       : [0;32mresults/pipeline_info[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+-[2m----------------------------------------------------[0m-
+If you use nf-core/rnavar for your analysis please cite:
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/rnavar/blob/master/CITATIONS.md
+-[2m----------------------------------------------------[0m-
+Apr-25 16:37:54.510 [main] ERROR nextflow.Nextflow - Known variants VCF file or its index is missing!. At least --dbsnp (and its index) or --known_indels (and its index) is required.

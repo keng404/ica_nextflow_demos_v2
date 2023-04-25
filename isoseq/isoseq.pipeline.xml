@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="isoseq pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="project_dir" format="UNKNOWN" type="DIRECTORY" required="true" multiValue="true">
+      <label>project_dir</label>
+      <description>directory with additional files/input to run pipeline --- other files in your github project</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>Path to comma-separated file containing information about the samples in the experiment.
+You will need to create a design file with information about the samples in your experiment before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with 3 columns, and a header row. See [usage docs](https://nf-co.re/isoseq/usage#samplesheet-input).</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="primers" minValues="1" maxValues="1" classification="USER">
+          <label>primers</label>
+          <description>Fasta file of primers sequences
+The provided file must contains all primers sequences used for sequencing. 
+Gziped files are accepted. </description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="gtf" minValues="1" maxValues="1" classification="USER">
+          <label>gtf</label>
+          <description>Genome annotation file
+Provide a GTF annotation file (sorted by sequence and start) if you set the --aligner option to uLTRA
+Gziped files are accepted. </description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.</description>
+          <stringType/>
+          <value>results</value>
+        </parameter>
+        <parameter code="multiqc_title" minValues="1" maxValues="1" classification="USER">
+          <label>multiqc_title</label>
+          <description>MultiQC report title. Printed as page header, used for filename if not otherwise specified.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Full test dataset to check pipeline function'</value>
+        </parameter>
+        <parameter code="rq" minValues="0" maxValues="1" classification="USER">
+          <label>rq</label>
+          <description>Configure params.rq</description>
+          <floatType/>
+          <value>0.9</value>
+        </parameter>
+        <parameter code="chunk" minValues="0" maxValues="1" classification="USER">
+          <label>chunk</label>
+          <description>Configure params.chunk</description>
+          <integerType/>
+          <value>100</value>
+        </parameter>
+        <parameter code="five_prime" minValues="0" maxValues="1" classification="USER">
+          <label>five_prime</label>
+          <description>Configure params.five_prime</description>
+          <integerType/>
+          <value>100</value>
+        </parameter>
+        <parameter code="splice_junction" minValues="0" maxValues="1" classification="USER">
+          <label>splice_junction</label>
+          <description>Configure params.splice_junction</description>
+          <integerType/>
+          <value>10</value>
+        </parameter>
+        <parameter code="three_prime" minValues="0" maxValues="1" classification="USER">
+          <label>three_prime</label>
+          <description>Configure params.three_prime</description>
+          <integerType/>
+          <value>100</value>
+        </parameter>
+        <parameter code="capped" minValues="0" maxValues="1" classification="USER">
+          <label>capped</label>
+          <description>Configure params.capped</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="genome" minValues="0" maxValues="1" classification="USER">
+          <label>genome</label>
+          <description>Configure params.genome</description>
+          <stringType/>
+          <value>'Sscrofa10.2'</value>
+        </parameter>
+        <parameter code="ica_smoke_test" minValues="0" maxValues="1" classification="USER">
+          <label>ica_smoke_test</label>
+          <description>Boolean to trigger smoke test:</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+      </tool>
+    </step>
+    <step execution="MANDATORY" code="aligner_option">
+      <label>aligner_option</label>
+      <description>aligner_option parameters</description>
+      <tool code="aligner_option parameters">
+        <label>aligner_option</label>
+        <description>aligner_option parameters</description>
+        <parameter code="aligner" minValues="1" maxValues="1" classification="USER">
+          <label>aligner</label>
+          <description>Aligner to use for mapping: minimap2 or ultra
+The uLTRA aligner improve detection of small exons but require an annotation in GTF format to run. 
+If the genome don't have any reference annotation, you have to use minimap2. </description>
+          <optionsType>
+            <option>minimap2</option>
+            <option>ultra</option>
+          </optionsType>
+          <value>minimap2</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

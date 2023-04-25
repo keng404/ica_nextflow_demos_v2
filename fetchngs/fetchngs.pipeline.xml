@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="fetchngs pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="project_dir" format="UNKNOWN" type="DIRECTORY" required="true" multiValue="true">
+      <label>project_dir</label>
+      <description>directory with additional files/input to run pipeline --- other files in your github project</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>File containing SRA/ENA/DDBJ identifiers one per line to download their associated metadata and FastQ files.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="input_type" minValues="1" maxValues="1" classification="USER">
+          <label>input_type</label>
+          <description>Specifies the type of identifier provided via --input - available options are 'sra' and 'synapse'.</description>
+          <optionsType>
+            <option>sra</option>
+            <option>synapse</option>
+          </optionsType>
+          <value>sra</value>
+        </parameter>
+        <parameter code="ena_metadata_fields" minValues="1" maxValues="1" classification="USER">
+          <label>ena_metadata_fields</label>
+          <description>Comma-separated list of ENA metadata fields to fetch before downloading data.
+The default list of fields used by the pipeline can be found at the top of the [bin/sra_ids_to_runinfo.py](https://github.com/nf-core/fetchngs/blob/master/bin/sra_ids_to_runinfo.py) script within the pipeline repo. This pipeline requires a minimal set of fields to download FastQ files i.e. 'run_accession,experiment_accession,library_layout,fastq_ftp,fastq_md5'. Full list of accepted metadata fields can be obtained from the [ENA API](https://www.ebi.ac.uk/ena/portal/api/returnFields?dataPortal=enaformat=tsvresult=read_run]).</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="sample_mapping_fields" minValues="1" maxValues="1" classification="USER">
+          <label>sample_mapping_fields</label>
+          <description>Comma-separated list of ENA metadata fields used to create a separate 'id_mappings.csv' and 'multiqc_config.yml' with selected fields that can be used to rename samples in general and in MultiQC.</description>
+          <stringType/>
+          <value>experiment_accession,run_accession,sample_accession,experiment_alias,run_alias,sample_alias,experiment_title,sample_title,sample_description,description</value>
+        </parameter>
+        <parameter code="nf_core_pipeline" minValues="1" maxValues="1" classification="USER">
+          <label>nf_core_pipeline</label>
+          <description>Name of supported nf-core pipeline e.g. 'rnaseq'. A samplesheet for direct use with the pipeline will be created with the appropriate columns.</description>
+          <optionsType>
+            <option>rnaseq</option>
+            <option>atacseq</option>
+            <option>viralrecon</option>
+            <option>taxprofiler</option>
+          </optionsType>
+          <value>rnaseq</value>
+        </parameter>
+        <parameter code="nf_core_rnaseq_strandedness" minValues="1" maxValues="1" classification="USER">
+          <label>nf_core_rnaseq_strandedness</label>
+          <description>Value for 'strandedness' entry added to samplesheet created when using '--nf_core_pipeline rnaseq'.
+The default is 'auto' which can be used with nf-core/rnaseq v3.10 onwards to auto-detect strandedness during the pipeline execution.</description>
+          <stringType/>
+          <value>auto</value>
+        </parameter>
+        <parameter code="force_sratools_download" minValues="1" maxValues="1" classification="USER">
+          <label>force_sratools_download</label>
+          <description>Force download FASTQ files via sra-tools instead of via the ENA FTP.
+If FTP connections are blocked on your network use this flag to force the pipeline to download data using sra-tools instead of the ENA FTP.</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="skip_fastq_download" minValues="1" maxValues="1" classification="USER">
+          <label>skip_fastq_download</label>
+          <description>Only download metadata for public data database ids and don't download the FastQ files.</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="synapse_config" minValues="1" maxValues="1" classification="USER">
+          <label>synapse_config</label>
+          <description>Path to Synapse configuration file</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Full test dataset to check pipeline function'</value>
+        </parameter>
+        <parameter code="ica_smoke_test" minValues="0" maxValues="1" classification="USER">
+          <label>ica_smoke_test</label>
+          <description>Boolean to trigger smoke test:</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

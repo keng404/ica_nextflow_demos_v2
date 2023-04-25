@@ -1,0 +1,78 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"],
+      "value": ["fil.3a1458a7a33b4c00e22e08d9fd7903ef", "fil.efb1009a913d4aaf5db808db45a409a8", "fil.efb1009a913d4aaf5db808db45a409a8", "fil.9341a7d5490d4a1aa85b08db459ecc74", "fil.075fff4d99384cb55ccb08db45a409a8"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"],
+      "value": ["fol.155ec094ffcb443fa86708db459ecc74", "fol.c5a6d1bff14a4117a85e08db459ecc74", "fol.3e310b719c4042d95cee08db45a409a8", "fol.d9d11cb5721d40155ccc08db45a409a8", "fol.a578d29b226941d0a84308db459ecc74", "fol.730a5e0cead246e2a83b08db459ecc74", "fol.4cc186e279384bf8a83408db459ecc74", "fol.d467f2f9ec3f45c45cb808db45a409a8", "fol.2489419eef244474a82708db459ecc74"]
+    }
+  },
+  "parameters": {
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/scrnaseq/samplesheet_2.0_full.csv'"]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "multiqc_title": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full Test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset to check pipeline function'"]
+    },
+    "genome": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'GRCh38'"]
+    },
+    "aligner": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'star'"]
+    },
+    "protocol": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'10XV2'"]
+    },
+    "schema_ignore_params": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'genomes'"]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    }
+  }
+}

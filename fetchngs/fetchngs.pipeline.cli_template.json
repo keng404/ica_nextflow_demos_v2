@@ -1,0 +1,96 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"],
+      "value": ["fil.d8fce2788d1742b4770008d9b69989fe", "fil.4a9683175d024ee076ff08d9b69989fe", "fil.7ada6d7dd92c4b4dabb708d9adf63314", "fil.5f94dbdbb6ef48a276fb08d9b69989fe", "fil.47ab2fb89f8e4eff9f9e08db459ecc74", "fil.2f624279957f4e709f7f08db459ecc74"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"],
+      "value": ["fol.9cd3d8aabbc1453c134608db459ec65e", "fol.3378bb657b5343ed134108db459ec65e", "fol.6ca2d09c7a4741079fa008db459ecc74", "fol.a197a6cea1ca4d969f8008db459ecc74", "fol.27b2eb0ace2d40fc6a2b08db4590b257", "fol.2bf5067cd8c34b556a2508db4590b257", "fol.6914ea7fd87647946a1f08db4590b257", "fol.f12a59abd5e34e1d700408db45944288", "fol.77d8850aa78d4eaf6a0808db4590b257"]
+    }
+  },
+  "parameters": {
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/fetchngs/sra_ids_test.csv'"]
+    },
+    "input_type": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["sra"]
+    },
+    "ena_metadata_fields": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "sample_mapping_fields": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["experiment_accession,run_accession,sample_accession,experiment_alias,run_alias,sample_alias,experiment_title,sample_title,sample_description,description"]
+    },
+    "nf_core_pipeline": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["rnaseq"]
+    },
+    "nf_core_rnaseq_strandedness": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["auto"]
+    },
+    "force_sratools_download": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "skip_fastq_download": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "synapse_config": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset to check pipeline function'"]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    }
+  }
+}

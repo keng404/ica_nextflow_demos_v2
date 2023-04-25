@@ -1,0 +1,398 @@
+Apr-25 16:44:08.436 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -c nextflow.ica.config --input input.csv
+Apr-25 16:44:08.490 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.3
+Apr-25 16:44:08.509 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/keng/nf-core-v2/sarek/nextflow.config
+Apr-25 16:44:08.513 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /Users/keng/nf-core-v2/sarek/nextflow.ica.config
+Apr-25 16:44:08.514 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/sarek/nextflow.config
+Apr-25 16:44:08.515 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/sarek/nextflow.ica.config
+Apr-25 16:44:08.534 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 16:44:09.449 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:44:09.458 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 16:44:09.461 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 16:44:09.463 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 16:44:09.467 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:44:09.758 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:44:09.763 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:44:09.765 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:44:09.851 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:44:11.362 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 16:44:11.455 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:44:11.456 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:44:11.531 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:44:11.533 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:44:11.535 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:44:11.603 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:44:12.267 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Apr-25 16:44:12.281 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [elegant_lovelace] DSL2 - revision: 27da85b4b6
+Apr-25 16:44:12.283 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/.nextflow/plugins; core-plugins: nf-amazon@1.7.2,nf-azure@0.13.2,nf-console@1.0.3,nf-ga4gh@1.0.3,nf-google@1.1.4,nf-sqldb@0.4.0,nf-tower@1.4.0
+Apr-25 16:44:12.285 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Apr-25 16:44:12.296 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 16:44:12.297 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 16:44:12.299 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 16:44:12.307 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Apr-25 16:44:12.340 [main] DEBUG nextflow.Session - Session uuid: 168551a8-07b2-4dd3-8518-17e3c64df191
+Apr-25 16:44:12.342 [main] DEBUG nextflow.Session - Run name: elegant_lovelace
+Apr-25 16:44:12.343 [main] DEBUG nextflow.Session - Executor pool size: 8
+Apr-25 16:44:12.364 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.04.3 build 5703
+  Created: 18-05-2022 19:22 UTC 
+  System: Linux 5.15.49-linuxkit
+  Runtime: Groovy 3.0.10 on OpenJDK 64-Bit Server VM 17.0.3+6-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 1@beba9def69a0 [172.17.0.2]
+  CPUs: 8 - Mem: 13.2 GB (798.8 MB) - Swap: 2 GB (1.9 GB)
+Apr-25 16:44:12.396 [main] DEBUG nextflow.Session - Work-dir: /Users/keng/nf-core-v2/sarek/work [fuseblk]
+Apr-25 16:44:12.398 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Users/keng/nf-core-v2/sarek/bin
+Apr-25 16:44:12.407 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Apr-25 16:44:12.416 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Apr-25 16:44:12.472 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Apr-25 16:44:12.480 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Apr-25 16:44:12.588 [main] DEBUG nextflow.Session - Session start invoked
+Apr-25 16:44:12.593 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /Users/keng/nf-core-v2/sarek/results/pipeline_info/execution_trace_2023-04-25_16-44-10.txt
+Apr-25 16:44:12.614 [main] DEBUG nextflow.Session - Using default localLib path: /Users/keng/nf-core-v2/sarek/lib
+Apr-25 16:44:12.625 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/sarek/lib
+Apr-25 16:44:12.627 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/sarek/lib/nfcore_external_java_deps.jar
+Apr-25 16:44:13.570 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Apr-25 16:44:13.866 [main] WARN  nextflow.Nextflow - Found unexpected parameters:
+* --conda_enabled: false
+* --ica_smoke_test: false
+Apr-25 16:44:13.867 [main] INFO  nextflow.Nextflow - - [2mIgnore this warning: params.schema_ignore_params = "conda_enabled,ica_smoke_test" [0m
+Apr-25 16:44:13.882 [main] INFO  nextflow.Nextflow - 
+
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;37m      ____[0m
+[0;37m    .´ _  `.[0m
+[0;37m   /  [0;32m|\[0m`-_ \[0m     [0;34m __        __   ___     [0m
+[0;37m  |   [0;32m| \[0m  `-|[0m    [0;34m|__`  /\  |__) |__  |__/[0m
+[0;37m   \ [0;32m|   \[0m  /[0m     [0;34m.__| /¯¯\ |  \ |___ |  \[0m
+[0;37m    `[0;32m|[0m____[0;32m\[0m´[0m
+
+[0;35m  nf-core/sarek v3.1.1[0m
+-[2m----------------------------------------------------[0m-
+[1mCore Nextflow options[0m
+  [0;34mrunName              : [0;32melegant_lovelace[0m
+  [0;34mcontainerEngine      : [0;32mdocker[0m
+  [0;34mlaunchDir            : [0;32m/Users/keng/nf-core-v2/sarek[0m
+  [0;34mworkDir              : [0;32m/Users/keng/nf-core-v2/sarek/work[0m
+  [0;34mprojectDir           : [0;32m/Users/keng/nf-core-v2/sarek[0m
+  [0;34muserName             : [0;32mroot[0m
+  [0;34mprofile              : [0;32mstandard[0m
+  [0;34mconfigFiles          : [0;32m/Users/keng/nf-core-v2/sarek/nextflow.config, /Users/keng/nf-core-v2/sarek/nextflow.ica.config[0m
+
+[1mInput/output options[0m
+  [0;34minput                : [0;32minput.csv[0m
+  [0;34moutdir               : [0;32mout[0m
+
+[1mMain options[0m
+  [0;34mintervals            : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/intervals/wgs_calling_regions_noseconds.hg38.bed[0m
+
+[1mVariant Calling[0m
+  [0;34mcf_chrom_len         : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/Length/Homo_sapiens_assembly38.len[0m
+  [0;34mpon                  : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000g_pon.hg38.vcf.gz[0m
+  [0;34mpon_tbi              : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000g_pon.hg38.vcf.gz.tbi[0m
+
+[1mReference genome options[0m
+  [0;34mascat_genome         : [0;32mhg38[0m
+  [0;34mascat_alleles        : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/G1000_alleles_hg38.zip[0m
+  [0;34mascat_loci           : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/G1000_loci_hg38.zip[0m
+  [0;34mascat_loci_gc        : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/GC_G1000_hg38.zip[0m
+  [0;34mascat_loci_rt        : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/RT_G1000_hg38.zip[0m
+  [0;34mbwa                  : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/BWAIndex/[0m
+  [0;34mbwamem2              : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/BWAmem2Index/[0m
+  [0;34mchr_dir              : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/Chromosomes[0m
+  [0;34mdbsnp                : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/dbsnp_146.hg38.vcf.gz[0m
+  [0;34mdbsnp_tbi            : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/dbsnp_146.hg38.vcf.gz.tbi[0m
+  [0;34mdbsnp_vqsr           : [0;32m--resource:dbsnp,known=false,training=true,truth=false,prior=2.0 dbsnp_146.hg38.vcf.gz[0m
+  [0;34mdict                 : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.dict[0m
+  [0;34mdragmap              : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/dragmap/[0m
+  [0;34mfasta                : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta[0m
+  [0;34mfasta_fai            : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Sequence/WholeGenomeFasta/Homo_sapiens_assembly38.fasta.fai[0m
+  [0;34mgermline_resource    : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/af-only-gnomad.hg38.vcf.gz[0m
+  [0;34mgermline_resource_tbi: [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/af-only-gnomad.hg38.vcf.gz.tbi[0m
+  [0;34mknown_indels         : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/{Mills_and_1000G_gold_standard.indels.hg38,beta/Homo_sapiens_assembly38.known_indels}.vcf.gz[0m
+  [0;34mknown_indels_tbi     : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/{Mills_and_1000G_gold_standard.indels.hg38,beta/Homo_sapiens_assembly38.known_indels}.vcf.gz.tbi[0m
+  [0;34mknown_indels_vqsr    : [0;32m--resource:gatk,known=false,training=true,truth=true,prior=10.0 Homo_sapiens_assembly38.known_indels.vcf.gz --resource:mills,known=false,training=true,truth=true,prior=10.0 Mills_and_1000G_gold_standard.indels.hg38.vcf.gz[0m
+  [0;34mknown_snps           : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000G_omni2.5.hg38.vcf.gz[0m
+  [0;34mknown_snps_tbi       : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/GATKBundle/1000G_omni2.5.hg38.vcf.gz.tbi[0m
+  [0;34mknown_snps_vqsr      : [0;32m--resource:1000G,known=false,training=true,truth=true,prior=10.0 1000G_omni2.5.hg38.vcf.gz[0m
+  [0;34mmappability          : [0;32ms3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/Control-FREEC/out100m2_hg38.gem[0m
+  [0;34msnpeff_db            : [0;32mGRCh38.105[0m
+  [0;34msnpeff_genome        : [0;32mGRCh38[0m
+  [0;34msnpeff_version       : [0;32m5.1[0m
+  [0;34mvep_genome           : [0;32mGRCh38[0m
+  [0;34mvep_species          : [0;32mhomo_sapiens[0m
+  [0;34mvep_cache_version    : [0;32m106[0m
+  [0;34mvep_version          : [0;32m106.1[0m
+  [0;34migenomes_base        : [0;32ms3://ngi-igenomes/igenomes[0m
+
+[1mGeneric options[0m
+  [0;34mtracedir             : [0;32mresults/pipeline_info[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+-[2m----------------------------------------------------[0m-
+If you use nf-core/sarek for your analysis please cite:
+
+* The pipeline
+  https://doi.org/10.12688/f1000research.16665.2
+  https://doi.org/10.5281/zenodo.4468605
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/sarek/blob/master/CITATIONS.md
+-[2m----------------------------------------------------[0m-
+Apr-25 16:44:17.571 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-amazon version: 1.7.2
+Apr-25 16:44:17.574 [main] INFO  nextflow.plugin.PluginUpdater - Downloading plugin nf-amazon@1.7.2
+Apr-25 16:44:17.649 [main] ERROR o.p.update.DefaultUpdateRepository - PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:131)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:371)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:314)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:309)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.checkServerCerts(CertificateMessage.java:1357)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.onConsumeCertificate(CertificateMessage.java:1232)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.consume(CertificateMessage.java:1175)
+	at java.base/sun.security.ssl.SSLHandshake.consume(SSLHandshake.java:396)
+	at java.base/sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:480)
+	at java.base/sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:458)
+	at java.base/sun.security.ssl.TransportContext.dispatch(TransportContext.java:201)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:172)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1505)
+	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1420)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:455)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426)
+	at java.base/sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:580)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:183)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1665)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1589)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:224)
+	at java.base/java.net.URL.openStream(URL.java:1161)
+	at org.pf4j.update.DefaultUpdateRepository.initPlugins(DefaultUpdateRepository.java:96)
+	at org.pf4j.update.DefaultUpdateRepository.getPlugins(DefaultUpdateRepository.java:80)
+	at org.pf4j.update.UpdateManager.getPluginsMap(UpdateManager.java:149)
+	at org.pf4j.update.UpdateManager.findReleaseForPlugin(UpdateManager.java:319)
+	at org.pf4j.update.UpdateManager.downloadPlugin(UpdateManager.java:268)
+	at nextflow.plugin.PluginUpdater.download0(PluginUpdater.groovy:161)
+	at nextflow.plugin.PluginUpdater.access$0(PluginUpdater.groovy)
+	at nextflow.plugin.PluginUpdater$_safeDownload_closure2.doCall(PluginUpdater.groovy:216)
+	at nextflow.plugin.PluginUpdater$_safeDownload_closure2.call(PluginUpdater.groovy)
+	at nextflow.file.FileMutex.lock(FileMutex.groovy:107)
+	at nextflow.plugin.PluginUpdater.safeDownload(PluginUpdater.groovy:216)
+	at nextflow.plugin.PluginUpdater.load0(PluginUpdater.groovy:245)
+	at nextflow.plugin.PluginUpdater.installPlugin(PluginUpdater.groovy:144)
+	at nextflow.plugin.PluginUpdater.prepareAndStart(PluginUpdater.groovy:91)
+	at nextflow.plugin.PluginsFacade.start(PluginsFacade.groovy:312)
+	at nextflow.plugin.PluginsFacade.start(PluginsFacade.groovy:303)
+	at nextflow.plugin.PluginsFacade.startIfMissing(PluginsFacade.groovy:415)
+	at nextflow.plugin.Plugins.startIfMissing(Plugins.groovy:73)
+	at nextflow.file.FileHelper.autoStartMissingPlugin(FileHelper.groovy:288)
+	at nextflow.file.FileHelper.asPath(FileHelper.groovy:268)
+	at nextflow.extension.Bolts.asType(Bolts.groovy:439)
+	at jdk.internal.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.runtime.metaclass.ReflectionMetaMethod.invoke(ReflectionMetaMethod.java:54)
+	at org.codehaus.groovy.runtime.metaclass.NewInstanceMetaMethod.invoke(NewInstanceMetaMethod.java:54)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePojoMethod(InvokerHelper.java:1017)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:1008)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodN(ScriptBytecodeAdapter.java:180)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.asType(ScriptBytecodeAdapter.java:603)
+	at nextflow.Nextflow.file(Nextflow.groovy:148)
+	at nextflow.Nextflow$file.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
+	at Script_ab5de4af.runScript(Script_ab5de4af:52)
+	at nextflow.script.BaseScript.runDsl2(BaseScript.groovy:170)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:217)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:220)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:206)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:200)
+	at nextflow.script.IncludeDef.memoizedMethodPriv$loadModule0PathMapSession(IncludeDef.groovy:142)
+	at nextflow.script.IncludeDef.access$0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef$__clinit__closure1.doCall(IncludeDef.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.lambda$call$0(Memoize.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:113)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.call(Memoize.java:136)
+	at nextflow.script.IncludeDef.loadModule0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef.load0(IncludeDef.groovy:114)
+	at nextflow.script.IncludeDef$load0$1.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at Script_f9b93fa4.runScript(Script_f9b93fa4:72)
+	at nextflow.script.BaseScript.runDsl2(BaseScript.groovy:170)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:217)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:220)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:212)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:120)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:337)
+	at nextflow.cli.Launcher.run(Launcher.groovy:480)
+	at nextflow.cli.Launcher.main(Launcher.groovy:639)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at java.base/sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:439)
+	at java.base/sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:306)
+	at java.base/sun.security.validator.Validator.validate(Validator.java:264)
+	at java.base/sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:231)
+	at java.base/sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:132)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.checkServerCerts(CertificateMessage.java:1341)
+	... 92 common frames omitted
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at java.base/sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:141)
+	at java.base/sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:126)
+	at java.base/java.security.cert.CertPathBuilder.build(CertPathBuilder.java:297)
+	at java.base/sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:434)
+	... 97 common frames omitted
+Apr-25 16:44:17.651 [main] INFO  org.pf4j.update.UpdateManager - Plugin with id nf-amazon does not exist in any repository
+Apr-25 16:44:17.653 [main] WARN  nextflow.file.FileHelper - Unable to start plugin 'nf-amazon' required by s3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/G1000_alleles_hg38.zip
+org.pf4j.PluginRuntimeException: Plugin with id nf-amazon not found in any repository
+	at org.pf4j.update.UpdateManager.findReleaseForPlugin(UpdateManager.java:322)
+	at org.pf4j.update.UpdateManager.downloadPlugin(UpdateManager.java:268)
+	at nextflow.plugin.PluginUpdater.download0(PluginUpdater.groovy:161)
+	at nextflow.plugin.PluginUpdater.access$0(PluginUpdater.groovy)
+	at nextflow.plugin.PluginUpdater$_safeDownload_closure2.doCall(PluginUpdater.groovy:216)
+	at nextflow.plugin.PluginUpdater$_safeDownload_closure2.call(PluginUpdater.groovy)
+	at nextflow.file.FileMutex.lock(FileMutex.groovy:107)
+	at nextflow.plugin.PluginUpdater.safeDownload(PluginUpdater.groovy:216)
+	at nextflow.plugin.PluginUpdater.load0(PluginUpdater.groovy:245)
+	at nextflow.plugin.PluginUpdater.installPlugin(PluginUpdater.groovy:144)
+	at nextflow.plugin.PluginUpdater.prepareAndStart(PluginUpdater.groovy:91)
+	at nextflow.plugin.PluginsFacade.start(PluginsFacade.groovy:312)
+	at nextflow.plugin.PluginsFacade.start(PluginsFacade.groovy:303)
+	at nextflow.plugin.PluginsFacade.startIfMissing(PluginsFacade.groovy:415)
+	at nextflow.plugin.Plugins.startIfMissing(Plugins.groovy:73)
+	at nextflow.file.FileHelper.autoStartMissingPlugin(FileHelper.groovy:288)
+	at nextflow.file.FileHelper.asPath(FileHelper.groovy:268)
+	at nextflow.extension.Bolts.asType(Bolts.groovy:439)
+	at jdk.internal.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.runtime.metaclass.ReflectionMetaMethod.invoke(ReflectionMetaMethod.java:54)
+	at org.codehaus.groovy.runtime.metaclass.NewInstanceMetaMethod.invoke(NewInstanceMetaMethod.java:54)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePojoMethod(InvokerHelper.java:1017)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:1008)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodN(ScriptBytecodeAdapter.java:180)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.asType(ScriptBytecodeAdapter.java:603)
+	at nextflow.Nextflow.file(Nextflow.groovy:148)
+	at nextflow.Nextflow$file.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
+	at Script_ab5de4af.runScript(Script_ab5de4af:52)
+	at nextflow.script.BaseScript.runDsl2(BaseScript.groovy:170)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:217)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:220)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:206)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:200)
+	at nextflow.script.IncludeDef.memoizedMethodPriv$loadModule0PathMapSession(IncludeDef.groovy:142)
+	at nextflow.script.IncludeDef.access$0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef$__clinit__closure1.doCall(IncludeDef.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.lambda$call$0(Memoize.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:113)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.call(Memoize.java:136)
+	at nextflow.script.IncludeDef.loadModule0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef.load0(IncludeDef.groovy:114)
+	at nextflow.script.IncludeDef$load0$1.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at Script_f9b93fa4.runScript(Script_f9b93fa4:72)
+	at nextflow.script.BaseScript.runDsl2(BaseScript.groovy:170)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:217)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:220)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:212)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:120)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:337)
+	at nextflow.cli.Launcher.run(Launcher.groovy:480)
+	at nextflow.cli.Launcher.main(Launcher.groovy:639)
+Apr-25 16:44:17.656 [main] DEBUG nextflow.Session - Session aborted -- Cause: Missing plugin 'nf-amazon' required to read file: s3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/G1000_alleles_hg38.zip
+Apr-25 16:44:17.664 [main] ERROR nextflow.cli.Launcher - @unknown
+java.lang.IllegalStateException: Missing plugin 'nf-amazon' required to read file: s3://ngi-igenomes/igenomes/Homo_sapiens/GATK/GRCh38/Annotation/ASCAT/G1000_alleles_hg38.zip
+	at nextflow.file.FileHelper.asPath(FileHelper.groovy:320)
+	at nextflow.file.FileHelper.asPath(FileHelper.groovy:274)
+	at nextflow.extension.Bolts.asType(Bolts.groovy:439)
+	at jdk.internal.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.runtime.metaclass.ReflectionMetaMethod.invoke(ReflectionMetaMethod.java:54)
+	at org.codehaus.groovy.runtime.metaclass.NewInstanceMetaMethod.invoke(NewInstanceMetaMethod.java:54)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePojoMethod(InvokerHelper.java:1017)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:1008)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodN(ScriptBytecodeAdapter.java:180)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.asType(ScriptBytecodeAdapter.java:603)
+	at nextflow.Nextflow.file(Nextflow.groovy:148)
+	at nextflow.Nextflow$file.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
+	at Script_ab5de4af.runScript(Script_ab5de4af:52)
+	at nextflow.script.BaseScript.runDsl2(BaseScript.groovy:170)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:217)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:220)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:206)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:200)
+	at nextflow.script.IncludeDef.memoizedMethodPriv$loadModule0PathMapSession(IncludeDef.groovy:142)
+	at nextflow.script.IncludeDef.access$0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef$__clinit__closure1.doCall(IncludeDef.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.lambda$call$0(Memoize.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:113)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.call(Memoize.java:136)
+	at nextflow.script.IncludeDef.loadModule0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef.load0(IncludeDef.groovy:114)
+	at nextflow.script.IncludeDef$load0$1.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at Script_f9b93fa4.runScript(Script_f9b93fa4:72)
+	at nextflow.script.BaseScript.runDsl2(BaseScript.groovy:170)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:217)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:220)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:212)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:120)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:337)
+	at nextflow.cli.Launcher.run(Launcher.groovy:480)
+	at nextflow.cli.Launcher.main(Launcher.groovy:639)

@@ -1,0 +1,1 @@
+2023-04-25 17:06:47	-	tiny_davinci	-	6168b226aa84e20be19321b75c4f0325	da537de2-252f-49b0-9c18-0ec18ecf7303	nextflow run main.nf -c nextflow.ica.config --input input.csv

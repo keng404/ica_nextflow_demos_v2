@@ -1,0 +1,167 @@
+Apr-25 16:12:39.405 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -c nextflow.ica.config --input input.csv
+Apr-25 16:12:39.479 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.3
+Apr-25 16:12:39.504 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/keng/nf-core-v2/proteinfold/nextflow.config
+Apr-25 16:12:39.509 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /Users/keng/nf-core-v2/proteinfold/nextflow.ica.config
+Apr-25 16:12:39.511 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/proteinfold/nextflow.config
+Apr-25 16:12:39.512 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/proteinfold/nextflow.ica.config
+Apr-25 16:12:39.536 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 16:12:40.657 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:12:40.671 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 16:12:40.675 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 16:12:40.677 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 16:12:40.684 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:12:41.005 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:12:41.010 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:12:41.012 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:12:41.083 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:12:41.314 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 16:12:41.434 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:12:41.436 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:12:41.508 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:12:41.510 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:12:41.512 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:12:41.579 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 16:12:41.704 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Apr-25 16:12:41.720 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [chaotic_shockley] DSL2 - revision: ec29dd3d3b
+Apr-25 16:12:41.722 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/.nextflow/plugins; core-plugins: nf-amazon@1.7.2,nf-azure@0.13.2,nf-console@1.0.3,nf-ga4gh@1.0.3,nf-google@1.1.4,nf-sqldb@0.4.0,nf-tower@1.4.0
+Apr-25 16:12:41.732 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Apr-25 16:12:41.744 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 16:12:41.746 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 16:12:41.747 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 16:12:41.758 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Apr-25 16:12:41.793 [main] DEBUG nextflow.Session - Session uuid: f3cd32d3-621b-434f-b1d9-e760127d2ad5
+Apr-25 16:12:41.795 [main] DEBUG nextflow.Session - Run name: chaotic_shockley
+Apr-25 16:12:41.797 [main] DEBUG nextflow.Session - Executor pool size: 8
+Apr-25 16:12:41.819 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.04.3 build 5703
+  Created: 18-05-2022 19:22 UTC 
+  System: Linux 5.15.49-linuxkit
+  Runtime: Groovy 3.0.10 on OpenJDK 64-Bit Server VM 17.0.3+6-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 1@0c5ee7ad447d [172.17.0.2]
+  CPUs: 8 - Mem: 13.2 GB (1 GB) - Swap: 2 GB (1.9 GB)
+Apr-25 16:12:41.861 [main] DEBUG nextflow.Session - Work-dir: /Users/keng/nf-core-v2/proteinfold/work [fuseblk]
+Apr-25 16:12:41.878 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Apr-25 16:12:41.888 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Apr-25 16:12:41.940 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Apr-25 16:12:41.949 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Apr-25 16:12:42.065 [main] DEBUG nextflow.Session - Session start invoked
+Apr-25 16:12:42.069 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /Users/keng/nf-core-v2/proteinfold/null/pipeline_info/execution_trace_2023-04-25_16-12-41.txt
+Apr-25 16:12:42.095 [main] DEBUG nextflow.Session - Using default localLib path: /Users/keng/nf-core-v2/proteinfold/lib
+Apr-25 16:12:42.107 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/proteinfold/lib
+Apr-25 16:12:42.109 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/proteinfold/lib/nfcore_external_java_deps.jar
+Apr-25 16:12:43.201 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Apr-25 16:12:43.268 [main] INFO  nextflow.Nextflow - 
+
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;35m  nf-core/proteinfold v1.0.0[0m
+-[2m----------------------------------------------------[0m-
+[1mCore Nextflow options[0m
+  [0;34mrunName                         : [0;32mchaotic_shockley[0m
+  [0;34mcontainerEngine                 : [0;32mdocker[0m
+  [0;34mlaunchDir                       : [0;32m/Users/keng/nf-core-v2/proteinfold[0m
+  [0;34mworkDir                         : [0;32m/Users/keng/nf-core-v2/proteinfold/work[0m
+  [0;34mprojectDir                      : [0;32m/Users/keng/nf-core-v2/proteinfold[0m
+  [0;34muserName                        : [0;32mroot[0m
+  [0;34mprofile                         : [0;32mstandard[0m
+  [0;34mconfigFiles                     : [0;32m/Users/keng/nf-core-v2/proteinfold/nextflow.config, /Users/keng/nf-core-v2/proteinfold/nextflow.ica.config[0m
+
+[1mGlobal options[0m
+  [0;34minput                           : [0;32minput.csv[0m
+  [0;34moutdir                          : [0;32mout[0m
+
+[1mAlphafold2 options[0m
+  [0;34malphafold2_model_preset         : [0;32mmonomer[0m
+
+[1mAlphafold2 DBs and parameters links options[0m
+  [0;34mbfd_path                        : [0;32mnull/bfd/*[0m
+  [0;34msmall_bfd_path                  : [0;32mnull/small_bfd/*[0m
+  [0;34malphafold2_params_path          : [0;32mnull/alphafold_params_*/*[0m
+  [0;34mmgnify_path                     : [0;32mnull/mgnify/*[0m
+  [0;34mpdb70_path                      : [0;32mnull/pdb70/**[0m
+  [0;34mpdb_mmcif_path                  : [0;32mnull/pdb_mmcif/**[0m
+  [0;34municlust30_path                 : [0;32mnull/uniclust30/**[0m
+  [0;34muniref90_path                   : [0;32mnull/uniref90/*[0m
+  [0;34mpdb_seqres_path                 : [0;32mnull/pdb_seqres/*[0m
+  [0;34muniprot_path                    : [0;32mnull/uniprot/*[0m
+
+[1mColabfold DBs and parameters links options[0m
+  [0;34mcolabfold_db_path               : [0;32mnull/colabfold_envdb_202108[0m
+  [0;34muniref30_path                   : [0;32mnull/uniref30_2202[0m
+  [0;34mcolabfold_alphafold2_params_path: [0;32mnull/params/alphafold_params_2021-07-14[0m
+  [0;34mcolabfold_alphafold2_params_tags: [0;32m[AlphaFold2-multimer-v1:alphafold_params_colab_2021-10-27, AlphaFold2-multimer-v2:alphafold_params_colab_2022-03-02, AlphaFold2-ptm:alphafold_params_2021-07-14][0m
+
+[1mGeneric options[0m
+  [0;34mtracedir                        : [0;32mnull/pipeline_info[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+-[2m----------------------------------------------------[0m-
+If you use nf-core/proteinfold for your analysis please cite:
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/proteinfold/blob/master/CITATIONS.md
+-[2m----------------------------------------------------[0m-
+Apr-25 16:12:43.509 [main] WARN  nextflow.Nextflow - Found unexpected parameters:
+* --enable_conda: false
+* --igenomes_ignore: false
+* --conda_enabled: false
+* --ica_smoke_test: false
+Apr-25 16:12:43.510 [main] INFO  nextflow.Nextflow - - [2mIgnore this warning: params.schema_ignore_params = "enable_conda,igenomes_ignore,conda_enabled,ica_smoke_test" [0m
+Apr-25 16:12:44.342 [main] DEBUG nextflow.Session - Session aborted -- Cause: /Users/keng/nf-core-v2/proteinfold/input.csv
+Apr-25 16:12:44.350 [main] ERROR nextflow.cli.Launcher - /Users/keng/nf-core-v2/proteinfold/input.csv
+java.nio.file.NoSuchFileException: /Users/keng/nf-core-v2/proteinfold/input.csv
+	at nextflow.file.FileHelper.checkIfExists(FileHelper.groovy:1036)
+	at nextflow.file.FileHelper$checkIfExists$1.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)
+	at nextflow.Nextflow.file(Nextflow.groovy:159)
+	at nextflow.Nextflow$file.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:240)
+	at Script_815effef.runScript(Script_815effef:14)
+	at nextflow.script.BaseScript.runDsl2(BaseScript.groovy:170)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:217)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:220)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:206)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:200)
+	at nextflow.script.IncludeDef.memoizedMethodPriv$loadModule0PathMapSession(IncludeDef.groovy:142)
+	at nextflow.script.IncludeDef.access$0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef$__clinit__closure1.doCall(IncludeDef.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.lambda$call$0(Memoize.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:113)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.call(Memoize.java:136)
+	at nextflow.script.IncludeDef.loadModule0(IncludeDef.groovy)
+	at nextflow.script.IncludeDef.load0(IncludeDef.groovy:114)
+	at nextflow.script.IncludeDef$load0$1.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at Script_bc916ae7.runScript(Script_bc916ae7:31)
+	at nextflow.script.BaseScript.runDsl2(BaseScript.groovy:170)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:217)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:220)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:212)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:120)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:337)
+	at nextflow.cli.Launcher.run(Launcher.groovy:480)
+	at nextflow.cli.Launcher.main(Launcher.groovy:639)

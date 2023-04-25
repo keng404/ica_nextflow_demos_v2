@@ -1,0 +1,1 @@
+2023-04-25 14:27:18	-	fervent_cori	-	d07cf07825bfaa7fd6db37951187a78b	30250cff-3bc2-431f-a1ef-da4d95f0d023	nextflow run main.nf -c nextflow.ica.config --input input.csv

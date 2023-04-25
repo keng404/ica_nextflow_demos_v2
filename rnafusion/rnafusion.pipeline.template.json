@@ -1,0 +1,268 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"]
+    }
+  },
+  "parameters": {
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": [""]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "multiqc_title": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "build_references": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "genomes_base": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "ensembl_version": {
+      "type": ["integerType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["105"]
+    },
+    "starfusion_build": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "read_length": {
+      "type": ["integerType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["100"]
+    },
+    "all": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "arriba": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "arriba_ref": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "arriba_ref_blacklist": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "arriba_ref_protein_domain": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "arriba_fusions": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "ensembl_ref": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "fusioncatcher": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "fusioncatcher_fusions": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "fusioncatcher_limitSjdbInsertNsj": {
+      "type": ["integerType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "fusioncatcher_ref": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "fusioninspector_filter": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "fusioninspector_limitSjdbInsertNsj": {
+      "type": ["integerType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "fusioninspector_only": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "fusioninspector_fusions": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "fusionreport": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "fusionreport_ref": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "pizzly": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "pizzly_fusions": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "pizzly_ref": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "squid": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "squid_fusions": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "squid_ref": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "starfusion": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "starfusion_fusions": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "starfusion_ref": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "starindex": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "starindex_ref": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "cosmic_username": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "cosmic_passwd": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset to check pipeline function'"]
+    },
+    "genome": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'GRCh38'"]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    }
+  }
+}

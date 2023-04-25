@@ -1,0 +1,105 @@
+Apr-25 15:18:11.848 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -c nextflow.ica.config --input input.csv
+Apr-25 15:18:11.910 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.3
+Apr-25 15:18:11.931 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/keng/nf-core-v2/hicar/nextflow.config
+Apr-25 15:18:11.935 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /Users/keng/nf-core-v2/hicar/nextflow.ica.config
+Apr-25 15:18:11.937 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/hicar/nextflow.config
+Apr-25 15:18:11.938 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/hicar/nextflow.ica.config
+Apr-25 15:18:11.960 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 15:18:12.946 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 15:18:12.957 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 15:18:12.960 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 15:18:12.963 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 15:18:12.968 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 15:18:13.252 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 15:18:13.886 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 15:18:13.967 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 15:18:13.969 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 15:18:14.039 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 15:18:14.441 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Apr-25 15:18:14.458 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [sick_wright] DSL2 - revision: bef09da6f1
+Apr-25 15:18:14.460 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/.nextflow/plugins; core-plugins: nf-amazon@1.7.2,nf-azure@0.13.2,nf-console@1.0.3,nf-ga4gh@1.0.3,nf-google@1.1.4,nf-sqldb@0.4.0,nf-tower@1.4.0
+Apr-25 15:18:14.462 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Apr-25 15:18:14.475 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 15:18:14.477 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 15:18:14.479 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 15:18:14.488 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Apr-25 15:18:14.527 [main] DEBUG nextflow.Session - Session uuid: 0068148d-18c5-4954-ba65-8d9b3d97abc2
+Apr-25 15:18:14.528 [main] DEBUG nextflow.Session - Run name: sick_wright
+Apr-25 15:18:14.530 [main] DEBUG nextflow.Session - Executor pool size: 8
+Apr-25 15:18:14.551 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.04.3 build 5703
+  Created: 18-05-2022 19:22 UTC 
+  System: Linux 5.15.49-linuxkit
+  Runtime: Groovy 3.0.10 on OpenJDK 64-Bit Server VM 17.0.3+6-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 1@49d93faedf43 [172.17.0.2]
+  CPUs: 8 - Mem: 13.2 GB (1 GB) - Swap: 2 GB (1.9 GB)
+Apr-25 15:18:14.586 [main] DEBUG nextflow.Session - Work-dir: /Users/keng/nf-core-v2/hicar/work [fuseblk]
+Apr-25 15:18:14.613 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Apr-25 15:18:14.623 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Apr-25 15:18:14.679 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Apr-25 15:18:14.687 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Apr-25 15:18:14.803 [main] DEBUG nextflow.Session - Session start invoked
+Apr-25 15:18:14.807 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /Users/keng/nf-core-v2/hicar/null/pipeline_info/execution_trace_2023-04-25_15-18-13.txt
+Apr-25 15:18:14.831 [main] DEBUG nextflow.Session - Using default localLib path: /Users/keng/nf-core-v2/hicar/lib
+Apr-25 15:18:14.843 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/hicar/lib
+Apr-25 15:18:14.845 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/hicar/lib/nfcore_external_java_deps.jar
+Apr-25 15:18:15.966 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Apr-25 15:18:16.264 [main] WARN  nextflow.Nextflow - Found unexpected parameters:
+* --conda_enabled: false
+* --ica_smoke_test: false
+Apr-25 15:18:16.266 [main] INFO  nextflow.Nextflow - - [2mIgnore this warning: params.schema_ignore_params = "conda_enabled,ica_smoke_test" [0m
+Apr-25 15:18:16.281 [main] INFO  nextflow.Nextflow - 
+
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;35m  nf-core/hicar v1.0.0[0m
+-[2m----------------------------------------------------[0m-
+[1mCore Nextflow options[0m
+  [0;34mrunName         : [0;32msick_wright[0m
+  [0;34mcontainerEngine : [0;32mdocker[0m
+  [0;34mlaunchDir       : [0;32m/Users/keng/nf-core-v2/hicar[0m
+  [0;34mworkDir         : [0;32m/Users/keng/nf-core-v2/hicar/work[0m
+  [0;34mprojectDir      : [0;32m/Users/keng/nf-core-v2/hicar[0m
+  [0;34muserName        : [0;32mroot[0m
+  [0;34mprofile         : [0;32mstandard[0m
+  [0;34mconfigFiles     : [0;32m/Users/keng/nf-core-v2/hicar/nextflow.config, /Users/keng/nf-core-v2/hicar/nextflow.ica.config[0m
+
+[1mInput/output options[0m
+  [0;34minput           : [0;32minput.csv[0m
+  [0;34moutdir          : [0;32mout[0m
+
+[1mMAPS peak calling options[0m
+  [0;34mmaps_digest_file: [0;32mnull[0m
+  [0;34mpeak_pair_block : [0;32m1E+8[0m
+
+[1mOptions related to tracks, juicer_tools, and circos[0m
+  [0;34mjuicer_tools_jar: [0;32mhttps://github.com/aidenlab/Juicebox/releases/download/v2.13.06/juicer_tools_2.13.06.jar[0m
+
+[1mOther options not expose[0m
+  [0;34menrichment_fdr  : [0;32m0.05[0m
+
+[1mMax job request options[0m
+  [0;34mmax_memory      : [0;32m156.GB[0m
+
+[1mGeneric options[0m
+  [0;34mtracedir        : [0;32mnull/pipeline_info[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+-[2m----------------------------------------------------[0m-
+If you use nf-core/hicar for your analysis please cite:
+
+* The pipeline
+  https://doi.org/10.5281/zenodo.5618247
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/hicar/blob/master/CITATIONS.md
+-[2m----------------------------------------------------[0m-
+Apr-25 15:18:18.489 [main] ERROR nextflow.Nextflow - Genome fasta file not specified with e.g. '--fasta genome.fa' or via a detectable config file.

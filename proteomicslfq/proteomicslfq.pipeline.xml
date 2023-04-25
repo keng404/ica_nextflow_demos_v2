@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="proteomicslfq pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="project_dir" format="UNKNOWN" type="DIRECTORY" required="true" multiValue="true">
+      <label>project_dir</label>
+      <description>directory with additional files/input to run pipeline --- other files in your github project</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>URI/path to an [SDRF](https://github.com/bigbio/proteomics-metadata-standard/tree/master/annotated-projects) file --OR-- globbing pattern for URIs/paths of mzML or Thermo RAW files
+The input to the pipeline can be specified in two --mutually exclusive-- ways:
+  - using a path or URI to a PRIDE Sample to Data Relation Format file (SDRF), e.g. as part of a submitted and
+annotated PRIDE experiment (see [here](https://github.com/bigbio/proteomics-metadata-standard/tree/master/annotated-projects) for examples). Input files will be downloaded and cached from the URIs specified in the SDRF file.
+An OpenMS-style experimental design will be generated based on the factor columns of the SDRF. The settings for the
+following parameters will currently be overwritten by the ones specified in the SDRF:
+
+    - fixed_mods,
+    - variable_mods,
+    - precursor_mass_tolerance,
+    - precursor_mass_tolerance_unit,
+    - fragment_mass_tolerance,
+    - fragment_mass_tolerance_unit,
+    - fragment_method,
+    - enzyme
+  - by specifying globbing patterns to the input spectrum files in Thermo RAW or mzML format (e.g. /data/experiment{1,2,3}_rep-.mzML). An experimental design should be provided with the expdesign parameter.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved.</description>
+          <stringType/>
+          <value>.&amp;#x2F;results</value>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Real-world sized test dataset to check pipeline function and sanity of results'</value>
+        </parameter>
+        <parameter code="expdesign" minValues="0" maxValues="1" classification="USER">
+          <label>expdesign</label>
+          <description>Configure params.expdesign</description>
+          <stringType/>
+          <value>'https://raw.githubusercontent.com/nf-core/test-datasets/proteomicslfq/testdata-aws/experimental_design_short.tsv'</value>
+        </parameter>
+        <parameter code="posterior_probabilities" minValues="0" maxValues="1" classification="USER">
+          <label>posterior_probabilities</label>
+          <description>Configure params.posterior_probabilities</description>
+          <stringType/>
+          <value>percolator</value>
+        </parameter>
+        <parameter code="search_engines" minValues="0" maxValues="1" classification="USER">
+          <label>search_engines</label>
+          <description>Configure params.search_engines</description>
+          <stringType/>
+          <value>comet</value>
+        </parameter>
+        <parameter code="psm_pep_fdr_cutoff" minValues="0" maxValues="1" classification="USER">
+          <label>psm_pep_fdr_cutoff</label>
+          <description>Configure params.psm_pep_fdr_cutoff</description>
+          <floatType/>
+          <value>0.01</value>
+        </parameter>
+        <parameter code="decoy_affix" minValues="0" maxValues="1" classification="USER">
+          <label>decoy_affix</label>
+          <description>Configure params.decoy_affix</description>
+          <stringType/>
+          <value>rev</value>
+        </parameter>
+        <parameter code="protein_inference" minValues="0" maxValues="1" classification="USER">
+          <label>protein_inference</label>
+          <description>Configure params.protein_inference</description>
+          <stringType/>
+          <value>bayesian</value>
+        </parameter>
+        <parameter code="targeted_only" minValues="0" maxValues="1" classification="USER">
+          <label>targeted_only</label>
+          <description>Configure params.targeted_only</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="ica_smoke_test" minValues="0" maxValues="1" classification="USER">
+          <label>ica_smoke_test</label>
+          <description>Boolean to trigger smoke test:</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+      </tool>
+    </step>
+    <step execution="MANDATORY" code="protein_database">
+      <label>protein_database</label>
+      <description>protein_database parameters</description>
+      <tool code="protein_database parameters">
+        <label>protein_database</label>
+        <description>protein_database parameters</description>
+        <parameter code="database" minValues="1" maxValues="1" classification="USER">
+          <label>database</label>
+          <description>The fasta protein database used during database search.
+Since the database is not included in an SDRF, this parameter always needs to be given to specify the input protein database
+when you run the pipeline. Remember to include contaminants (and decoys if not added in the pipeline with \-\-add-decoys)
+
+bash
+--database '[path to Fasta protein database]'</description>
+          <stringType/>
+          <value/>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

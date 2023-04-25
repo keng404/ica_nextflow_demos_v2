@@ -1,0 +1,1 @@
+2023-04-25 17:01:47	-	insane_jennings	-	3024dbe871eea7bfd40a985074e542b9	2206d4c6-fa28-42cf-83c3-5cc7a8f35c02	nextflow run main.nf -c nextflow.ica.config --input input.csv

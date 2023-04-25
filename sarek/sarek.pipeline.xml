@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="sarek pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="project_dir" format="UNKNOWN" type="DIRECTORY" required="true" multiValue="true">
+      <label>project_dir</label>
+      <description>directory with additional files/input to run pipeline --- other files in your github project</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="step" minValues="1" maxValues="1" classification="USER">
+          <label>step</label>
+          <description>Starting step
+The pipeline starts from this step and then runs through the possible subsequent steps.</description>
+          <optionsType>
+            <option>mapping</option>
+            <option>markduplicates</option>
+            <option>prepare_recalibration</option>
+            <option>recalibrate</option>
+            <option>variant_calling</option>
+            <option>annotate</option>
+          </optionsType>
+          <value>mapping</value>
+        </parameter>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>Path to comma-separated file containing information about the samples in the experiment.
+A design file with information about the samples in your experiment. Use this parameter to specify the location of the input files. It has to be a comma-separated file with a header row. See [usage docs](https://nf-co.re/sarek/usage#input).
+
+If no input file is specified, sarek will attempt to locate one in the {outdir} directory.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Full test dataset to check pipeline function'</value>
+        </parameter>
+        <parameter code="tools" minValues="0" maxValues="1" classification="USER">
+          <label>tools</label>
+          <description>Configure params.tools</description>
+          <stringType/>
+          <value>'strelka,mutect2,freebayes,ascat,manta,cnvkit,tiddit,controlfreec,vep'</value>
+        </parameter>
+        <parameter code="split_fastq" minValues="0" maxValues="1" classification="USER">
+          <label>split_fastq</label>
+          <description>Configure params.split_fastq</description>
+          <integerType/>
+          <value>20000000</value>
+        </parameter>
+        <parameter code="intervals" minValues="0" maxValues="1" classification="USER">
+          <label>intervals</label>
+          <description>Configure params.intervals</description>
+          <stringType/>
+          <value>'s3://nf-core-awsmegatests/sarek/input/S07604624_Padded_Agilent_SureSelectXT_allexons_V6_UTR.bed'</value>
+        </parameter>
+        <parameter code="wes" minValues="0" maxValues="1" classification="USER">
+          <label>wes</label>
+          <description>Configure params.wes</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="nucleotides_per_second" minValues="0" maxValues="1" classification="USER">
+          <label>nucleotides_per_second</label>
+          <description>Configure params.nucleotides_per_second</description>
+          <integerType/>
+          <value>100000</value>
+        </parameter>
+        <parameter code="genome" minValues="1" maxValues="1" classification="USER">
+          <label>genome</label>
+          <description>Select Genome:</description>
+          <optionsType>
+            <option>GATK.GRCh37</option>
+            <option>GATK.GRCh38</option>
+            <option>Ensembl.GRCh37</option>
+            <option>NCBI.GRCh38</option>
+            <option>GRCm38</option>
+            <option>TAIR10</option>
+            <option>EB2</option>
+            <option>UMD3.1</option>
+            <option>WBcel235</option>
+            <option>CanFam3.1</option>
+            <option>GRCz10</option>
+            <option>BDGP6</option>
+            <option>EquCab2</option>
+            <option>EB1</option>
+            <option>Galgal4</option>
+            <option>Gm01</option>
+            <option>Mmul_1</option>
+            <option>IRGSP-1.0</option>
+            <option>CHIMP2.1.4</option>
+            <option>Rnor_5.0</option>
+            <option>Rnor_6.0</option>
+            <option>R64-1-1</option>
+            <option>EF2</option>
+            <option>Sbi1</option>
+            <option>Sscrofa10.2</option>
+            <option>AGPv3</option>
+            <option>hg38</option>
+            <option>hg19</option>
+            <option>mm10</option>
+            <option>bosTau8</option>
+            <option>ce10</option>
+            <option>canFam3</option>
+            <option>danRer10</option>
+            <option>dm6</option>
+            <option>equCab2</option>
+            <option>galGal4</option>
+            <option>panTro4</option>
+            <option>rn6</option>
+            <option>sacCer3</option>
+            <option>susScr3</option>
+          </optionsType>
+          <value>GATK.GRCh38</value>
+        </parameter>
+        <parameter code="ica_smoke_test" minValues="0" maxValues="1" classification="USER">
+          <label>ica_smoke_test</label>
+          <description>Boolean to trigger smoke test:</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

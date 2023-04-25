@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="diaproteomics pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>Input sample sheet (containing path and meta data of raw or mzML files)
+Use this to specify a sample sheet table including your input raw or mzml files as well as their metainformation such as BatchID, MSstats_Condition and MSstats_BioReplicate (of note: the BioReplicate column is optional). For example:
+
+| Sample   | BatchID      | MSstats_Condition  | MSstats_BioReplicate |   Spectra_Filepath                      |
+| -----|:------------:| ----------:|----------:|------------------------------------------:|
+| 1    | MelanomaStudy |      Malignant     |  BioReplicate1  |   data/Melanoma_DIA_standard_rep1.raw    |
+| 2    | MelanomaStudy |      Malignant     |  BioReplicate1  |   data/Melanoma_DIA_standard_rep2.raw    |
+| 3    | MelanomaStudy |      Benign     |  BioReplicate2  |   data/SkinTissue_DIA_standard_rep1.raw    |
+| 4    | MelanomaStudy |      Benign     |  BioReplicate2  |   data/SkinTissue_DIA_standard_rep2.raw    |
+| 5    | BreastCancerStudy |      Malignant     |  BioReplicate1  |   data/BreastCancer_DIA_standard_rep1.raw    |
+| 6    | BreastCancerStudy |      Malignant     |  BioReplicate1  |   data/BreastCancer_DIA_standard_rep2.raw    |
+| 7    | BreastCancerStudy |      Benign     |  BioReplicate2  |   data/BreastTissue_DIA_standard_rep1.raw    |
+| 8    | BreastCancerStudy |      Benign     |  BioReplicate2  |   data/BreastTissue_DIA_standard_rep2.raw    |</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="input_spectral_library" minValues="1" maxValues="1" classification="USER">
+          <label>input_spectral_library</label>
+          <description>Input sample sheet of spectral libraries (tsv, pqp, TraML)
+Use this to specify a sample sheet table including your input spectral library files as well as their metainformation such as BatchID and MSstats_Condition. For example:
+
+| Sample   | BatchID      |   Library_Filepath                       |
+| -----|:------------:|------------------------------------------:|
+| 1    | MelanomaStudy |   data/Melanoma_library.tsv    |
+| 2    | BreastCancerStudy |   data/BraCa_library.tsv    |</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="irts" minValues="1" maxValues="1" classification="USER">
+          <label>irts</label>
+          <description>Path to internal retention time standard sample sheet (tsv, pqp, TraML)
+Use this to specify a sample sheet table including your input internal retention time spectral library files as well as their metainformation such as BatchID and MSstats_Condition. For example:
+
+| Sample      | BatchID      |   irt_Filepath                       |
+| -----|:------------:|------------------------------------------:|
+| 1    | MelanomaStudy |   data/Melanoma_irt_library.tsv    |
+| 2    | BreastCancerStudy |   data/BraCa_irt_library.tsv    |</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved.</description>
+          <stringType/>
+          <value>./results</value>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Full test dataset to check pipeline function'</value>
+        </parameter>
+        <parameter code="max_cpus" minValues="0" maxValues="1" classification="USER">
+          <label>max_cpus</label>
+          <description>Configure params.max_cpus</description>
+          <integerType/>
+          <value>32</value>
+        </parameter>
+        <parameter code="max_memory" minValues="0" maxValues="1" classification="USER">
+          <label>max_memory</label>
+          <description>Configure params.max_memory</description>
+          <stringType/>
+          <value>16.GB</value>
+        </parameter>
+        <parameter code="max_time" minValues="0" maxValues="1" classification="USER">
+          <label>max_time</label>
+          <description>Configure params.max_time</description>
+          <stringType/>
+          <value>48.h</value>
+        </parameter>
+        <parameter code="pyprophet_classifier" minValues="0" maxValues="1" classification="USER">
+          <label>pyprophet_classifier</label>
+          <description>Configure params.pyprophet_classifier</description>
+          <stringType/>
+          <value>'LDA' // LDA is conservative: Also possible to switch to XGBoost to do a non-linear target-decoy separation</value>
+        </parameter>
+        <parameter code="pyprophet_peakgroup_fdr" minValues="0" maxValues="1" classification="USER">
+          <label>pyprophet_peakgroup_fdr</label>
+          <description>Configure params.pyprophet_peakgroup_fdr</description>
+          <floatType/>
+          <value>0.01</value>
+        </parameter>
+        <parameter code="pyprophet_peptide_fdr" minValues="0" maxValues="1" classification="USER">
+          <label>pyprophet_peptide_fdr</label>
+          <description>Configure params.pyprophet_peptide_fdr</description>
+          <floatType/>
+          <value>0.01</value>
+        </parameter>
+        <parameter code="pyprophet_protein_fdr" minValues="0" maxValues="1" classification="USER">
+          <label>pyprophet_protein_fdr</label>
+          <description>Configure params.pyprophet_protein_fdr</description>
+          <floatType/>
+          <value>0.01</value>
+        </parameter>
+        <parameter code="pyprophet_global_fdr_level" minValues="0" maxValues="1" classification="USER">
+          <label>pyprophet_global_fdr_level</label>
+          <description>Configure params.pyprophet_global_fdr_level</description>
+          <stringType/>
+          <value>'protein'</value>
+        </parameter>
+        <parameter code="dialignr_global_align_fdr" minValues="0" maxValues="1" classification="USER">
+          <label>dialignr_global_align_fdr</label>
+          <description>Configure params.dialignr_global_align_fdr</description>
+          <floatType/>
+          <value>0.01</value>
+        </parameter>
+        <parameter code="dialignr_analyte_fdr" minValues="0" maxValues="1" classification="USER">
+          <label>dialignr_analyte_fdr</label>
+          <description>Configure params.dialignr_analyte_fdr</description>
+          <floatType/>
+          <value>0.01</value>
+        </parameter>
+        <parameter code="dialignr_unalign_fdr" minValues="0" maxValues="1" classification="USER">
+          <label>dialignr_unalign_fdr</label>
+          <description>Configure params.dialignr_unalign_fdr</description>
+          <floatType/>
+          <value>0.01</value>
+        </parameter>
+        <parameter code="dialignr_align_fdr" minValues="0" maxValues="1" classification="USER">
+          <label>dialignr_align_fdr</label>
+          <description>Configure params.dialignr_align_fdr</description>
+          <floatType/>
+          <value>0.05</value>
+        </parameter>
+        <parameter code="dialignr_query_fdr" minValues="0" maxValues="1" classification="USER">
+          <label>dialignr_query_fdr</label>
+          <description>Configure params.dialignr_query_fdr</description>
+          <floatType/>
+          <value>0.05</value>
+        </parameter>
+        <parameter code="min_overlap_for_merging" minValues="0" maxValues="1" classification="USER">
+          <label>min_overlap_for_merging</label>
+          <description>Configure params.min_overlap_for_merging</description>
+          <stringType/>
+          <value>10 // depending on the dataset it is possible to raise this value</value>
+        </parameter>
+        <parameter code="irt_min_bins_covered" minValues="0" maxValues="1" classification="USER">
+          <label>irt_min_bins_covered</label>
+          <description>Configure params.irt_min_bins_covered</description>
+          <integerType/>
+          <value>8</value>
+        </parameter>
+        <parameter code="irt_alignment_method" minValues="0" maxValues="1" classification="USER">
+          <label>irt_alignment_method</label>
+          <description>Configure params.irt_alignment_method</description>
+          <stringType/>
+          <value>'lowess'</value>
+        </parameter>
+        <parameter code="n_irts" minValues="0" maxValues="1" classification="USER">
+          <label>n_irts</label>
+          <description>Configure params.n_irts</description>
+          <stringType/>
+          <value>250 // high number of pseudo irts for alignment between library and DIA run, if low yield samples are used this value can be smaller.</value>
+        </parameter>
+        <parameter code="generate_spectral_library" minValues="0" maxValues="1" classification="USER">
+          <label>generate_spectral_library</label>
+          <description>Configure params.generate_spectral_library</description>
+          <stringType/>
+          <value>true // specification that library should be generated from DDA input data</value>
+        </parameter>
+        <parameter code="generate_pseudo_irts" minValues="0" maxValues="1" classification="USER">
+          <label>generate_pseudo_irts</label>
+          <description>Configure params.generate_pseudo_irts</description>
+          <stringType/>
+          <value>false // specification that irt-library should be generated from DDA input data</value>
+        </parameter>
+        <parameter code="merge_libraries" minValues="0" maxValues="1" classification="USER">
+          <label>merge_libraries</label>
+          <description>Configure params.merge_libraries</description>
+          <stringType/>
+          <value>true // specification that multiple libraries belonging to the same sample group should be merged</value>
+        </parameter>
+        <parameter code="align_libraries" minValues="0" maxValues="1" classification="USER">
+          <label>align_libraries</label>
+          <description>Configure params.align_libraries</description>
+          <stringType/>
+          <value>true // specification that multiple libraries belonging to the same sample group should be RT aligned</value>
+        </parameter>
+        <parameter code="force_option" minValues="0" maxValues="1" classification="USER">
+          <label>force_option</label>
+          <description>Configure params.force_option</description>
+          <stringType/>
+          <value>true // specification that the OpenSwathWorkflow should be forced to run despite warnings</value>
+        </parameter>
+        <parameter code="generate_plots" minValues="0" maxValues="1" classification="USER">
+          <label>generate_plots</label>
+          <description>Configure params.generate_plots</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="run_msstats" minValues="0" maxValues="1" classification="USER">
+          <label>run_msstats</label>
+          <description>Configure params.run_msstats</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="use_ms1" minValues="0" maxValues="1" classification="USER">
+          <label>use_ms1</label>
+          <description>Configure params.use_ms1</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="unimod" minValues="0" maxValues="1" classification="USER">
+          <label>unimod</label>
+          <description>Configure params.unimod</description>
+          <stringType/>
+          <value>'https://raw.githubusercontent.com/nf-core/test-datasets/diaproteomics/unimod.xml'</value>
+        </parameter>
+        <parameter code="input_sheet_dda" minValues="0" maxValues="1" classification="USER">
+          <label>input_sheet_dda</label>
+          <description>Configure params.input_sheet_dda</description>
+          <stringType/>
+          <value>'https://raw.githubusercontent.com/nf-core/test-datasets/diaproteomics/dda_sheet_full.tsv'</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

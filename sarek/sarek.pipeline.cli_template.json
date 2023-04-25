@@ -1,0 +1,90 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"],
+      "value": ["fil.bb042fd1c98c41e54f6708d9aecb19c4", "fil.6cdcf9a04a9a49ecb6df08d9adf63307", "fil.ddcfa9e8dffa4c34b6de08d9adf63307", "fil.a9ebeb6185cc4fd3b6bb08d9adf63307", "fil.98491bb330c24ecbb6ba08d9adf63307", "fil.744e41ea082c4bdb4f4608d9aecb19c4", "fil.15800e7c4805445f4f4508d9aecb19c4", "fil.fb03594b404f4e8bb6b908d9adf63307", "fil.e1fadfc2c31241425db708db45a409a8", "fil.e1fadfc2c31241425db708db45a409a8", "fil.010dfc355def4f83a7ca08db459ecc74", "fil.5c41d00f64644472a74608db459ecc74"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"],
+      "value": ["fol.3b1bdd49cf72495c5cab08db45a409a8", "fol.0b0e3252ab884369a80608db459ecc74", "fol.5bb310ec592c42325c6408db45a409a8", "fol.64975423cd3747945c6108db45a409a8", "fol.24b00316067c4635a74708db459ecc74", "fol.0079fdc9686b4621a73f08db459ecc74", "fol.3d1bad61b2cf4fdea71108db459ecc74", "fol.5466ac1f79fd4f6b5b7208db45a409a8", "fol.dd9c130c99b24b98a6e508db459ecc74"]
+    }
+  },
+  "parameters": {
+    "step": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["mapping"]
+    },
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/sarek/testdata/csv/HCC1395_WXS_somatic_full_test.csv'"]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset to check pipeline function'"]
+    },
+    "tools": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'strelka,mutect2,freebayes,ascat,manta,cnvkit,tiddit,controlfreec,vep'"]
+    },
+    "split_fastq": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["20000000"]
+    },
+    "intervals": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'s3://nf-core-awsmegatests/sarek/input/S07604624_Padded_Agilent_SureSelectXT_allexons_V6_UTR.bed'"]
+    },
+    "wes": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "nucleotides_per_second": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["100000"]
+    },
+    "genome": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["GATK.GRCh38"]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    }
+  }
+}

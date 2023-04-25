@@ -1,0 +1,136 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"]
+    }
+  },
+  "parameters": {
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": [""]
+    },
+    "udg_type": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["none"]
+    },
+    "single_stranded": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "single_end": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "colour_chemistry": {
+      "type": ["integerType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["4"]
+    },
+    "bam": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile for nf-core/eager'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset to check nf-core/eager function'"]
+    },
+    "fasta": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'https://ftp.ncbi.nlm.nih.gov/genomes/refseq/vertebrate_other/Gadus_morhua/representative/GCF_902167405.1_gadMor3.0/GCF_902167405.1_gadMor3.0_genomic.fna.gz'"]
+    },
+    "bwaalnn": {
+      "type": ["floatType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["0.04"]
+    },
+    "bwaalnl": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["1024"]
+    },
+    "run_bam_filtering": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "bam_unmapped_type": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'discard'"]
+    },
+    "bam_mapping_quality_threshold": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["25"]
+    },
+    "run_genotyping": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "genotyping_tool": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'hc'"]
+    },
+    "genotyping_source": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'raw'"]
+    },
+    "gatk_ploidy": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["2"]
+    },
+    "genome": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["GRCh38"]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    }
+  }
+}

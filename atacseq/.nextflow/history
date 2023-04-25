@@ -1,0 +1,1 @@
+2023-04-25 14:07:17	-	hungry_saha	-	cfcbe3ebe99be195f4355c8898f54038	d06bfece-6455-4353-96b7-9cc98befd667	nextflow run main.nf -c nextflow.ica.config --input input.csv

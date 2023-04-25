@@ -1,0 +1,99 @@
+Apr-25 14:52:12.032 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -c nextflow.ica.config --input input.csv
+Apr-25 14:52:12.097 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.3
+Apr-25 14:52:12.118 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/keng/nf-core-v2/differentialabundance/nextflow.config
+Apr-25 14:52:12.123 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /Users/keng/nf-core-v2/differentialabundance/nextflow.ica.config
+Apr-25 14:52:12.124 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/differentialabundance/nextflow.config
+Apr-25 14:52:12.125 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/differentialabundance/nextflow.ica.config
+Apr-25 14:52:12.154 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 14:52:13.142 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:52:13.152 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 14:52:13.154 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 14:52:13.158 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 14:52:13.162 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:52:13.445 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:52:13.927 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 14:52:14.028 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:52:14.029 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:52:14.100 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:52:14.355 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Apr-25 14:52:14.373 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [silly_colden] DSL2 - revision: 7318dbb5d8
+Apr-25 14:52:14.392 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/.nextflow/plugins; core-plugins: nf-amazon@1.7.2,nf-azure@0.13.2,nf-console@1.0.3,nf-ga4gh@1.0.3,nf-google@1.1.4,nf-sqldb@0.4.0,nf-tower@1.4.0
+Apr-25 14:52:14.395 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Apr-25 14:52:14.407 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 14:52:14.409 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 14:52:14.411 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 14:52:14.421 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Apr-25 14:52:14.478 [main] DEBUG nextflow.Session - Session uuid: 3dd8e347-f9ad-440d-9fea-92f9b6b97cb8
+Apr-25 14:52:14.479 [main] DEBUG nextflow.Session - Run name: silly_colden
+Apr-25 14:52:14.480 [main] DEBUG nextflow.Session - Executor pool size: 8
+Apr-25 14:52:14.503 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.04.3 build 5703
+  Created: 18-05-2022 19:22 UTC 
+  System: Linux 5.15.49-linuxkit
+  Runtime: Groovy 3.0.10 on OpenJDK 64-Bit Server VM 17.0.3+6-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 1@0084fddd98e4 [172.17.0.2]
+  CPUs: 8 - Mem: 13.2 GB (1 GB) - Swap: 2 GB (1.9 GB)
+Apr-25 14:52:14.537 [main] DEBUG nextflow.Session - Work-dir: /Users/keng/nf-core-v2/differentialabundance/work [fuseblk]
+Apr-25 14:52:14.553 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Apr-25 14:52:14.564 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Apr-25 14:52:14.659 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Apr-25 14:52:14.668 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Apr-25 14:52:14.775 [main] DEBUG nextflow.Session - Session start invoked
+Apr-25 14:52:14.780 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /Users/keng/nf-core-v2/differentialabundance/null/pipeline_info/execution_trace_2023-04-25_14-52-13.txt
+Apr-25 14:52:14.802 [main] DEBUG nextflow.Session - Using default localLib path: /Users/keng/nf-core-v2/differentialabundance/lib
+Apr-25 14:52:14.812 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/differentialabundance/lib
+Apr-25 14:52:14.814 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/differentialabundance/lib/nfcore_external_java_deps.jar
+Apr-25 14:52:16.023 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Apr-25 14:52:16.090 [main] INFO  nextflow.Nextflow - 
+
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;35m  nf-core/differentialabundance v1.0.0[0m
+-[2m----------------------------------------------------[0m-
+[1mCore Nextflow options[0m
+  [0;34mrunName        : [0;32msilly_colden[0m
+  [0;34mcontainerEngine: [0;32mdocker[0m
+  [0;34mlaunchDir      : [0;32m/Users/keng/nf-core-v2/differentialabundance[0m
+  [0;34mworkDir        : [0;32m/Users/keng/nf-core-v2/differentialabundance/work[0m
+  [0;34mprojectDir     : [0;32m/Users/keng/nf-core-v2/differentialabundance[0m
+  [0;34muserName       : [0;32mroot[0m
+  [0;34mprofile        : [0;32mstandard[0m
+  [0;34mconfigFiles    : [0;32m/Users/keng/nf-core-v2/differentialabundance/nextflow.config, /Users/keng/nf-core-v2/differentialabundance/nextflow.ica.config[0m
+
+[1mInput/output options[0m
+  [0;34minput          : [0;32minput.csv[0m
+  [0;34moutdir         : [0;32mout[0m
+  [0;34mreport_file    : [0;32m/Users/keng/nf-core-v2/differentialabundance/assets/differentialabundance_report.Rmd[0m
+  [0;34mlogo_file      : [0;32m/Users/keng/nf-core-v2/differentialabundance/docs/images/nf-core-differentialabundance_logo_light.png[0m
+  [0;34mcss_file       : [0;32m/Users/keng/nf-core-v2/differentialabundance/assets/nf-core_style.css[0m
+  [0;34mcitations_file : [0;32m/Users/keng/nf-core-v2/differentialabundance/CITATIONS.md[0m
+
+[1mGSEA[0m
+  [0;34mgsea_gene_sets : [0;32mnull[0m
+
+[1mGeneric options[0m
+  [0;34mtracedir       : [0;32mnull/pipeline_info[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+-[2m----------------------------------------------------[0m-
+If you use nf-core/differentialabundance for your analysis please cite:
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/differentialabundance/blob/master/CITATIONS.md
+-[2m----------------------------------------------------[0m-
+Apr-25 14:52:16.344 [main] ERROR nextflow.Nextflow - ERROR: Validation of pipeline parameters failed!
+Apr-25 14:52:16.357 [main] ERROR nextflow.Nextflow - * Missing required parameter: --contrasts
+Apr-25 14:52:16.358 [main] ERROR nextflow.Nextflow - * Missing required parameter: --matrix
+Apr-25 14:52:16.359 [main] WARN  nextflow.Nextflow - Found unexpected parameters:
+* --enable_conda: false
+* --conda_enabled: false
+* --ica_smoke_test: false
+Apr-25 14:52:16.360 [main] INFO  nextflow.Nextflow - - [2mIgnore this warning: params.schema_ignore_params = "enable_conda,conda_enabled,ica_smoke_test" [0m

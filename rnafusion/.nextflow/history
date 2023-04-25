@@ -1,0 +1,1 @@
+2023-04-25 16:24:17	-	scruffy_baekeland	-	7206afbb9d09cde7d018d9b42bd7c0d9	6cdb81a6-e9e0-4d40-975c-9d7c5ac6907a	nextflow run main.nf -c nextflow.ica.config --input input.csv

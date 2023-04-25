@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="rnafusion pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="project_dir" format="UNKNOWN" type="DIRECTORY" required="true" multiValue="true">
+      <label>project_dir</label>
+      <description>directory with additional files/input to run pipeline --- other files in your github project</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>Path to comma-separated file containing information about the samples in the experiment.
+You will need to create a design file with information about the samples in your experiment before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with 3 columns, and a header row. See [usage docs](https://nf-co.re/rnafusion/usage#samplesheet-input).</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="multiqc_title" minValues="1" maxValues="1" classification="USER">
+          <label>multiqc_title</label>
+          <description>MultiQC report title. Printed as page header, used for filename if not otherwise specified.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="build_references" minValues="1" maxValues="1" classification="USER">
+          <label>build_references</label>
+          <description>Specifies which analysis type for the pipeline - either build references or analyse data</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="genomes_base" minValues="1" maxValues="1" classification="USER">
+          <label>genomes_base</label>
+          <description>Path to reference folder</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="ensembl_version" minValues="1" maxValues="1" classification="USER">
+          <label>ensembl_version</label>
+          <description>ensembl version</description>
+          <integerType/>
+          <value>105</value>
+        </parameter>
+        <parameter code="starfusion_build" minValues="1" maxValues="1" classification="USER">
+          <label>starfusion_build</label>
+          <description>If set, starfusion references are built from scratch instead of downloaded (default)</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="read_length" minValues="1" maxValues="1" classification="USER">
+          <label>read_length</label>
+          <description>Read length</description>
+          <integerType/>
+          <value>100</value>
+        </parameter>
+        <parameter code="all" minValues="1" maxValues="1" classification="USER">
+          <label>all</label>
+          <description>Build or run all references/analyses</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="arriba" minValues="1" maxValues="1" classification="USER">
+          <label>arriba</label>
+          <description>Build or run arriba references/analyses</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="arriba_ref" minValues="1" maxValues="1" classification="USER">
+          <label>arriba_ref</label>
+          <description>Path to arriba references</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="arriba_ref_blacklist" minValues="1" maxValues="1" classification="USER">
+          <label>arriba_ref_blacklist</label>
+          <description>Path to arriba reference blacklist</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="arriba_ref_protein_domain" minValues="1" maxValues="1" classification="USER">
+          <label>arriba_ref_protein_domain</label>
+          <description>Path to arriba reference protein domain</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="arriba_fusions" minValues="1" maxValues="1" classification="USER">
+          <label>arriba_fusions</label>
+          <description>Path to arriba output</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="ensembl_ref" minValues="1" maxValues="1" classification="USER">
+          <label>ensembl_ref</label>
+          <description>Path to ensembl references</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="fusioncatcher" minValues="1" maxValues="1" classification="USER">
+          <label>fusioncatcher</label>
+          <description>Build or run fusioncatcher references/analyses</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="fusioncatcher_fusions" minValues="1" maxValues="1" classification="USER">
+          <label>fusioncatcher_fusions</label>
+          <description>Path to fusioncatcher output</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="fusioncatcher_limitSjdbInsertNsj" minValues="1" maxValues="1" classification="USER">
+          <label>fusioncatcher_limitSjdbInsertNsj</label>
+          <description>Use limitSjdbInsertNsj with int for fusioncatcher</description>
+          <integerType/>
+          <value/>
+        </parameter>
+        <parameter code="fusioncatcher_ref" minValues="1" maxValues="1" classification="USER">
+          <label>fusioncatcher_ref</label>
+          <description>Path to fusioncatcher references</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="fusioninspector_filter" minValues="1" maxValues="1" classification="USER">
+          <label>fusioninspector_filter</label>
+          <description>Feed filtered fusionreport fusions to fusioninspector</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="fusioninspector_limitSjdbInsertNsj" minValues="1" maxValues="1" classification="USER">
+          <label>fusioninspector_limitSjdbInsertNsj</label>
+          <description>Use limitSjdbInsertNsj with int for fusioninspector STAR process</description>
+          <integerType/>
+          <value/>
+        </parameter>
+        <parameter code="fusioninspector_only" minValues="1" maxValues="1" classification="USER">
+          <label>fusioninspector_only</label>
+          <description>Skip fusion-report. --fusioninspector_fusions PATH needed to provide a fusion list as input</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="fusioninspector_fusions" minValues="1" maxValues="1" classification="USER">
+          <label>fusioninspector_fusions</label>
+          <description>Path to a fusion list file built with format GENE1--GENE2</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="fusionreport" minValues="1" maxValues="1" classification="USER">
+          <label>fusionreport</label>
+          <description>Build fusionreport references</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="fusionreport_ref" minValues="1" maxValues="1" classification="USER">
+          <label>fusionreport_ref</label>
+          <description>Path to fusionreport references</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="pizzly" minValues="1" maxValues="1" classification="USER">
+          <label>pizzly</label>
+          <description>Build or run pizzly references/analyses</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="pizzly_fusions" minValues="1" maxValues="1" classification="USER">
+          <label>pizzly_fusions</label>
+          <description>Path to pizzly output</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="pizzly_ref" minValues="1" maxValues="1" classification="USER">
+          <label>pizzly_ref</label>
+          <description>Path to pizzly references</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="squid" minValues="1" maxValues="1" classification="USER">
+          <label>squid</label>
+          <description>Build or run squid references/analyses</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="squid_fusions" minValues="1" maxValues="1" classification="USER">
+          <label>squid_fusions</label>
+          <description>Path to squid output</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="squid_ref" minValues="1" maxValues="1" classification="USER">
+          <label>squid_ref</label>
+          <description>Path to squid references</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="starfusion" minValues="1" maxValues="1" classification="USER">
+          <label>starfusion</label>
+          <description>Build or run starfusion references/analyses</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="starfusion_fusions" minValues="1" maxValues="1" classification="USER">
+          <label>starfusion_fusions</label>
+          <description>Path to starfusion output</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="starfusion_ref" minValues="1" maxValues="1" classification="USER">
+          <label>starfusion_ref</label>
+          <description>Path to starfusion references</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="starindex" minValues="1" maxValues="1" classification="USER">
+          <label>starindex</label>
+          <description>Build or run starindex references/analyses</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="starindex_ref" minValues="1" maxValues="1" classification="USER">
+          <label>starindex_ref</label>
+          <description>Path to starindex references</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="cosmic_username" minValues="1" maxValues="1" classification="USER">
+          <label>cosmic_username</label>
+          <description>COSMIC username</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="cosmic_passwd" minValues="1" maxValues="1" classification="USER">
+          <label>cosmic_passwd</label>
+          <description>COSMIC password</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Full test dataset to check pipeline function'</value>
+        </parameter>
+        <parameter code="genome" minValues="0" maxValues="1" classification="USER">
+          <label>genome</label>
+          <description>Configure params.genome</description>
+          <stringType/>
+          <value>'GRCh38'</value>
+        </parameter>
+        <parameter code="ica_smoke_test" minValues="0" maxValues="1" classification="USER">
+          <label>ica_smoke_test</label>
+          <description>Boolean to trigger smoke test:</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

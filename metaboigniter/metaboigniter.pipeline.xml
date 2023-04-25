@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="metaboigniter pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="project_dir" format="UNKNOWN" type="DIRECTORY" required="true" multiValue="true">
+      <label>project_dir</label>
+      <description>directory with additional files/input to run pipeline --- other files in your github project</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="quantification_input_files">
+      <label>quantification_input_files</label>
+      <description>quantification_input_files parameters</description>
+      <tool code="quantification_input_files parameters">
+        <label>quantification_input_files</label>
+        <description>quantification_input_files parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>Path to a folder containing mzML files used for doing quantification (MS1 data in positive ionization method)</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Full test dataset to check pipeline function'</value>
+        </parameter>
+        <parameter code="type_of_ionization" minValues="0" maxValues="1" classification="USER">
+          <label>type_of_ionization</label>
+          <description>Configure params.type_of_ionization</description>
+          <stringType/>
+          <value>'both'</value>
+        </parameter>
+        <parameter code="quant_mzml_files_neg" minValues="0" maxValues="1" classification="USER">
+          <label>quant_mzml_files_neg</label>
+          <description>Configure params.quant_mzml_files_neg</description>
+          <stringType/>
+          <value>[</value>
+        </parameter>
+        <parameter code="phenotype_design_pos" minValues="0" maxValues="1" classification="USER">
+          <label>phenotype_design_pos</label>
+          <description>Configure params.phenotype_design_pos</description>
+          <stringType/>
+          <value>'https://raw.githubusercontent.com/nf-core/test-datasets/metaboigniter/phenotype_positive.csv'// Path to a csv file containing the experimental design</value>
+        </parameter>
+        <parameter code="phenotype_design_neg" minValues="0" maxValues="1" classification="USER">
+          <label>phenotype_design_neg</label>
+          <description>Configure params.phenotype_design_neg</description>
+          <stringType/>
+          <value>'https://raw.githubusercontent.com/nf-core/test-datasets/metaboigniter/phenotype_negative.csv'// Path to a csv file containing the experimental design</value>
+        </parameter>
+        <parameter code="id_mzml_files_pos" minValues="0" maxValues="1" classification="USER">
+          <label>id_mzml_files_pos</label>
+          <description>Configure params.id_mzml_files_pos</description>
+          <stringType/>
+          <value>[</value>
+        </parameter>
+        <parameter code="id_mzml_files_neg" minValues="0" maxValues="1" classification="USER">
+          <label>id_mzml_files_neg</label>
+          <description>Configure params.id_mzml_files_neg</description>
+          <stringType/>
+          <value>[</value>
+        </parameter>
+        <parameter code="quant_library_mzml_files_pos" minValues="0" maxValues="1" classification="USER">
+          <label>quant_library_mzml_files_pos</label>
+          <description>Configure params.quant_library_mzml_files_pos</description>
+          <stringType/>
+          <value>[</value>
+        </parameter>
+        <parameter code="id_library_mzml_files_pos" minValues="0" maxValues="1" classification="USER">
+          <label>id_library_mzml_files_pos</label>
+          <description>Configure params.id_library_mzml_files_pos</description>
+          <stringType/>
+          <value>[</value>
+        </parameter>
+        <parameter code="library_description_pos" minValues="0" maxValues="1" classification="USER">
+          <label>library_description_pos</label>
+          <description>Configure params.library_description_pos</description>
+          <stringType/>
+          <value>'https://raw.githubusercontent.com/nf-core/test-datasets/metaboigniter/library_charac_pos.csv' // Path to a csv file containing description of the library for positive</value>
+        </parameter>
+        <parameter code="quant_library_mzml_files_neg" minValues="0" maxValues="1" classification="USER">
+          <label>quant_library_mzml_files_neg</label>
+          <description>Configure params.quant_library_mzml_files_neg</description>
+          <stringType/>
+          <value>[</value>
+        </parameter>
+        <parameter code="id_library_mzml_files_neg" minValues="0" maxValues="1" classification="USER">
+          <label>id_library_mzml_files_neg</label>
+          <description>Configure params.id_library_mzml_files_neg</description>
+          <stringType/>
+          <value>[</value>
+        </parameter>
+        <parameter code="library_description_neg" minValues="0" maxValues="1" classification="USER">
+          <label>library_description_neg</label>
+          <description>Configure params.library_description_neg</description>
+          <stringType/>
+          <value>'https://raw.githubusercontent.com/nf-core/test-datasets/metaboigniter/library_charac_neg.csv' // Path to a csv file containing description of the library for negative</value>
+        </parameter>
+        <parameter code="database_csv_files_pos_metfrag" minValues="0" maxValues="1" classification="USER">
+          <label>database_csv_files_pos_metfrag</label>
+          <description>Configure params.database_csv_files_pos_metfrag</description>
+          <stringType/>
+          <value>'https://raw.githubusercontent.com/nf-core/test-datasets/metaboigniter/hmdb_2017-07-23.csv' // path to a csv file containing your database</value>
+        </parameter>
+        <parameter code="database_csv_files_pos_cfmid" minValues="0" maxValues="1" classification="USER">
+          <label>database_csv_files_pos_cfmid</label>
+          <description>Configure params.database_csv_files_pos_cfmid</description>
+          <stringType/>
+          <value>'https://raw.githubusercontent.com/nf-core/test-datasets/metaboigniter/hmdb_2017-07-23.csv' // path to a csv file containing your database</value>
+        </parameter>
+        <parameter code="database_csv_files_neg_metfrag" minValues="0" maxValues="1" classification="USER">
+          <label>database_csv_files_neg_metfrag</label>
+          <description>Configure params.database_csv_files_neg_metfrag</description>
+          <stringType/>
+          <value>'https://raw.githubusercontent.com/nf-core/test-datasets/metaboigniter/hmdb_2017-07-23.csv' // path to a csv file containing your database</value>
+        </parameter>
+        <parameter code="database_csv_files_neg_cfmid" minValues="0" maxValues="1" classification="USER">
+          <label>database_csv_files_neg_cfmid</label>
+          <description>Configure params.database_csv_files_neg_cfmid</description>
+          <stringType/>
+          <value>'https://raw.githubusercontent.com/nf-core/test-datasets/metaboigniter/hmdb_2017-07-23.csv' // path to a csv file containing your database</value>
+        </parameter>
+        <parameter code="perform_identification" minValues="0" maxValues="1" classification="USER">
+          <label>perform_identification</label>
+          <description>Configure params.perform_identification</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="perform_identification_csifingerid" minValues="0" maxValues="1" classification="USER">
+          <label>perform_identification_csifingerid</label>
+          <description>Configure params.perform_identification_csifingerid</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="perform_identification_metfrag" minValues="0" maxValues="1" classification="USER">
+          <label>perform_identification_metfrag</label>
+          <description>Configure params.perform_identification_metfrag</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="perform_identification_internal_library" minValues="0" maxValues="1" classification="USER">
+          <label>perform_identification_internal_library</label>
+          <description>Configure params.perform_identification_internal_library</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="perform_identification_cfmid" minValues="0" maxValues="1" classification="USER">
+          <label>perform_identification_cfmid</label>
+          <description>Configure params.perform_identification_cfmid</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="minPeaks_msmstoparam_pos_msnbase" minValues="0" maxValues="1" classification="USER">
+          <label>minPeaks_msmstoparam_pos_msnbase</label>
+          <description>Configure params.minPeaks_msmstoparam_pos_msnbase</description>
+          <integerType/>
+          <value>50</value>
+        </parameter>
+        <parameter code="precursorppm_msmstoparam_pos_msnbase" minValues="0" maxValues="1" classification="USER">
+          <label>precursorppm_msmstoparam_pos_msnbase</label>
+          <description>Configure params.precursorppm_msmstoparam_pos_msnbase</description>
+          <integerType/>
+          <value>5</value>
+        </parameter>
+        <parameter code="fragmentppm_msmstoparam_pos_msnbase" minValues="0" maxValues="1" classification="USER">
+          <label>fragmentppm_msmstoparam_pos_msnbase</label>
+          <description>Configure params.fragmentppm_msmstoparam_pos_msnbase</description>
+          <integerType/>
+          <value>5</value>
+        </parameter>
+        <parameter code="timeout_csifingerid_pos_csifingerid" minValues="0" maxValues="1" classification="USER">
+          <label>timeout_csifingerid_pos_csifingerid</label>
+          <description>Configure params.timeout_csifingerid_pos_csifingerid</description>
+          <integerType/>
+          <value>10</value>
+        </parameter>
+        <parameter code="quantification_openms_xcms_pos" minValues="0" maxValues="1" classification="USER">
+          <label>quantification_openms_xcms_pos</label>
+          <description>Configure params.quantification_openms_xcms_pos</description>
+          <stringType/>
+          <value>'xcms'</value>
+        </parameter>
+        <parameter code="quantification_openms_xcms_neg" minValues="0" maxValues="1" classification="USER">
+          <label>quantification_openms_xcms_neg</label>
+          <description>Configure params.quantification_openms_xcms_neg</description>
+          <stringType/>
+          <value>'openms'</value>
+        </parameter>
+        <parameter code="need_centroiding" minValues="0" maxValues="1" classification="USER">
+          <label>need_centroiding</label>
+          <description>Configure params.need_centroiding</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="cv_filter_pos" minValues="0" maxValues="1" classification="USER">
+          <label>cv_filter_pos</label>
+          <description>Configure params.cv_filter_pos</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="dilution_filter_pos" minValues="0" maxValues="1" classification="USER">
+          <label>dilution_filter_pos</label>
+          <description>Configure params.dilution_filter_pos</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="blank_filter_pos" minValues="0" maxValues="1" classification="USER">
+          <label>blank_filter_pos</label>
+          <description>Configure params.blank_filter_pos</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="cv_filter_neg" minValues="0" maxValues="1" classification="USER">
+          <label>cv_filter_neg</label>
+          <description>Configure params.cv_filter_neg</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="dilution_filter_neg" minValues="0" maxValues="1" classification="USER">
+          <label>dilution_filter_neg</label>
+          <description>Configure params.dilution_filter_neg</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="blank_filter_neg" minValues="0" maxValues="1" classification="USER">
+          <label>blank_filter_neg</label>
+          <description>Configure params.blank_filter_neg</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="database_msmstoparam_pos_msnbase" minValues="0" maxValues="1" classification="USER">
+          <label>database_msmstoparam_pos_msnbase</label>
+          <description>Configure params.database_msmstoparam_pos_msnbase</description>
+          <stringType/>
+          <value>'LocalCSV'</value>
+        </parameter>
+        <parameter code="database_msmstoparam_neg_msnbase" minValues="0" maxValues="1" classification="USER">
+          <label>database_msmstoparam_neg_msnbase</label>
+          <description>Configure params.database_msmstoparam_neg_msnbase</description>
+          <stringType/>
+          <value>'KEGG'</value>
+        </parameter>
+        <parameter code="schema_ignore_params" minValues="0" maxValues="1" classification="USER">
+          <label>schema_ignore_params</label>
+          <description>Configure params.schema_ignore_params</description>
+          <stringType/>
+          <value>'id_library_mzml_files_neg,quant_library_mzml_files_neg,id_library_mzml_files_pos,quant_library_mzml_files_pos,id_mzml_files_neg,id_mzml_files_pos,quant_mzml_files_neg,input'</value>
+        </parameter>
+        <parameter code="ica_smoke_test" minValues="0" maxValues="1" classification="USER">
+          <label>ica_smoke_test</label>
+          <description>Boolean to trigger smoke test:</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

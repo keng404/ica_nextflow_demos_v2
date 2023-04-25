@@ -1,0 +1,198 @@
+Apr-25 14:52:21.488 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -c nextflow.ica.config --input input.csv
+Apr-25 14:52:21.545 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.3
+Apr-25 14:52:21.565 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/keng/nf-core-v2/dualrnaseq/nextflow.config
+Apr-25 14:52:21.571 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /Users/keng/nf-core-v2/dualrnaseq/nextflow.ica.config
+Apr-25 14:52:21.572 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/dualrnaseq/nextflow.config
+Apr-25 14:52:21.573 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/dualrnaseq/nextflow.ica.config
+Apr-25 14:52:21.598 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 14:52:22.595 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:52:22.605 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 14:52:22.608 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 14:52:22.611 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 14:52:22.616 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:52:22.899 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:52:22.940 [main] DEBUG nextflow.config.ConfigBuilder - In the following config snippet the attribute `params.genomes_ignore` is empty:
+  genome_host=false
+  genome_pathogen=false
+  input='input.csv'
+  single_end=false
+  outdir='./results'
+  publish_dir_mode='copy'
+  run_cutadapt=false
+  a='AGATCGGAAGAGCACACGTCTGAACTCCAGTCA'
+  A='AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT'
+  quality_cutoff='10'
+  cutadapt_params=''
+  run_bbduk=false
+  minlen='18'
+  qtrim='r'
+  trimq='10'
+  ktrim='r'
+  k='17'
+  mink='11'
+  hdist='1'
+  adapters=/Users/keng/nf-core-v2/dualrnaseq/assets/adapters.fa
+  bbduk_params=''
+  skip_fastqc=false
+  fastqc_params=''
+  libtype=''
+  generate_salmon_uniq_ambig=false
+  incompatPrior=0.0
+  gene_attribute_gff_to_create_transcriptome_host='transcript_id'
+  gene_feature_gff_to_create_transcriptome_host=['exon', 'tRNA']
+  gene_attribute_gff_to_create_transcriptome_pathogen='locus_tag'
+  gene_feature_gff_to_create_transcriptome_pathogen=['gene', 'sRNA', 'tRNA', 'rRNA']
+  read_transcriptome_fasta_host_from_file=false
+  read_transcriptome_fasta_pathogen_from_file=false
+  run_salmon_selective_alignment=false
+  kmer_length=21
+  writeUnmappedNames=false
+  softclipOverhangs=false
+  dumpEq=false
+  writeMappings=false
+  keepDuplicates=false
+  salmon_sa_params_index=''
+  salmon_sa_params_mapping=''
+  run_star=false
+  outSAMunmapped='Within'
+  outSAMattributes='Standard'
+  outFilterMultimapNmax=999
+  outFilterType='BySJout'
+  alignSJoverhangMin=8
+  alignSJDBoverhangMin=1
+  outFilterMismatchNmax=999
+  outFilterMismatchNoverReadLmax=1
+  alignIntronMin=20
+  alignIntronMax=1000000
+  alignMatesGapMax=1000000
+  limitBAMsortRAM=0
+  winAnchorMultimapNmax=999
+  sjdbOverhang=100
+  outWigType='None'
+  outWigStrand='Stranded'
+  star_index_params=''
+  star_alignment_params=''
+  quantTranscriptomeBan='Singleend'
+  star_salmon_index_params=''
+  star_salmon_alignment_params=''
+  run_salmon_alignment_based_mode=false
+  salmon_alignment_based_params=''
+  run_htseq_uniquely_mapped=false
+  stranded='yes'
+  max_reads_in_buffer=30000000
+  minaqual=10
+  gene_feature_gff_to_quantify_host=['exon', 'tRNA']
+  gene_feature_gff_to_quantify_pathogen=['gene', 'sRNA', 'tRNA', 'rRNA']
+  host_gff_attribute='gene_id'
+  pathogen_gff_attribute='locus_tag'
+  htseq_params=''
+  mapping_statistics=false
+  rna_classes_to_replace_host=/Users/keng/nf-core-v2/dualrnaseq/data/RNA_classes_to_replace.tsv
+  custom_config_version='master'
+  custom_config_base=https://raw.githubusercontent.com/nf-core/configs/master
+  hostnames=false
+  config_profile_description=false
+  config_profile_contact=false
+  config_profile_url=false
+  name=false
+  multiqc_config=false
+  email=false
+  email_on_fail=false
+  max_multiqc_email_size=25 MB
+  plaintext_email=false
+  monochrome_logs=false
+  help=false
+  tracedir=./results/pipeline_info
+  max_memory=128 GB
+  max_cpus=16
+  max_time=10d
+  genomes {
+  	GRCh38 {
+  		fasta_host='path_to_references/human/GRCh38.genome.fa'
+  		gff_host='path_to_references/human/GRCh38.annotation.gff3'
+  		gff_host_tRNA='path_to_references/human/GRCh38.gencode.tRNAs.gff3'
+  		transcriptome_host='path_to_references/human/GRCh38.gencode.transcripts.fa'
+  	}
+  	SL1344 {
+  		fasta_pathogen='path_to_references/Salmonella/SL1344.fasta'
+  		gff_pathogen='path_to_references/Salmonella/SL1344.gff'
+  	}
+  	My_Bacteria {
+  		fasta_pathogen='path_to_references/My_Bacteria/My_Bacteria.fasta'
+  		gff_pathogen='path_to_references/My_Bacteria/My_Bacteria.gff'
+  	}
+  }
+
+Apr-25 14:52:22.945 [main] ERROR nextflow.cli.Launcher - Unknown config attribute `params.genomes_ignore` -- check config file: /Users/keng/nf-core-v2/dualrnaseq/nextflow.config
+nextflow.exception.ConfigParseException: Unknown config attribute `params.genomes_ignore` -- check config file: /Users/keng/nf-core-v2/dualrnaseq/nextflow.config
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at nextflow.config.ConfigBuilder.validate(ConfigBuilder.groovy:459)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:212)
+	at nextflow.config.ConfigBuilder.validate(ConfigBuilder.groovy:466)
+	at nextflow.config.ConfigBuilder.validate(ConfigBuilder.groovy:446)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:194)
+	at nextflow.config.ConfigBuilder.merge0(ConfigBuilder.groovy:420)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:203)
+	at nextflow.config.ConfigBuilder.buildConfig0(ConfigBuilder.groovy:369)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:194)
+	at nextflow.config.ConfigBuilder.buildGivenFiles(ConfigBuilder.groovy:317)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at nextflow.config.ConfigBuilder.buildConfigObject(ConfigBuilder.groovy:754)
+	at nextflow.config.ConfigBuilder.build(ConfigBuilder.groovy:767)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:294)
+	at nextflow.cli.Launcher.run(Launcher.groovy:480)
+	at nextflow.cli.Launcher.main(Launcher.groovy:639)

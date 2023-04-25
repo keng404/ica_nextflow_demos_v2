@@ -1,0 +1,114 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"],
+      "value": ["fil.d8fce2788d1742b4770008d9b69989fe", "fil.4a9683175d024ee076ff08d9b69989fe", "fil.7ada6d7dd92c4b4dabb708d9adf63314", "fil.5f94dbdbb6ef48a276fb08d9b69989fe", "fil.fd0dca55321a4fcaa23b08db459ecc74", "fil.85c6e5d10b1d464e6c4708db459f848e"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"],
+      "value": ["fol.66736e77abf344fe6c8608db459f848e", "fol.31df03cb619647c3a23d08db459ecc74", "fol.c8be9c52f29944db6c7e08db459f848e", "fol.500fa778dd8343566c4b08db459f848e", "fol.b2dc3074d5a2483ca1f508db459ecc74", "fol.bbedda86cf3c4556a1eb08db459ecc74", "fol.e407b857b8b2440a6c3908db459f848e", "fol.3b9525cbc0e24f6e6c3108db459f848e", "fol.938848dfcb6a4e2ba1d808db459ecc74"]
+    }
+  },
+  "parameters": {
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["\"s3://nf-core-awsmegatests/mag/input_data/samplesheets/samplesheet.full.csv\""]
+    },
+    "single_end": {
+      "type": ["booleanType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["false"]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "multiqc_title": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset to check pipeline function'"]
+    },
+    "host_fasta": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["\"s3://nf-core-awsmegatests/mag/input_data/hg19_main_mask_ribo_animal_allplant_allfungus.fa.gz\""]
+    },
+    "centrifuge_db": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["\"s3://nf-core-awsmegatests/mag/input_data/p_compressed+h+v.tar.gz\""]
+    },
+    "kraken2_db": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["\"s3://nf-core-awsmegatests/mag/input_data/minikraken_8GB_202003.tgz\""]
+    },
+    "cat_db": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["\"s3://nf-core-awsmegatests/mag/input_data/CAT_prepare_20210107.tar.gz\""]
+    },
+    "gtdb": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["\"s3://nf-core-awsmegatests/mag/input_data/gtdbtk_r202_data.tar.gz\""]
+    },
+    "spades_fix_cpus": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["10"]
+    },
+    "spadeshybrid_fix_cpus": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["10"]
+    },
+    "megahit_fix_cpu_1": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "genome": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["GRCh38"]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    }
+  }
+}

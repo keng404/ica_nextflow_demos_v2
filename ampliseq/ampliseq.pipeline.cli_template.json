@@ -1,0 +1,114 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"],
+      "value": ["fil.d8fce2788d1742b4770008d9b69989fe", "fil.4a9683175d024ee076ff08d9b69989fe", "fil.7ada6d7dd92c4b4dabb708d9adf63314", "fil.5f94dbdbb6ef48a276fb08d9b69989fe", "fil.bce3bc00001f45845da008db45a409a8", "fil.bce3bc00001f45845da008db45a409a8", "fil.948f0035ed8944106c9008db45944288", "fil.fa2b5ce8c24a427266a108db4590b257"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"],
+      "value": ["fol.76b97e9e1d5746b566bd08db4590b257", "fol.36b66923c24c4dab6c9108db45944288", "fol.cb4f085991414598345608db4595e15c", "fol.fec204e04a594ec06c7508db45944288", "fol.354e4439249f4068343508db4595e15c", "fol.12864e5c27b84a4d669608db4590b257", "fol.c850f0cfa74f4edb6c6b08db45944288", "fol.03e6fc2abf7f4794668608db4590b257", "fol.3d48c06d0b71481c667f08db4590b257"]
+    }
+  },
+  "parameters": {
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["\"https://raw.githubusercontent.com/nf-core/test-datasets/ampliseq/samplesheets/Samplesheet_full.tsv\""]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset to check pipeline function'"]
+    },
+    "FW_primer": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["\"GTGYCAGCMGCCGCGGTAA\""]
+    },
+    "RV_primer": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["\"GGACTACNVGGGTWTCTAAT\""]
+    },
+    "metadata": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["\"https://raw.githubusercontent.com/nf-core/test-datasets/ampliseq/samplesheets/Metadata_full.tsv\""]
+    },
+    "dada_ref_taxonomy": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["\"rdp\""]
+    },
+    "qiime_ref_taxonomy": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["\"greengenes85\""]
+    },
+    "trunc_qmin": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["35"]
+    },
+    "min_samples": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["3"]
+    },
+    "min_frequency": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["30"]
+    },
+    "metadata_category_barplot": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["\"habitat\""]
+    },
+    "picrust": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "qiime_adonis_formula": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["\"habitat\""]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    }
+  }
+}

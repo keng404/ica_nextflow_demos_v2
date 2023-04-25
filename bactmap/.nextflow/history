@@ -1,0 +1,1 @@
+2023-04-25 14:20:45	-	determined_easley	-	c9791d1085d70751141542b2fb9859d9	bfcce40a-cd16-45e9-b20a-659b893f1ea5	nextflow run main.nf -c nextflow.ica.config --input input.csv

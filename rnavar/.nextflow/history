@@ -1,0 +1,1 @@
+2023-04-25 16:37:51	-	trusting_lichterman	-	af83ead239f10d8be34981995a245fc7	2913710e-8910-4da8-8864-b7c9f78171a7	nextflow run main.nf -c nextflow.ica.config --input input.csv

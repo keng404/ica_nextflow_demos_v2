@@ -1,0 +1,60 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"],
+      "value": ["fil.bb042fd1c98c41e54f6708d9aecb19c4", "fil.6cdcf9a04a9a49ecb6df08d9adf63307", "fil.ddcfa9e8dffa4c34b6de08d9adf63307", "fil.a9ebeb6185cc4fd3b6bb08d9adf63307", "fil.98491bb330c24ecbb6ba08d9adf63307", "fil.744e41ea082c4bdb4f4608d9aecb19c4", "fil.15800e7c4805445f4f4508d9aecb19c4", "fil.fb03594b404f4e8bb6b908d9adf63307", "fil.a090a2d1e42e45bc5da908db45a409a8", "fil.a090a2d1e42e45bc5da908db45a409a8", "fil.8345c39c162341276bee08db459f848e", "fil.ac1a603e795f4c266bcc08db459f848e"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"],
+      "value": ["fol.f7b299b7b9ac4394a16b08db459ecc74", "fol.0be132328acd4dd2a16808db459ecc74", "fol.7eb8902882f3447a6bef08db459f848e", "fol.95f4f1dce117439a6bcd08db459f848e", "fol.e99486d6fe9a41d1a15b08db459ecc74", "fol.a0c8d69791834bff6bba08db459f848e", "fol.4ca93fba61a84f6a6bad08db459f848e", "fol.4a3449515bdb409ca13f08db459ecc74", "fol.14fed348f89f41e9a13408db459ecc74", "fol.09f115c3af674905a11f08db459ecc74"]
+    }
+  },
+  "parameters": {
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/hlatyping/samplesheets/samplesheet_full.csv'"]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset"]
+    },
+    "solver": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'glpk'"]
+    },
+    "genome": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["GRCh38"]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    }
+  }
+}

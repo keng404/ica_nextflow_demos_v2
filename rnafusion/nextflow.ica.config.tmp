@@ -1,0 +1,119 @@
+if(params.ica_smoke_test) {
+    params.input = null
+   includeConfig 'conf/test_full.config'
+}
+params.input = "fake_input_to_build_refs.csv"  
+params.build_references = false  
+params.cosmic_username = null  
+params.cosmic_passwd = null  
+params.multiqc_config = null  
+params.multiqc_title = null  
+params.max_multiqc_email_size = '25.MB'  
+params.genome = 'GRCh38'  
+params.genomes_base = "${params.outdir}/references"  
+params.ensembl_version = 102  
+params.read_length = 100  
+params.genomes = [:]  
+params.starfusion_build = true  
+params.fusioninspector_filter = false  
+params.trim = false  
+params.star_ignore_sjdbgtf = false  
+params.seq_center = null  
+params.seq_platform = null  
+params.fusioncatcher_limitSjdbInsertNsj = 2000000  
+params.fusioninspector_limitSjdbInsertNsj = 1000000  
+params.all = false  
+params.arriba = false  
+params.fusioncatcher = false  
+params.pizzly = false  
+params.squid = false  
+params.starindex = false  
+params.starfusion = false  
+params.fusionreport = false  
+params.fusioninspector_only = false  
+params.skip_qc = false  
+params.skip_vis = false  
+params.ensembl_ref = "${params.genomes_base}/ensembl"  
+params.arriba_ref = "/usr/local/var/lib/arriba"  
+params.arriba_ref_blacklist = "/usr/local/var/lib/arriba/blacklist_hg38_GRCh38_v2.3.0.tsv.gz"  
+params.arriba_ref_protein_domain = "/usr/local/var/lib/arriba/protein_domains_hg38_GRCh38_v2.3.0.gff3"  
+params.fusioncatcher_ref = "${params.genomes_base}/fusioncatcher/human_v102"  
+params.pizzly_ref = "${params.genomes_base}/pizzly/kallisto"  
+params.squid_ref = "${params.genomes_base}/squid"  
+params.starfusion_ref = "${params.genomes_base}/starfusion/ctat_genome_lib_build_dir"  
+params.starindex_ref = "${params.genomes_base}/star"  
+params.fusionreport_ref = "${params.genomes_base}/fusion_report_db"  
+params.arriba_fusions = null  
+params.pizzly_fusions = null  
+params.squid_fusions = null  
+params.starfusion_fusions = null  
+params.fusioncatcher_fusions = null  
+params.fusioninspector_fusions = null  
+params.plaintext_email = false  
+params.monochrome_logs = false  
+params.help = false  
+params.validate_params = true  
+params.show_hidden_params = false  
+params.schema_ignore_params = 'genomes'  
+singularity_pull_docker_container = false  
+params.custom_config_version = 'master'  
+params.custom_config_base = "https://raw.githubusercontent.com/nf-core/configs/${params.custom_config_version}"  
+params.config_profile_description = null  
+params.config_profile_contact = null  
+params.config_profile_url = null  
+params.config_profile_name = null  
+params.max_memory = '128.GB'  
+params.max_cpus = 16  
+params.max_time = '240.h'  
+docker.enabled = true  
+docker.userEmulation = true  
+params.outdir = 'out'  
+params.publish_dir_mode = 'copy'  
+params.conda_enabled = false  
+params.igenomes_ignore = false  
+params.enable_conda = false  
+params.email_on_fail = null  
+params.email = null  
+process = [:]  
+params.ica_smoke_test = false  
+includeConfig 'conf/base.ica.config'
+includeConfig 'conf/genomes.config'
+try {
+    includeConfig "${params.custom_config_base}/nfcore_custom.config"
+} catch (Exception e) {
+    System.err.println("WARNING: Could not load nf-core/config profiles: ${params.custom_config_base}/nfcore_custom.config")
+}
+//   includeConfig "${params.custom_config_base}/pipeline/rnafusion.config"
+process.shell = ['/bin/bash', '-euo', 'pipefail']
+def trace_timestamp = new java.util.Date().format( 'yyyy-MM-dd_HH-mm-ss')
+includeConfig 'conf/modules.config'
+def check_max(obj, type) {
+    if (type == 'memory') {
+        try {
+            if (obj.compareTo(params.max_memory as nextflow.util.MemoryUnit) == 1)
+                return params.max_memory as nextflow.util.MemoryUnit
+            else
+                return obj
+        } catch (all) {
+            println "   ### ERROR ###   Max memory '${params.max_memory}' is not valid! Using default value: $obj"
+            return obj
+        }
+    } else if (type == 'time') {
+        try {
+            if (obj.compareTo(params.max_time as nextflow.util.Duration) == 1)
+                return params.max_time as nextflow.util.Duration
+            else
+                return obj
+        } catch (all) {
+            println "   ### ERROR ###   Max time '${params.max_time}' is not valid! Using default value: $obj"
+            return obj
+        }
+    } else if (type == 'cpus') {
+        try {
+            return Math.min( obj, params.max_cpus as int )
+        } catch (all) {
+            println "   ### ERROR ###   Max cpus '${params.max_cpus}' is not valid! Using default value: $obj"
+            return obj
+        }
+    }
+}

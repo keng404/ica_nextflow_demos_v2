@@ -1,0 +1,66 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"],
+      "value": ["fil.7b1b17b90c6740a5b33408d9af5ff96c", "fil.bbb8fe670329419a064708d9adf63308", "fil.fbf07e2c813947a7064608d9adf63308", "fil.63d891fb433c42ddb33308d9af5ff96c", "fil.2204283c42194cf7b33208d9af5ff96c", "fil.a218645c89fa4c87b33108d9af5ff96c", "fil.9ce4d4a6e66e4644b33008d9af5ff96c", "fil.f0fabbee06cc498db32f08d9af5ff96c", "fil.9c9edf359e1340435db108db45a409a8", "fil.9c9edf359e1340435db108db45a409a8", "fil.ef92d6487128447c570808db45a409a8", "fil.64fd496fc4794c6da29208db459ecc74"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"],
+      "value": ["fol.4d5722362a564532571a08db45a409a8", "fol.14769af521234bcea2c508db459ecc74", "fol.84f0f4940dc14100570c08db45a409a8", "fol.065e815a9b324175a29308db459ecc74", "fol.85410c0f38364caa56d008db45a409a8", "fol.eae97cbf4aa64c1ba28808db459ecc74", "fol.01998a8b47f04934a28308db459ecc74", "fol.a1d7ae020d8b48e2a28008db459ecc74", "fol.73b9f2c56e76430356bd08db45a409a8"]
+    }
+  },
+  "parameters": {
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["\"https://raw.githubusercontent.com/nf-core/test-datasets/methylseq/samplesheet/samplesheet_full.csv\""]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["./results"]
+    },
+    "multiqc_title": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset to check pipeline function'"]
+    },
+    "genome": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'GRCh38'"]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "aligner": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["bismark"]
+    }
+  }
+}

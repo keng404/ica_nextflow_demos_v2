@@ -1,0 +1,1 @@
+2023-04-25 14:15:20	-	hopeful_edison	-	c524bea139af14791ec92a21c4567251	a4d19863-6804-4adb-a263-042d01e2cac1	nextflow run main.nf -c nextflow.ica.config --input input.csv

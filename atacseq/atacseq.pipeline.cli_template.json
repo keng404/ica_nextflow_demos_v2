@@ -1,0 +1,78 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"],
+      "value": ["fil.d8fce2788d1742b4770008d9b69989fe", "fil.4a9683175d024ee076ff08d9b69989fe", "fil.7ada6d7dd92c4b4dabb708d9adf63314", "fil.5f94dbdbb6ef48a276fb08d9b69989fe", "fil.95136468016c404ba93808db459ecc74", "fil.95136468016c404ba93808db459ecc74", "fil.a260d1b1eabc45c06d1f08db45944288", "fil.3d41c6bc47374b8566f308db4590b257"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"],
+      "value": ["fol.70b85ab0984f49b0673e08db4590b257", "fol.8736771eb9c44aa46d2408db45944288", "fol.3f3b7a37c1d44d586d2108db45944288", "fol.b5fe465977a84c046cc608db45944288", "fol.206c83ea9d594e9366ed08db4590b257", "fol.7137237fc4c94fe16cb108db45944288", "fol.13cf8e225ec84f9366db08db4590b257", "fol.5cfb73239770464b346c08db4595e15c", "fol.98f3fc6a468440ff6c9d08db45944288"]
+    }
+  },
+  "parameters": {
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/atacseq/samplesheet/v2.0/samplesheet_full.csv'"]
+    },
+    "fragment_size": {
+      "type": ["integerType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["200"]
+    },
+    "seq_center": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "read_length": {
+      "type": ["integerType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["50"]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "multiqc_title": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset to check pipeline function'"]
+    },
+    "genome": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'hg19'"]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    }
+  }
+}

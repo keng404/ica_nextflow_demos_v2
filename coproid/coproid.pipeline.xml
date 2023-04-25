@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="coproid pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="reads" minValues="1" maxValues="1" classification="USER">
+          <label>reads</label>
+          <description>Path to fastq input files</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="krakendb" minValues="1" maxValues="1" classification="USER">
+          <label>krakendb</label>
+          <description>path/to/kraken2_db_dir</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="sp_labels" minValues="1" maxValues="1" classification="USER">
+          <label>sp_labels</label>
+          <description>Path to sourcepredict labels file</description>
+          <stringType/>
+          <value>/Users/maxime/Documents/github/coproid/data/sourcepredict/modern_gut_microbiomes_labels.csv</value>
+        </parameter>
+        <parameter code="sp_sources" minValues="1" maxValues="1" classification="USER">
+          <label>sp_sources</label>
+          <description>Path to sourcepredict sources file</description>
+          <stringType/>
+          <value>/Users/maxime/Documents/github/coproid/data/sourcepredict/modern_gut_microbiomes_sources.csv</value>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved.</description>
+          <stringType/>
+          <value>./results</value>
+        </parameter>
+        <parameter code="genome" minValues="1" maxValues="1" classification="USER">
+          <label>genome</label>
+          <description>Select Genome:</description>
+          <optionsType>
+            <option>GRCh37</option>
+            <option>GRCh38</option>
+            <option>GRCm38</option>
+            <option>TAIR10</option>
+            <option>EB2</option>
+            <option>UMD3.1</option>
+            <option>WBcel235</option>
+            <option>CanFam3.1</option>
+            <option>GRCz10</option>
+            <option>BDGP6</option>
+            <option>EquCab2</option>
+            <option>EB1</option>
+            <option>Galgal4</option>
+            <option>Gm01</option>
+            <option>Mmul_1</option>
+            <option>IRGSP-1.0</option>
+            <option>CHIMP2.1.4</option>
+            <option>Rnor_6.0</option>
+            <option>R64-1-1</option>
+            <option>EF2</option>
+            <option>Sbi1</option>
+            <option>Sscrofa10.2</option>
+            <option>AGPv3</option>
+            <option>hg38</option>
+            <option>hg19</option>
+            <option>mm10</option>
+            <option>bosTau8</option>
+            <option>ce10</option>
+            <option>canFam3</option>
+            <option>danRer10</option>
+            <option>dm6</option>
+            <option>equCab2</option>
+            <option>galGal4</option>
+            <option>panTro4</option>
+            <option>rn6</option>
+            <option>sacCer3</option>
+            <option>susScr3</option>
+          </optionsType>
+          <value>GRCh38</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

@@ -1,0 +1,1 @@
+2023-04-25 14:51:53	-	small_swirles	-	6b2f0871b379471405ff3db9f4e61ea4	82858fbb-71e2-4011-96e1-a99af77d9414	nextflow run main.nf -c nextflow.ica.config --input input.csv

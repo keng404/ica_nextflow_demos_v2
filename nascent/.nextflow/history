@@ -1,0 +1,1 @@
+2023-04-25 15:59:32	-	jovial_goldwasser	-	e7c4894548949e59168cead25bbbf05b	da8f6a14-3f87-44c9-8060-b3100146a590	nextflow run main.nf -c nextflow.ica.config --input input.csv

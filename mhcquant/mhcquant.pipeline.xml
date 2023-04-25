@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="mhcquant pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="project_dir" format="UNKNOWN" type="DIRECTORY" required="true" multiValue="true">
+      <label>project_dir</label>
+      <description>directory with additional files/input to run pipeline --- other files in your github project</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>Input raw / mzML files listed in a tsv file (see help for details)
+Use this to specify a sample sheet table including your input raw or mzml files as well as their meta information such as SampleID and Condition. For example:
+
+| ID   | Sample      | Condition  |   ReplicateFileName                       |
+| -----|:------------:| ----------:|------------------------------------------:|
+| 1    | MM15_Melanom |      A     |   data/MM15_Melanom_W_1_A_standard.raw    |
+| 2    | MM15_Melanom |      B     |   data/MM15_Melanom_W_1_B_standard.raw    |
+| 3    | MM17_Melanom |      B     |   data/MM17_Melanom_W_1_B_standard.raw    |
+
+bash
+--input 'path/samples.tsv'</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="multiqc_title" minValues="1" maxValues="1" classification="USER">
+          <label>multiqc_title</label>
+          <description>MultiQC report title. Printed as page header, used for filename if not otherwise specified.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Full test dataset to check pipeline function'</value>
+        </parameter>
+        <parameter code="predict_class_1" minValues="0" maxValues="1" classification="USER">
+          <label>predict_class_1</label>
+          <description>Configure params.predict_class_1</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="fasta" minValues="0" maxValues="1" classification="USER">
+          <label>fasta</label>
+          <description>Configure params.fasta</description>
+          <stringType/>
+          <value>'https://raw.githubusercontent.com/nf-core/test-datasets/mhcquant/test.fasta'</value>
+        </parameter>
+        <parameter code="allele_sheet" minValues="0" maxValues="1" classification="USER">
+          <label>allele_sheet</label>
+          <description>Configure params.allele_sheet</description>
+          <stringType/>
+          <value>'https://raw.githubusercontent.com/nf-core/test-datasets/mhcquant/allele_sheet_full.tsv'</value>
+        </parameter>
+        <parameter code="ica_smoke_test" minValues="0" maxValues="1" classification="USER">
+          <label>ica_smoke_test</label>
+          <description>Boolean to trigger smoke test:</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

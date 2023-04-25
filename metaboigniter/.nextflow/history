@@ -1,0 +1,1 @@
+2023-04-25 15:40:54	-	zen_gutenberg	-	53e6a6a44a8838440910937347052a81	7f1eb545-4765-4462-96a6-fc221fe6c10f	nextflow run main.nf -c nextflow.ica.config --input input.csv

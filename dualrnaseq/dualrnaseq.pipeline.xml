@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="dualrnaseq pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="pipeline_basics">
+      <label>pipeline_basics</label>
+      <description>pipeline_basics parameters</description>
+      <tool code="pipeline_basics parameters">
+        <label>pipeline_basics</label>
+        <description>pipeline_basics parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>Input files can be read as either .fastq or .fastq.gz. They should be named descriptively without spaces and special characters (such as : and @), with the corresponding replicate (if any) appended at the end. The best practise for this pipeline is to use underscores to separate different experimental conditions.
+Use this to specify the location of your input FastQ files. For example:
+
+--input 'path/to/data/sample_-_{1,2}.fastq'
+
+Please note the following requirements:
+
+1. The path must be enclosed in quotes
+2. The path must have at least one - wildcard character
+3. When using the pipeline with paired end data, the path must use {1,2} notation to specify read pairs.
+4. If left unspecified, a default pattern is used: data/-{1,2}.fastq.gz
+
+Note: by default, the pipeline expects paired-end data. If you have single-end data, you need to specify --single_end on the command line when launched. For example: --single_end --input '-.fastq'</description>
+          <stringType/>
+          <value>data/*{1,2}.fastq.gz</value>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Full test dataset to check pipeline function'</value>
+        </parameter>
+        <parameter code="max_cpus" minValues="0" maxValues="1" classification="USER">
+          <label>max_cpus</label>
+          <description>Configure params.max_cpus</description>
+          <integerType/>
+          <value>12</value>
+        </parameter>
+        <parameter code="max_memory" minValues="0" maxValues="1" classification="USER">
+          <label>max_memory</label>
+          <description>Configure params.max_memory</description>
+          <stringType/>
+          <value>16.GB</value>
+        </parameter>
+        <parameter code="max_time" minValues="0" maxValues="1" classification="USER">
+          <label>max_time</label>
+          <description>Configure params.max_time</description>
+          <stringType/>
+          <value>48.h</value>
+        </parameter>
+        <parameter code="single_end" minValues="0" maxValues="1" classification="USER">
+          <label>single_end</label>
+          <description>Configure params.single_end</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="genomes_ignore" minValues="0" maxValues="1" classification="USER">
+          <label>genomes_ignore</label>
+          <description>Configure params.genomes_ignore</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="run_bbduk" minValues="0" maxValues="1" classification="USER">
+          <label>run_bbduk</label>
+          <description>Configure params.run_bbduk</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="qtrim" minValues="0" maxValues="1" classification="USER">
+          <label>qtrim</label>
+          <description>Configure params.qtrim</description>
+          <stringType/>
+          <value>rl</value>
+        </parameter>
+        <parameter code="run_salmon_selective_alignment" minValues="0" maxValues="1" classification="USER">
+          <label>run_salmon_selective_alignment</label>
+          <description>Configure params.run_salmon_selective_alignment</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="libtype" minValues="0" maxValues="1" classification="USER">
+          <label>libtype</label>
+          <description>Configure params.libtype</description>
+          <stringType/>
+          <value>A</value>
+        </parameter>
+        <parameter code="gene_feature_gff_to_create_transcriptome_pathogen" minValues="0" maxValues="1" classification="USER">
+          <label>gene_feature_gff_to_create_transcriptome_pathogen</label>
+          <description>Configure params.gene_feature_gff_to_create_transcriptome_pathogen</description>
+          <stringType/>
+          <value>[CDS,tRNA,rRNA,ncRNA]</value>
+        </parameter>
+        <parameter code="mapping_statistics" minValues="0" maxValues="1" classification="USER">
+          <label>mapping_statistics</label>
+          <description>Configure params.mapping_statistics</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="input_paths" minValues="0" maxValues="1" classification="USER">
+          <label>input_paths</label>
+          <description>Configure params.input_paths</description>
+          <stringType/>
+          <value>[</value>
+        </parameter>
+        <parameter code="genomes['full_test_host'].fasta_host" minValues="0" maxValues="1" classification="USER">
+          <label>genomes['full_test_host'].fasta_host</label>
+          <description>Configure params.genomes['full_test_host'].fasta_host</description>
+          <stringType/>
+          <value>https://nf-core-awsmegatests.s3-eu-west-1.amazonaws.com/dualrnaseq/input_data/GRCh38.primary_assembly.genome.fa.gz</value>
+        </parameter>
+        <parameter code="genomes" minValues="0" maxValues="1" classification="USER">
+          <label>genomes</label>
+          <description>Configure params.genomes</description>
+          <stringType/>
+          <value>[:]</value>
+        </parameter>
+        <parameter code="genomes['full_test_host']" minValues="0" maxValues="1" classification="USER">
+          <label>genomes['full_test_host']</label>
+          <description>Configure params.genomes['full_test_host']</description>
+          <stringType/>
+          <value>[:]</value>
+        </parameter>
+        <parameter code="genomes['full_test_host'].gff_host" minValues="0" maxValues="1" classification="USER">
+          <label>genomes['full_test_host'].gff_host</label>
+          <description>Configure params.genomes['full_test_host'].gff_host</description>
+          <stringType/>
+          <value>https://nf-core-awsmegatests.s3-eu-west-1.amazonaws.com/dualrnaseq/input_data/Human_gencode.v35.annotation.gff3.gz</value>
+        </parameter>
+        <parameter code="genomes['full_test_host'].gff_host_tRNA" minValues="0" maxValues="1" classification="USER">
+          <label>genomes['full_test_host'].gff_host_tRNA</label>
+          <description>Configure params.genomes['full_test_host'].gff_host_tRNA</description>
+          <stringType/>
+          <value></value>
+        </parameter>
+        <parameter code="genomes['full_test_pathogen'].fasta_pathogen" minValues="0" maxValues="1" classification="USER">
+          <label>genomes['full_test_pathogen'].fasta_pathogen</label>
+          <description>Configure params.genomes['full_test_pathogen'].fasta_pathogen</description>
+          <stringType/>
+          <value>https://nf-core-awsmegatests.s3-eu-west-1.amazonaws.com/dualrnaseq/input_data/Karp.fasta.gz</value>
+        </parameter>
+        <parameter code="genomes['full_test_pathogen']" minValues="0" maxValues="1" classification="USER">
+          <label>genomes['full_test_pathogen']</label>
+          <description>Configure params.genomes['full_test_pathogen']</description>
+          <stringType/>
+          <value>[:]</value>
+        </parameter>
+        <parameter code="genomes['full_test_pathogen'].gff_pathogen" minValues="0" maxValues="1" classification="USER">
+          <label>genomes['full_test_pathogen'].gff_pathogen</label>
+          <description>Configure params.genomes['full_test_pathogen'].gff_pathogen</description>
+          <stringType/>
+          <value>https://nf-core-awsmegatests.s3-eu-west-1.amazonaws.com/dualrnaseq/input_data/Karp.gff3.gz</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

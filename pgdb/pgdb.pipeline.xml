@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="pgdb pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="project_dir" format="UNKNOWN" type="DIRECTORY" required="true" multiValue="true">
+      <label>project_dir</label>
+      <description>directory with additional files/input to run pipeline --- other files in your github project</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved.</description>
+          <stringType/>
+          <value>./results</value>
+        </parameter>
+        <parameter code="final_database_protein" minValues="1" maxValues="1" classification="USER">
+          <label>final_database_protein</label>
+          <description>Filename for the final protein database</description>
+          <stringType/>
+          <value>final_proteinDB.fa</value>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Full test COSMIC generation'</value>
+        </parameter>
+        <parameter code="ensembl_name" minValues="0" maxValues="1" classification="USER">
+          <label>ensembl_name</label>
+          <description>Configure params.ensembl_name</description>
+          <stringType/>
+          <value>'homo_sapiens'</value>
+        </parameter>
+        <parameter code="ensembl" minValues="0" maxValues="1" classification="USER">
+          <label>ensembl</label>
+          <description>Configure params.ensembl</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="gnomad" minValues="0" maxValues="1" classification="USER">
+          <label>gnomad</label>
+          <description>Configure params.gnomad</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="cosmic" minValues="0" maxValues="1" classification="USER">
+          <label>cosmic</label>
+          <description>Configure params.cosmic</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="cosmic_celllines" minValues="0" maxValues="1" classification="USER">
+          <label>cosmic_celllines</label>
+          <description>Configure params.cosmic_celllines</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="cbioportal" minValues="0" maxValues="1" classification="USER">
+          <label>cbioportal</label>
+          <description>Configure params.cbioportal</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="decoy" minValues="0" maxValues="1" classification="USER">
+          <label>decoy</label>
+          <description>Configure params.decoy</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="ica_smoke_test" minValues="0" maxValues="1" classification="USER">
+          <label>ica_smoke_test</label>
+          <description>Boolean to trigger smoke test:</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

@@ -1,0 +1,104 @@
+Apr-25 14:26:22.650 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -c nextflow.ica.config --input input.csv
+Apr-25 14:26:22.712 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.3
+Apr-25 14:26:22.732 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/keng/nf-core-v2/cageseq/nextflow.config
+Apr-25 14:26:22.738 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /Users/keng/nf-core-v2/cageseq/nextflow.ica.config
+Apr-25 14:26:22.739 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/cageseq/nextflow.config
+Apr-25 14:26:22.740 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/cageseq/nextflow.ica.config
+Apr-25 14:26:22.762 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 14:26:23.645 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:26:23.655 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 14:26:23.658 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 14:26:23.661 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 14:26:23.665 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:26:23.978 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:26:24.212 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 14:26:24.309 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:26:24.311 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:26:24.392 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:26:24.523 [main] DEBUG nextflow.config.ConfigBuilder - In the following config snippet the attribute `process.withLabel:process_high` is empty:
+  container='nfcore/cageseq:1.0.2'
+  withName:CUSTOM_DUMPSOFTWAREVERSIONS.errorStrategy='ignore'
+  pod=['annotation':'scheduler.illumina.com/presetSize', 'value':'himem-small']
+  cpus=7
+  memory='60 GB'
+  maxForks=5
+  withLabel:process_low {
+  	cpus=Script6160A098254D8259E5E672AC1B238FE2$_run_closure3$_closure5$_closure8@7951c3a2
+  	memory=Script6160A098254D8259E5E672AC1B238FE2$_run_closure3$_closure5$_closure9@4ed9f7b1
+  	time=Script6160A098254D8259E5E672AC1B238FE2$_run_closure3$_closure5$_closure10@2d119405
+  	pod=['annotation':'scheduler.illumina.com/presetSize', 'value':'standard-large']
+  }
+  withLabel:process_medium {
+  	cpus=Script6160A098254D8259E5E672AC1B238FE2$_run_closure3$_closure6$_closure11@57e388c3
+  	memory=Script6160A098254D8259E5E672AC1B238FE2$_run_closure3$_closure6$_closure12@20580d4e
+  	time=Script6160A098254D8259E5E672AC1B238FE2$_run_closure3$_closure6$_closure13@21bd128b
+  	pod=['annotation':'scheduler.illumina.com/presetSize', 'value':'standard-xlarge']
+  }
+  shell=['/bin/bash', '-euo', 'pipefail']
+
+Apr-25 14:26:24.527 [main] ERROR nextflow.cli.Launcher - Unknown config attribute `process.withLabel:process_high` -- check config file: /Users/keng/nf-core-v2/cageseq/nextflow.ica.config
+nextflow.exception.ConfigParseException: Unknown config attribute `process.withLabel:process_high` -- check config file: /Users/keng/nf-core-v2/cageseq/nextflow.ica.config
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at nextflow.config.ConfigBuilder.validate(ConfigBuilder.groovy:459)
+	at jdk.internal.reflect.GeneratedMethodAccessor12.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:212)
+	at nextflow.config.ConfigBuilder.validate(ConfigBuilder.groovy:466)
+	at nextflow.config.ConfigBuilder.validate(ConfigBuilder.groovy:446)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:194)
+	at nextflow.config.ConfigBuilder.merge0(ConfigBuilder.groovy:420)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:203)
+	at nextflow.config.ConfigBuilder.buildConfig0(ConfigBuilder.groovy:369)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:194)
+	at nextflow.config.ConfigBuilder.buildGivenFiles(ConfigBuilder.groovy:317)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at nextflow.config.ConfigBuilder.buildConfigObject(ConfigBuilder.groovy:754)
+	at nextflow.config.ConfigBuilder.build(ConfigBuilder.groovy:767)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:294)
+	at nextflow.cli.Launcher.run(Launcher.groovy:480)
+	at nextflow.cli.Launcher.main(Launcher.groovy:639)

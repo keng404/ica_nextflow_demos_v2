@@ -1,0 +1,1 @@
+2023-04-25 16:56:58	-	stupefied_sax	-	e3ca30a4d163fc04ca82bc69919b9f5b	1a9f1c51-2ee4-4625-b1e0-14ee3ff90aa9	nextflow run main.nf -c nextflow.ica.config --input input.csv

@@ -1,0 +1,1 @@
+2023-04-25 15:54:17	-	zen_lavoisier	-	faed6a7db5b27747547b9fb6708ae660	e63e62eb-4518-4470-b830-a95b9352d08b	nextflow run main.nf -c nextflow.ica.config --input input.csv

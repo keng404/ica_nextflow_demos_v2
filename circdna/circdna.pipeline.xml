@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="circdna pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="project_dir" format="UNKNOWN" type="DIRECTORY" required="true" multiValue="true">
+      <label>project_dir</label>
+      <description>directory with additional files/input to run pipeline --- other files in your github project</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>Path to comma-separated file containing information about the samples in the experiment.
+You will need to create a design file with information about the samples in your experiment before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with either 2 [BAM] or 3 [FASTQ] columns, and a header row. See [usage docs](https://nf-co.re/circdna/usage#samplesheet-input).</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="input_format" minValues="1" maxValues="1" classification="USER">
+          <label>input_format</label>
+          <description>Specify input format. Default -FASTQ-. Options 'FASTQ' or 'BAM'.
+Define which input file formats are used in the pipeline run. Use either --input_format FASTQ or --input_format BAM.</description>
+          <stringType/>
+          <value>FASTQ</value>
+        </parameter>
+        <parameter code="bam_sorted" minValues="1" maxValues="1" classification="USER">
+          <label>bam_sorted</label>
+          <description>Specify if bam file is sorted [false, true]. If false or not specified, bam file will be sorted!
+Set this parameter if you specified --input_format BAM and supplied sorted BAM files. This will skip the samtools sort step.</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="save_sorted_bam" minValues="1" maxValues="1" classification="USER">
+          <label>save_sorted_bam</label>
+          <description>Specify if sorted bam file should be saved [false, true]. Default: false
+Set this parameter if you specified bam files in your samplesheet.</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="multiqc_title" minValues="1" maxValues="1" classification="USER">
+          <label>multiqc_title</label>
+          <description>MultiQC report title. Printed as page header, used for filename if not otherwise specified.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Full test dataset to check pipeline function'</value>
+        </parameter>
+        <parameter code="max_cpus" minValues="0" maxValues="1" classification="USER">
+          <label>max_cpus</label>
+          <description>Configure params.max_cpus</description>
+          <integerType/>
+          <value>2</value>
+        </parameter>
+        <parameter code="max_memory" minValues="0" maxValues="1" classification="USER">
+          <label>max_memory</label>
+          <description>Configure params.max_memory</description>
+          <stringType/>
+          <value>'6.GB'</value>
+        </parameter>
+        <parameter code="max_time" minValues="0" maxValues="1" classification="USER">
+          <label>max_time</label>
+          <description>Configure params.max_time</description>
+          <stringType/>
+          <value>'6.h'</value>
+        </parameter>
+        <parameter code="fasta" minValues="0" maxValues="1" classification="USER">
+          <label>fasta</label>
+          <description>Configure params.fasta</description>
+          <stringType/>
+          <value>'https://raw.githubusercontent.com/nf-core/test-datasets/circdna/reference/genome.fa'</value>
+        </parameter>
+        <parameter code="circle_identifier" minValues="0" maxValues="1" classification="USER">
+          <label>circle_identifier</label>
+          <description>Configure params.circle_identifier</description>
+          <stringType/>
+          <value>'circexplorer2,circle_finder,circle_map_realign,circle_map_repeats,unicycler'</value>
+        </parameter>
+        <parameter code="igenomes_ignore" minValues="0" maxValues="1" classification="USER">
+          <label>igenomes_ignore</label>
+          <description>Configure params.igenomes_ignore</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="skip_markduplicates" minValues="0" maxValues="1" classification="USER">
+          <label>skip_markduplicates</label>
+          <description>Configure params.skip_markduplicates</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="mosek_license_dir" minValues="0" maxValues="1" classification="USER">
+          <label>mosek_license_dir</label>
+          <description>Configure params.mosek_license_dir</description>
+          <stringType/>
+          <value>https://raw.githubusercontent.com/nf-core/test-datasets/circdna/mosek/mosek.lic</value>
+        </parameter>
+        <parameter code="aa_data_repo" minValues="0" maxValues="1" classification="USER">
+          <label>aa_data_repo</label>
+          <description>Configure params.aa_data_repo</description>
+          <stringType/>
+          <value>data_repo</value>
+        </parameter>
+        <parameter code="reference_build" minValues="0" maxValues="1" classification="USER">
+          <label>reference_build</label>
+          <description>Configure params.reference_build</description>
+          <stringType/>
+          <value>GRCh38</value>
+        </parameter>
+        <parameter code="genome" minValues="1" maxValues="1" classification="USER">
+          <label>genome</label>
+          <description>Select Genome:</description>
+          <optionsType>
+            <option>GRCh37</option>
+            <option>GRCh38</option>
+            <option>GRCm38</option>
+            <option>TAIR10</option>
+            <option>EB2</option>
+            <option>UMD3.1</option>
+            <option>WBcel235</option>
+            <option>CanFam3.1</option>
+            <option>GRCz10</option>
+            <option>BDGP6</option>
+            <option>EquCab2</option>
+            <option>EB1</option>
+            <option>Galgal4</option>
+            <option>Gm01</option>
+            <option>Mmul_1</option>
+            <option>IRGSP-1.0</option>
+            <option>CHIMP2.1.4</option>
+            <option>Rnor_5.0</option>
+            <option>Rnor_6.0</option>
+            <option>R64-1-1</option>
+            <option>EF2</option>
+            <option>Sbi1</option>
+            <option>Sscrofa10.2</option>
+            <option>AGPv3</option>
+            <option>hg38</option>
+            <option>hg19</option>
+            <option>mm10</option>
+            <option>bosTau8</option>
+            <option>ce10</option>
+            <option>canFam3</option>
+            <option>danRer10</option>
+            <option>dm6</option>
+            <option>equCab2</option>
+            <option>galGal4</option>
+            <option>panTro4</option>
+            <option>rn6</option>
+            <option>sacCer3</option>
+            <option>susScr3</option>
+          </optionsType>
+          <value>GRCh38</value>
+        </parameter>
+        <parameter code="ica_smoke_test" minValues="0" maxValues="1" classification="USER">
+          <label>ica_smoke_test</label>
+          <description>Boolean to trigger smoke test:</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

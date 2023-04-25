@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="hic pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="project_dir" format="UNKNOWN" type="DIRECTORY" required="true" multiValue="true">
+      <label>project_dir</label>
+      <description>directory with additional files/input to run pipeline --- other files in your github project</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>Input FastQ files.
+Use this to specify the location of your input FastQ files. For example:
+
+bash
+--input 'path/to/data/sample_-_{1,2}.fastq'
+
+
+Please note the following requirements:
+
+1. The path must be enclosed in quotes
+2. The path must have at least one - wildcard character
+3. When using the pipeline with paired end data, the path must use {1,2} notation to specify read pairs.
+
+If left unspecified, a default pattern is used: data/-{1,2}.fastq.gz</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved.</description>
+          <stringType/>
+          <value>./results</value>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Full test dataset to check pipeline function'</value>
+        </parameter>
+        <parameter code="input_paths" minValues="0" maxValues="1" classification="USER">
+          <label>input_paths</label>
+          <description>Configure params.input_paths</description>
+          <stringType/>
+          <value>[</value>
+        </parameter>
+        <parameter code="['SRR4292758_00'," minValues="0" maxValues="1" classification="USER">
+          <label>['SRR4292758_00',</label>
+          <description>Configure params.['SRR4292758_00',</description>
+          <stringType/>
+          <value>'https://github.com/nf-core/test-datasets/raw/hic/data/SRR4292758_00_R2.fastq.gz']]</value>
+        </parameter>
+        <parameter code="fasta" minValues="0" maxValues="1" classification="USER">
+          <label>fasta</label>
+          <description>Configure params.fasta</description>
+          <stringType/>
+          <value>'https://github.com/nf-core/test-datasets/raw/hic/reference/W303_SGD_2015_JRIU00000000.fsa'</value>
+        </parameter>
+        <parameter code="digestion" minValues="0" maxValues="1" classification="USER">
+          <label>digestion</label>
+          <description>Configure params.digestion</description>
+          <stringType/>
+          <value>'hindiii'</value>
+        </parameter>
+        <parameter code="min_mapq" minValues="0" maxValues="1" classification="USER">
+          <label>min_mapq</label>
+          <description>Configure params.min_mapq</description>
+          <integerType/>
+          <value>10</value>
+        </parameter>
+        <parameter code="min_restriction_fragment_size" minValues="0" maxValues="1" classification="USER">
+          <label>min_restriction_fragment_size</label>
+          <description>Configure params.min_restriction_fragment_size</description>
+          <integerType/>
+          <value>100</value>
+        </parameter>
+        <parameter code="max_restriction_fragment_size" minValues="0" maxValues="1" classification="USER">
+          <label>max_restriction_fragment_size</label>
+          <description>Configure params.max_restriction_fragment_size</description>
+          <integerType/>
+          <value>100000</value>
+        </parameter>
+        <parameter code="min_insert_size" minValues="0" maxValues="1" classification="USER">
+          <label>min_insert_size</label>
+          <description>Configure params.min_insert_size</description>
+          <integerType/>
+          <value>100</value>
+        </parameter>
+        <parameter code="max_insert_size" minValues="0" maxValues="1" classification="USER">
+          <label>max_insert_size</label>
+          <description>Configure params.max_insert_size</description>
+          <integerType/>
+          <value>600</value>
+        </parameter>
+        <parameter code="bin_size" minValues="0" maxValues="1" classification="USER">
+          <label>bin_size</label>
+          <description>Configure params.bin_size</description>
+          <stringType/>
+          <value>'1000'</value>
+        </parameter>
+        <parameter code="res_dist_decay" minValues="0" maxValues="1" classification="USER">
+          <label>res_dist_decay</label>
+          <description>Configure params.res_dist_decay</description>
+          <stringType/>
+          <value>'1000'</value>
+        </parameter>
+        <parameter code="res_tads" minValues="0" maxValues="1" classification="USER">
+          <label>res_tads</label>
+          <description>Configure params.res_tads</description>
+          <stringType/>
+          <value>'1000'</value>
+        </parameter>
+        <parameter code="tads_caller" minValues="0" maxValues="1" classification="USER">
+          <label>tads_caller</label>
+          <description>Configure params.tads_caller</description>
+          <stringType/>
+          <value>'insulation,hicexplorer'</value>
+        </parameter>
+        <parameter code="res_compartments" minValues="0" maxValues="1" classification="USER">
+          <label>res_compartments</label>
+          <description>Configure params.res_compartments</description>
+          <stringType/>
+          <value>'1000'</value>
+        </parameter>
+        <parameter code="schema_ignore_params" minValues="0" maxValues="1" classification="USER">
+          <label>schema_ignore_params</label>
+          <description>Configure params.schema_ignore_params</description>
+          <stringType/>
+          <value>'genomes,digest,input_paths,input'</value>
+        </parameter>
+        <parameter code="ica_smoke_test" minValues="0" maxValues="1" classification="USER">
+          <label>ica_smoke_test</label>
+          <description>Boolean to trigger smoke test:</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

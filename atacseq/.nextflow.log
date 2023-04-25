@@ -1,0 +1,92 @@
+Apr-25 14:07:14.356 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -c nextflow.ica.config --input input.csv
+Apr-25 14:07:14.412 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.3
+Apr-25 14:07:14.429 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/keng/nf-core-v2/atacseq/nextflow.config
+Apr-25 14:07:14.433 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /Users/keng/nf-core-v2/atacseq/nextflow.ica.config
+Apr-25 14:07:14.434 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/atacseq/nextflow.config
+Apr-25 14:07:14.435 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/atacseq/nextflow.ica.config
+Apr-25 14:07:14.454 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 14:07:15.358 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:07:15.368 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 14:07:15.371 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 14:07:15.373 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 14:07:15.377 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:07:15.660 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:07:16.516 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 14:07:16.607 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:07:16.609 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:07:16.695 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:07:17.148 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Apr-25 14:07:17.163 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [hungry_saha] DSL2 - revision: cfcbe3ebe9
+Apr-25 14:07:17.166 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/.nextflow/plugins; core-plugins: nf-amazon@1.7.2,nf-azure@0.13.2,nf-console@1.0.3,nf-ga4gh@1.0.3,nf-google@1.1.4,nf-sqldb@0.4.0,nf-tower@1.4.0
+Apr-25 14:07:17.169 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Apr-25 14:07:17.181 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 14:07:17.183 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 14:07:17.185 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 14:07:17.195 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Apr-25 14:07:17.233 [main] DEBUG nextflow.Session - Session uuid: d06bfece-6455-4353-96b7-9cc98befd667
+Apr-25 14:07:17.234 [main] DEBUG nextflow.Session - Run name: hungry_saha
+Apr-25 14:07:17.236 [main] DEBUG nextflow.Session - Executor pool size: 8
+Apr-25 14:07:17.260 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.04.3 build 5703
+  Created: 18-05-2022 19:22 UTC 
+  System: Linux 5.15.49-linuxkit
+  Runtime: Groovy 3.0.10 on OpenJDK 64-Bit Server VM 17.0.3+6-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 1@9df1793d3c97 [172.17.0.2]
+  CPUs: 8 - Mem: 13.2 GB (952 MB) - Swap: 2 GB (1.9 GB)
+Apr-25 14:07:17.299 [main] DEBUG nextflow.Session - Work-dir: /Users/keng/nf-core-v2/atacseq/work [fuseblk]
+Apr-25 14:07:17.323 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Apr-25 14:07:17.333 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Apr-25 14:07:17.391 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Apr-25 14:07:17.400 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Apr-25 14:07:17.520 [main] DEBUG nextflow.Session - Session start invoked
+Apr-25 14:07:17.525 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /Users/keng/nf-core-v2/atacseq/null/pipeline_info/execution_trace_2023-04-25_14-07-15.txt
+Apr-25 14:07:17.555 [main] DEBUG nextflow.Session - Using default localLib path: /Users/keng/nf-core-v2/atacseq/lib
+Apr-25 14:07:17.567 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/atacseq/lib
+Apr-25 14:07:17.569 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/atacseq/lib/nfcore_external_java_deps.jar
+Apr-25 14:07:18.531 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Apr-25 14:07:18.808 [main] WARN  nextflow.Nextflow - Found unexpected parameters:
+* --conda_enabled: false
+* --ica_smoke_test: false
+Apr-25 14:07:18.809 [main] INFO  nextflow.Nextflow - - [2mIgnore this warning: params.schema_ignore_params = "conda_enabled,ica_smoke_test" [0m
+Apr-25 14:07:18.821 [main] INFO  nextflow.Nextflow - 
+
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;35m  nf-core/atacseq v2.0[0m
+-[2m----------------------------------------------------[0m-
+[1mCore Nextflow options[0m
+  [0;34mrunName        : [0;32mhungry_saha[0m
+  [0;34mcontainerEngine: [0;32mdocker[0m
+  [0;34mlaunchDir      : [0;32m/Users/keng/nf-core-v2/atacseq[0m
+  [0;34mworkDir        : [0;32m/Users/keng/nf-core-v2/atacseq/work[0m
+  [0;34mprojectDir     : [0;32m/Users/keng/nf-core-v2/atacseq[0m
+  [0;34muserName       : [0;32mroot[0m
+  [0;34mprofile        : [0;32mstandard[0m
+  [0;34mconfigFiles    : [0;32m/Users/keng/nf-core-v2/atacseq/nextflow.config, /Users/keng/nf-core-v2/atacseq/nextflow.ica.config[0m
+
+[1mInput/output options[0m
+  [0;34minput          : [0;32minput.csv[0m
+  [0;34moutdir         : [0;32mout[0m
+
+[1mGeneric options[0m
+  [0;34mtracedir       : [0;32mnull/pipeline_info[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+-[2m----------------------------------------------------[0m-
+If you use nf-core/atacseq for your analysis please cite:
+
+* The pipeline
+  https://doi.org/10.5281/zenodo.2634132
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/atacseq/blob/master/CITATIONS.md
+-[2m----------------------------------------------------[0m-
+Apr-25 14:07:21.200 [main] ERROR nextflow.Nextflow - Genome fasta file not specified with e.g. '--fasta genome.fa' or via a detectable config file.

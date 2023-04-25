@@ -1,0 +1,1 @@
+2023-04-25 15:25:34	-	elegant_brahmagupta	-	22a5feb1668e99a00692ab341cc57dc5	412bb186-77eb-4d15-9c1c-9d97ec7734a1	nextflow run main.nf -c nextflow.ica.config --input input.csv

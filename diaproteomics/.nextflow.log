@@ -1,0 +1,149 @@
+Apr-25 14:52:00.999 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -c nextflow.ica.config --input input.csv
+Apr-25 14:52:01.055 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.04.3
+Apr-25 14:52:01.075 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/keng/nf-core-v2/diaproteomics/nextflow.config
+Apr-25 14:52:01.079 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /Users/keng/nf-core-v2/diaproteomics/nextflow.ica.config
+Apr-25 14:52:01.080 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/diaproteomics/nextflow.config
+Apr-25 14:52:01.081 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/keng/nf-core-v2/diaproteomics/nextflow.ica.config
+Apr-25 14:52:01.102 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 14:52:01.982 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:52:01.992 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 14:52:01.994 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 14:52:01.997 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 14:52:02.002 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:52:02.291 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:52:02.313 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-25 14:52:02.424 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:52:02.426 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:52:02.498 [main] DEBUG nextflow.plugin.PluginsFacade - Using Default plugins manager
+Apr-25 14:52:02.536 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=1 by probing script field
+Apr-25 14:52:02.554 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [agitated_nobel] DSL1 - revision: ccc1765471
+Apr-25 14:52:02.557 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/.nextflow/plugins; core-plugins: nf-amazon@1.7.2,nf-azure@0.13.2,nf-console@1.0.3,nf-ga4gh@1.0.3,nf-google@1.1.4,nf-sqldb@0.4.0,nf-tower@1.4.0
+Apr-25 14:52:02.558 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Apr-25 14:52:02.570 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-25 14:52:02.572 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-25 14:52:02.574 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-25 14:52:02.584 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Apr-25 14:52:02.626 [main] DEBUG nextflow.Session - Session uuid: e6a7bf65-7c0f-4242-b55e-b4c101d74ed8
+Apr-25 14:52:02.627 [main] DEBUG nextflow.Session - Run name: agitated_nobel
+Apr-25 14:52:02.629 [main] DEBUG nextflow.Session - Executor pool size: 8
+Apr-25 14:52:02.651 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.04.3 build 5703
+  Created: 18-05-2022 19:22 UTC 
+  System: Linux 5.15.49-linuxkit
+  Runtime: Groovy 3.0.10 on OpenJDK 64-Bit Server VM 17.0.3+6-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 1@2a4fd284d3ca [172.17.0.2]
+  CPUs: 8 - Mem: 13.2 GB (1.1 GB) - Swap: 2 GB (1.9 GB)
+Apr-25 14:52:02.689 [main] DEBUG nextflow.Session - Work-dir: /Users/keng/nf-core-v2/diaproteomics/work [fuseblk]
+Apr-25 14:52:02.711 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Apr-25 14:52:02.722 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Apr-25 14:52:02.788 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Apr-25 14:52:02.797 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Apr-25 14:52:02.900 [main] DEBUG nextflow.Session - Session start invoked
+Apr-25 14:52:02.905 [main] DEBUG nextflow.trace.TraceFileObserver - Flow starting -- trace file: /Users/keng/nf-core-v2/diaproteomics/results/pipeline_info/execution_trace.txt
+Apr-25 14:52:02.930 [main] DEBUG nextflow.Session - Using default localLib path: /Users/keng/nf-core-v2/diaproteomics/lib
+Apr-25 14:52:02.939 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/diaproteomics/lib
+Apr-25 14:52:02.941 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/keng/nf-core-v2/diaproteomics/lib/nfcore_external_java_deps.jar
+Apr-25 14:52:06.623 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Apr-25 14:52:06.638 [main] INFO  nextflow.Nextflow - 
+
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;35m  nf-core/diaproteomics v1.2.4[0m
+-[2m----------------------------------------------------[0m-
+
+Apr-25 14:52:06.895 [main] WARN  nextflow.Nextflow - Found unexpected parameters:
+* --enable_conda: false
+* --igenomes_ignore: false
+* --conda_enabled: false
+* --ica_smoke_test: false
+Apr-25 14:52:06.897 [main] INFO  nextflow.Nextflow - - [2mIgnore this warning: params.schema_ignore_params = "enable_conda,igenomes_ignore,conda_enabled,ica_smoke_test" [0m
+Apr-25 14:52:06.996 [Actor Thread 3] ERROR nextflow.extension.DataflowHelper - @unknown
+java.nio.file.NoSuchFileException: /Users/keng/nf-core-v2/diaproteomics/input.csv
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:218)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at nextflow.splitter.AbstractSplitter.newInputStream(AbstractSplitter.groovy:454)
+	at nextflow.splitter.AbstractTextSplitter.newReader(AbstractTextSplitter.groovy:153)
+	at nextflow.splitter.AbstractTextSplitter.normalizeSource0(AbstractTextSplitter.groovy:131)
+	at nextflow.splitter.AbstractTextSplitter.normalizeSource(AbstractTextSplitter.groovy:113)
+	at nextflow.splitter.AbstractTextSplitter.normalizeSource(AbstractTextSplitter.groovy)
+	at nextflow.splitter.AbstractSplitter.apply(AbstractSplitter.groovy:154)
+	at nextflow.extension.SplitOp$_applySplittingOperator_closure1.doCall(SplitOp.groovy:190)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:38)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at nextflow.extension.DataflowHelper$_subscribeImpl_closure2.doCall(DataflowHelper.groovy:285)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovyx.gpars.dataflow.operator.DataflowOperatorActor.startTask(DataflowOperatorActor.java:120)
+	at groovyx.gpars.dataflow.operator.DataflowOperatorActor.onMessage(DataflowOperatorActor.java:108)
+	at groovyx.gpars.actor.impl.SDAClosure$1.call(SDAClosure.java:43)
+	at groovyx.gpars.actor.AbstractLoopingActor.runEnhancedWithoutRepliesOnMessages(AbstractLoopingActor.java:293)
+	at groovyx.gpars.actor.AbstractLoopingActor.access$400(AbstractLoopingActor.java:30)
+	at groovyx.gpars.actor.AbstractLoopingActor$1.handleMessage(AbstractLoopingActor.java:93)
+	at groovyx.gpars.util.AsyncMessagingCore.run(AsyncMessagingCore.java:132)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Apr-25 14:52:07.003 [Actor Thread 3] DEBUG nextflow.Session - Session aborted -- Cause: /Users/keng/nf-core-v2/diaproteomics/input.csv
+Apr-25 14:52:07.020 [Actor Thread 3] DEBUG nextflow.Session - The following nodes are still active:
+  [operator] splitCsv
+  [operator] map
+  [operator] flatMap
+  [operator] into
+
+Apr-25 14:52:07.026 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `input_spectral_library` -- Initialise it to a default value eg. `params.input_spectral_library = some_value`
+Apr-25 14:52:07.028 [main] ERROR nextflow.cli.Launcher - Argument of `file` function cannot be null
+java.lang.IllegalArgumentException: Argument of `file` function cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at nextflow.Nextflow.file(Nextflow.groovy:146)
+	at nextflow.Nextflow.file(Nextflow.groovy)
+	at nextflow.Nextflow$file$0.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:231)
+	at Script_ee7909f5.runScript(Script_ee7909f5:148)
+	at nextflow.script.BaseScript.runDsl1(BaseScript.groovy:164)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:217)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:220)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:212)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:120)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:337)
+	at nextflow.cli.Launcher.run(Launcher.groovy:480)
+	at nextflow.cli.Launcher.main(Launcher.groovy:639)

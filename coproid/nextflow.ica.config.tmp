@@ -1,0 +1,99 @@
+params.reads = ''  
+params.single_end = false  
+params.phred = 33  
+params.adna = true  
+params.genome1 = ''  
+params.genome2 = ''  
+params.genome3 = ''  
+params.name1 = ''  
+params.name2 = ''  
+params.name3 = ''  
+params.index1 = ''  
+params.index2 = ''  
+params.index3 = ''  
+params.fasta1 = ''  
+params.fasta2 = ''  
+params.fasta3 = ''  
+params.collapse = true  
+params.identity = 0.95  
+params.pmdscore = 3  
+params.library = 'classic'  
+params.bowtie = 'very-sensitive'  
+params.minKraken = 50  
+params.endo1 = 0.01  
+params.endo2 = 0.01  
+params.endo3 = 0.01  
+params.sp_labels = "$baseDir/data/sourcepredict/modern_gut_microbiomes_labels.csv"  
+params.sp_sources = "$baseDir/data/sourcepredict/modern_gut_microbiomes_sources.csv"  
+params.sp_norm = 'gmpr'  
+params.sp_dim = 2  
+params.sp_embed = 'mds'  
+params.sp_neighbors = 'all'  
+params.name = false  
+params.multiqc_config = "$baseDir/assets/multiqc_config.yaml"  
+params.max_multiqc_email_size = 25.MB  
+params.plaintext_email = false  
+params.monochrome_logs = false  
+params.help = false  
+params.igenomes_base = 's3://ngi-igenomes/igenomes/'  
+params.custom_config_version = 'master'  
+params.custom_config_base = "https://raw.githubusercontent.com/nf-core/configs/${params.custom_config_version}"  
+params.hostnames = false  
+params.config_profile_description = false  
+params.config_profile_contact = false  
+params.config_profile_url = false  
+params.max_memory = 128.GB  
+params.max_cpus = 16  
+params.max_time = 240.h  
+docker.enabled = true  
+docker.userEmulation = true  
+params.outdir = 'out'  
+params.publish_dir_mode = 'copy'  
+params.conda_enabled = false  
+params.igenomes_ignore = false  
+params.enable_conda = false  
+params.email_on_fail = null  
+params.email = null  
+process = [:]  
+params.ica_smoke_test = false  
+process.container = 'nfcore/coproid:1.1.1'
+includeConfig 'conf/base.config'
+try {
+  includeConfig "${params.custom_config_base}/nfcore_custom.config"
+  } catch (Exception e) {
+  System.err.println("WARNING: Could not load nf-core/config profiles: ${params.custom_config_base}/nfcore_custom.config")
+}
+if (!params.igenomes_ignore) {
+  includeConfig 'conf/igenomes.config'
+}
+process.shell = ['/bin/bash', '-euo', 'pipefail']
+def check_max(obj, type) {
+  if (type == 'memory') {
+    try {
+      if (obj.compareTo(params.max_memory as nextflow.util.MemoryUnit) == 1)
+        return params.max_memory as nextflow.util.MemoryUnit
+      else
+        return obj
+      } catch (all) {
+      println "   ### ERROR ###   Max memory '${params.max_memory}' is not valid! Using default value: $obj"
+      return obj
+    }
+  } else if (type == 'time') {
+    try {
+      if (obj.compareTo(params.max_time as nextflow.util.Duration) == 1)
+        return params.max_time as nextflow.util.Duration
+      else
+        return obj
+      } catch (all) {
+      println "   ### ERROR ###   Max time '${params.max_time}' is not valid! Using default value: $obj"
+      return obj
+    }
+  } else if (type == 'cpus') {
+    try {
+      return Math.min( obj, params.max_cpus as int )
+      } catch (all) {
+      println "   ### ERROR ###   Max cpus '${params.max_cpus}' is not valid! Using default value: $obj"
+      return obj
+      }
+    }
+}

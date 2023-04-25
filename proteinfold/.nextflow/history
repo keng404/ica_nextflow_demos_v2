@@ -1,0 +1,1 @@
+2023-04-25 16:12:41	-	chaotic_shockley	-	ec29dd3d3bc29744928f9ccc1ed92996	f3cd32d3-621b-434f-b1d9-e760127d2ad5	nextflow run main.nf -c nextflow.ica.config --input input.csv

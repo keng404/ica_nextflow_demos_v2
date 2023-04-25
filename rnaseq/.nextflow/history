@@ -1,0 +1,1 @@
+2023-04-25 16:29:56	-	festering_becquerel	-	fd219f8633274a98ee737019032778ad	1f95b3ea-3adc-481c-b61c-e366101fb4ad	nextflow run main.nf -c nextflow.ica.config --input input.csv

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="bactmap pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="project_dir" format="UNKNOWN" type="DIRECTORY" required="true" multiValue="true">
+      <label>project_dir</label>
+      <description>directory with additional files/input to run pipeline --- other files in your github project</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>Path to a sample sheet describing paths to input fastq files</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved.</description>
+          <stringType/>
+          <value>./results</value>
+        </parameter>
+        <parameter code="modules['bcftools_filter'].args" minValues="0" maxValues="1" classification="USER">
+          <label>modules['bcftools_filter'].args</label>
+          <description>Configure params.modules['bcftools_filter'].args</description>
+          <stringType/>
+          <value>--soft-filter LowQual --exclude '%QUAL&lt;25 || FORMAT/DP&lt;1 || MQ&lt;30 || MQ0F&gt;0.1' --output-type z</value>
+        </parameter>
+        <parameter code="modules" minValues="0" maxValues="1" classification="USER">
+          <label>modules</label>
+          <description>Configure params.modules</description>
+          <stringType/>
+          <value>[:]</value>
+        </parameter>
+        <parameter code="modules['bcftools_filter']" minValues="0" maxValues="1" classification="USER">
+          <label>modules['bcftools_filter']</label>
+          <description>Configure params.modules['bcftools_filter']</description>
+          <stringType/>
+          <value>[:]</value>
+        </parameter>
+        <parameter code="modules['bcftools_filter'].suffix" minValues="0" maxValues="1" classification="USER">
+          <label>modules['bcftools_filter'].suffix</label>
+          <description>Configure params.modules['bcftools_filter'].suffix</description>
+          <stringType/>
+          <value>.filtered</value>
+        </parameter>
+        <parameter code="modules['bcftools_filter'].publish_dir" minValues="0" maxValues="1" classification="USER">
+          <label>modules['bcftools_filter'].publish_dir</label>
+          <description>Configure params.modules['bcftools_filter'].publish_dir</description>
+          <stringType/>
+          <value>'variants'</value>
+        </parameter>
+        <parameter code="modules['alignpseudogenomes'].non_GATC_threshold" minValues="0" maxValues="1" classification="USER">
+          <label>modules['alignpseudogenomes'].non_GATC_threshold</label>
+          <description>Configure params.modules['alignpseudogenomes'].non_GATC_threshold</description>
+          <floatType/>
+          <value>0.8</value>
+        </parameter>
+        <parameter code="modules['alignpseudogenomes']" minValues="0" maxValues="1" classification="USER">
+          <label>modules['alignpseudogenomes']</label>
+          <description>Configure params.modules['alignpseudogenomes']</description>
+          <stringType/>
+          <value>[:]</value>
+        </parameter>
+        <parameter code="modules['rapidnj'].build" minValues="0" maxValues="1" classification="USER">
+          <label>modules['rapidnj'].build</label>
+          <description>Configure params.modules['rapidnj'].build</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="modules['rapidnj']" minValues="0" maxValues="1" classification="USER">
+          <label>modules['rapidnj']</label>
+          <description>Configure params.modules['rapidnj']</description>
+          <stringType/>
+          <value>[:]</value>
+        </parameter>
+        <parameter code="modules['fasttree'].build" minValues="0" maxValues="1" classification="USER">
+          <label>modules['fasttree'].build</label>
+          <description>Configure params.modules['fasttree'].build</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="modules['fasttree']" minValues="0" maxValues="1" classification="USER">
+          <label>modules['fasttree']</label>
+          <description>Configure params.modules['fasttree']</description>
+          <stringType/>
+          <value>[:]</value>
+        </parameter>
+        <parameter code="modules['iqtree'].build" minValues="0" maxValues="1" classification="USER">
+          <label>modules['iqtree'].build</label>
+          <description>Configure params.modules['iqtree'].build</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="modules['iqtree']" minValues="0" maxValues="1" classification="USER">
+          <label>modules['iqtree']</label>
+          <description>Configure params.modules['iqtree']</description>
+          <stringType/>
+          <value>[:]</value>
+        </parameter>
+        <parameter code="modules['raxmlng'].build" minValues="0" maxValues="1" classification="USER">
+          <label>modules['raxmlng'].build</label>
+          <description>Configure params.modules['raxmlng'].build</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="modules['raxmlng']" minValues="0" maxValues="1" classification="USER">
+          <label>modules['raxmlng']</label>
+          <description>Configure params.modules['raxmlng']</description>
+          <stringType/>
+          <value>[:]</value>
+        </parameter>
+        <parameter code="ica_smoke_test" minValues="0" maxValues="1" classification="USER">
+          <label>ica_smoke_test</label>
+          <description>Boolean to trigger smoke test:</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+      </tool>
+    </step>
+    <step execution="MANDATORY" code="compulsory_parameters">
+      <label>compulsory_parameters</label>
+      <description>compulsory_parameters parameters</description>
+      <tool code="compulsory_parameters parameters">
+        <label>compulsory_parameters</label>
+        <description>compulsory_parameters parameters</description>
+        <parameter code="reference" minValues="1" maxValues="1" classification="USER">
+          <label>reference</label>
+          <description>Path to a fasta file of the reference sequence</description>
+          <stringType/>
+          <value/>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

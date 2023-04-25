@@ -1,0 +1,1 @@
+2023-04-25 15:18:14	-	sick_wright	-	bef09da6f1b7a52d04ed5278bd211220	0068148d-18c5-4954-ba65-8d9b3d97abc2	nextflow run main.nf -c nextflow.ica.config --input input.csv

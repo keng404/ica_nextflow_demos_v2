@@ -1,0 +1,1 @@
+2023-04-25 16:44:12	-	elegant_lovelace	-	27da85b4b69948e857596a4cbaa5fd98	168551a8-07b2-4dd3-8518-17e3c64df191	nextflow run main.nf -c nextflow.ica.config --input input.csv

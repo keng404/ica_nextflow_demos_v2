@@ -1,0 +1,1 @@
+2023-04-25 15:03:25	-	angry_davinci	-	09b320bf76c856a9e3648814c6bae140	ba3728a9-efb2-4b59-aa9b-266e71b2f5a3	nextflow run main.nf -c nextflow.ica.config --input input.csv

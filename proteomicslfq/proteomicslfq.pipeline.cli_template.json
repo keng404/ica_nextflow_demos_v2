@@ -1,0 +1,96 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"],
+      "value": ["fil.d8fce2788d1742b4770008d9b69989fe", "fil.4a9683175d024ee076ff08d9b69989fe", "fil.7ada6d7dd92c4b4dabb708d9adf63314", "fil.5f94dbdbb6ef48a276fb08d9b69989fe", "fil.4985aab5c8ce4619594e08db45a409a8"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"],
+      "value": ["fol.e08d49e006304338a4c008db459ecc74", "fol.a2e7ba1f97954888a4ba08db459ecc74", "fol.d9c2fe9e29c1487d594508db45a409a8", "fol.f362af0db9464952593f08db45a409a8", "fol.6c5a8a7b5ffd45ce592008db45a409a8", "fol.9e21f72b9a5e45e8591c08db45a409a8"]
+    }
+  },
+  "parameters": {
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["["]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": [".&#x2F;results"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Real-world sized test dataset to check pipeline function and sanity of results'"]
+    },
+    "expdesign": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/proteomicslfq/testdata-aws/experimental_design_short.tsv'"]
+    },
+    "posterior_probabilities": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["\"percolator\""]
+    },
+    "search_engines": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["\"comet\""]
+    },
+    "psm_pep_fdr_cutoff": {
+      "type": ["floatType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["0.01"]
+    },
+    "decoy_affix": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["\"rev\""]
+    },
+    "protein_inference": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["\"bayesian\""]
+    },
+    "targeted_only": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["\"false\""]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "database": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/proteomicslfq/testdata-aws/uniprot_yeast_reviewed_isoforms_ups1_crap.fasta_td.fasta'"]
+    }
+  }
+}

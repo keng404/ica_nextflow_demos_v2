@@ -1,0 +1,264 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"],
+      "value": ["fil.d8fce2788d1742b4770008d9b69989fe", "fil.4a9683175d024ee076ff08d9b69989fe", "fil.7ada6d7dd92c4b4dabb708d9adf63314", "fil.5f94dbdbb6ef48a276fb08d9b69989fe", "fil.76d8c187cb5f4d8d56b408db45a409a8"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"],
+      "value": ["fol.ef94f18dc6aa4566a27108db459ecc74", "fol.38a41614400d455156b008db45a409a8", "fol.2d4f543b3966422456a908db45a409a8", "fol.e0c8ff817cad4859a26d08db459ecc74", "fol.c82ff11c6a344bfda24d08db459ecc74", "fol.88e0d7b776a44b556c8d08db459f848e"]
+    }
+  },
+  "parameters": {
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["["]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset to check pipeline function'"]
+    },
+    "type_of_ionization": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'both'"]
+    },
+    "quant_mzml_files_neg": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["["]
+    },
+    "phenotype_design_pos": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/metaboigniter/phenotype_positive.csv'// Path to a csv file containing the experimental design"]
+    },
+    "phenotype_design_neg": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/metaboigniter/phenotype_negative.csv'// Path to a csv file containing the experimental design"]
+    },
+    "id_mzml_files_pos": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["["]
+    },
+    "id_mzml_files_neg": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["["]
+    },
+    "quant_library_mzml_files_pos": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["["]
+    },
+    "id_library_mzml_files_pos": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["["]
+    },
+    "library_description_pos": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/metaboigniter/library_charac_pos.csv' // Path to a csv file containing description of the library for positive"]
+    },
+    "quant_library_mzml_files_neg": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["["]
+    },
+    "id_library_mzml_files_neg": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["["]
+    },
+    "library_description_neg": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/metaboigniter/library_charac_neg.csv' // Path to a csv file containing description of the library for negative"]
+    },
+    "database_csv_files_pos_metfrag": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/metaboigniter/hmdb_2017-07-23.csv' // path to a csv file containing your database"]
+    },
+    "database_csv_files_pos_cfmid": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/metaboigniter/hmdb_2017-07-23.csv' // path to a csv file containing your database"]
+    },
+    "database_csv_files_neg_metfrag": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/metaboigniter/hmdb_2017-07-23.csv' // path to a csv file containing your database"]
+    },
+    "database_csv_files_neg_cfmid": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'https://raw.githubusercontent.com/nf-core/test-datasets/metaboigniter/hmdb_2017-07-23.csv' // path to a csv file containing your database"]
+    },
+    "perform_identification": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "perform_identification_csifingerid": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "perform_identification_metfrag": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "perform_identification_internal_library": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "perform_identification_cfmid": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "minPeaks_msmstoparam_pos_msnbase": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["50"]
+    },
+    "precursorppm_msmstoparam_pos_msnbase": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["5"]
+    },
+    "fragmentppm_msmstoparam_pos_msnbase": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["5"]
+    },
+    "timeout_csifingerid_pos_csifingerid": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["10"]
+    },
+    "quantification_openms_xcms_pos": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'xcms'"]
+    },
+    "quantification_openms_xcms_neg": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'openms'"]
+    },
+    "need_centroiding": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "cv_filter_pos": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "dilution_filter_pos": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "blank_filter_pos": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "cv_filter_neg": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "dilution_filter_neg": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "blank_filter_neg": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    },
+    "database_msmstoparam_pos_msnbase": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'LocalCSV'"]
+    },
+    "database_msmstoparam_neg_msnbase": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'KEGG'"]
+    },
+    "schema_ignore_params": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'id_library_mzml_files_neg,quant_library_mzml_files_neg,id_library_mzml_files_pos,quant_library_mzml_files_pos,id_mzml_files_neg,id_mzml_files_pos,quant_mzml_files_neg,input'"]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    }
+  }
+}

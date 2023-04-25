@@ -1,0 +1,149 @@
+if(params.ica_smoke_test) {
+    params.input = null
+   includeConfig 'conf/test_full.config'
+}
+params.input = null  
+params.study_name = 'study'  
+params.study_type = 'rnaseq'  
+params.contrasts = null  
+params.matrix = null  
+params.control_features = null  
+params.sizefactors_from_controls = null  
+params.report_file = "${projectDir}/assets/differentialabundance_report.Rmd"  
+params.logo_file = "${projectDir}/docs/images/nf-core-differentialabundance_logo_light.png"  
+params.css_file = "${projectDir}/assets/nf-core_style.css"  
+params.citations_file = "${projectDir}/CITATIONS.md"  
+params.observations_type = 'sample'  
+params.observations_id_col = 'sample'  
+params.features_type = 'gene'  
+params.features_id_col = 'gene_id'  
+params.features_name_col = 'gene_name'  
+params.filtering_min_samples = 1  
+params.filtering_min_abundance = 1  
+params.filtering_min_proportion = null  
+params.filtering_grouping_var = null  
+params.exploratory_main_variable = 'auto_pca'  
+params.exploratory_clustering_method = "ward.D2"  
+params.exploratory_cor_method = "spearman"  
+params.exploratory_n_features = 500  
+params.exploratory_whisker_distance = 1.5  
+params.exploratory_mad_threshold = -5  
+params.differential_file_suffix = ".deseq2.results.tsv"  
+params.differential_feature_id_column = "gene_id"  
+params.differential_feature_name_column = "gene_name"  
+params.differential_fc_column = "log2FoldChange"  
+params.differential_pval_column = "pvalue"  
+params.differential_qval_column = "padj"  
+params.differential_min_fold_change = 2  
+params.differential_max_qval = 0.05  
+params.differential_foldchanges_logged = true  
+params.deseq2_test = "Wald"  
+params.deseq2_fit_type = "parametric"  
+params.deseq2_sf_type = 'ratio'  
+params.deseq2_min_replicates_for_replace = 7  
+params.deseq2_use_t = false  
+params.deseq2_lfc_threshold = 0  
+params.deseq2_alt_hypothesis = 'greaterAbs'  
+params.deseq2_independent_filtering = true  
+params.deseq2_p_adjust_method = 'BH'  
+params.deseq2_alpha = 0.1  
+params.deseq2_minmu = 0.5  
+params.deseq2_vs_method = 'vst' // 'rlog', 'vst', or 'rlog,vst'  
+params.deseq2_shrink_lfc = true  
+params.deseq2_cores = 1  
+params.deseq2_vs_blind = true  
+params.deseq2_vst_nsub = 1000  
+params.gsea_run = false  
+params.gsea_nperm = 1000  
+params.gsea_permute = 'phenotype'  
+params.gsea_scoring_scheme = 'weighted'  
+params.gsea_metric = 'Signal2Noise'  
+params.gsea_sort = 'real'  
+params.gsea_order = 'descending'  
+params.gsea_set_max = 500  
+params.gsea_set_min = 15  
+params.gsea_norm = 'meandiv'  
+params.gsea_rnd_type = 'no_balance'  
+params.gsea_make_sets = true  
+params.gsea_median = false  
+params.gsea_num = 100  
+params.gsea_plot_top_x = 20  
+params.gsea_rnd_seed = 'timestamp'  
+params.gsea_save_rnd_lists = false  
+params.gsea_zip_report = false  
+params.gsea_gene_sets = null  
+params.genome = null  
+params.igenomes_base = 's3://ngi-igenomes/igenomes'  
+params.plaintext_email = false  
+params.monochrome_logs = false  
+params.hook_url = null  
+params.help = false  
+params.validate_params = true  
+params.show_hidden_params = false  
+params.schema_ignore_params = 'genomes'  
+params.custom_config_version = 'master'  
+params.custom_config_base = "https://raw.githubusercontent.com/nf-core/configs/${params.custom_config_version}"  
+params.config_profile_description = null  
+params.config_profile_contact = null  
+params.config_profile_url = null  
+params.config_profile_name = null  
+params.max_memory = '128.GB'  
+params.max_cpus = 16  
+params.max_time = '240.h'  
+params.genomes = [:]  
+docker.enabled = true  
+docker.userEmulation = true  
+params.outdir = 'out'  
+params.publish_dir_mode = 'copy'  
+params.conda_enabled = false  
+params.igenomes_ignore = false  
+params.enable_conda = false  
+params.email_on_fail = null  
+params.email = null  
+process = [:]  
+params.ica_smoke_test = false  
+includeConfig 'conf/base.ica.config'
+try {
+    includeConfig "${params.custom_config_base}/nfcore_custom.config"
+} catch (Exception e) {
+    System.err.println("WARNING: Could not load nf-core/config profiles: ${params.custom_config_base}/nfcore_custom.config")
+}
+//   includeConfig "${params.custom_config_base}/pipeline/differentialabundance.config"
+if (!params.igenomes_ignore) {
+    includeConfig 'conf/igenomes.config'
+} else {
+    params.genomes = [:]
+}
+process.shell = ['/bin/bash', '-euo', 'pipefail']
+def trace_timestamp = new java.util.Date().format( 'yyyy-MM-dd_HH-mm-ss')
+includeConfig 'conf/modules.config'
+def check_max(obj, type) {
+    if (type == 'memory') {
+        try {
+            if (obj.compareTo(params.max_memory as nextflow.util.MemoryUnit) == 1)
+                return params.max_memory as nextflow.util.MemoryUnit
+            else
+                return obj
+        } catch (all) {
+            println "   ### ERROR ###   Max memory '${params.max_memory}' is not valid! Using default value: $obj"
+            return obj
+        }
+    } else if (type == 'time') {
+        try {
+            if (obj.compareTo(params.max_time as nextflow.util.Duration) == 1)
+                return params.max_time as nextflow.util.Duration
+            else
+                return obj
+        } catch (all) {
+            println "   ### ERROR ###   Max time '${params.max_time}' is not valid! Using default value: $obj"
+            return obj
+        }
+    } else if (type == 'cpus') {
+        try {
+            return Math.min( obj, params.max_cpus as int )
+        } catch (all) {
+            println "   ### ERROR ###   Max cpus '${params.max_cpus}' is not valid! Using default value: $obj"
+            return obj
+        }
+    }
+}

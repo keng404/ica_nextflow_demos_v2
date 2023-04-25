@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="smrnaseq pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="project_dir" format="UNKNOWN" type="DIRECTORY" required="true" multiValue="true">
+      <label>project_dir</label>
+      <description>directory with additional files/input to run pipeline --- other files in your github project</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>Path to comma-separated file containing information about the samples in the experiment.
+You will need to create a design file with information about the samples in your experiment before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with 3 columns, and a header row. See [usage docs](https://nf-co.re/smrnaseq/usage#samplesheet-input).</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="protocol" minValues="1" maxValues="1" classification="USER">
+          <label>protocol</label>
+          <description>Protocol for constructing smRNA-seq libraries.
+Presets for trimming parameters and 3' adapter sequence with a specified protocol.
+
+| Protocol      | Library Prep Kit                        | Trimming Parameter                      | 3' Adapter Sequence     |
+| :------------ | :-------------------------------------- | :-------------------------------------- | :---------------------  |
+| illumina      | Illumina TruSeq Small RNA               | clip_r1 = 0 three_prime_clip_r1 = 0 | TGGAATTCTCGGGTGCCAAGG |
+| nextflex      | BIOO SCIENTIFIC  NEXTFLEX Small RNA-Seq | clip_r1 = 4 three_prime_clip_r1 = 4 | TGGAATTCTCGGGTGCCAAGG |
+| qiaseq        | QIAGEN QIAseq miRNA                     | clip_r1 = 0 three_prime_clip_r1 = 0 | AACTGTAGGCACCATCAAT   |
+| cats          | Diagenode CATS Small RNA-seq            | clip_r1 = 3 three_prime_clip_r1 = 0 | AAAAAAAAAAA + GATCGGAAGAGCACACGTCTG (only polyA is used for trimming) |
+| custom        | user defined                            | user defined                            | user defined            |
+
+ NB: When running --protocol custom the user ---must define the 3' Adapter Sequence---.
+ If trimming parameters aren't provided the pipeline will deafult to clip_R1 = 0 and three_prime_clip_R1 = 0 (i.e. no extra clipping).</description>
+          <optionsType>
+            <option>illumina</option>
+            <option>nextflex</option>
+            <option>qiaseq</option>
+            <option>cats</option>
+            <option>custom</option>
+          </optionsType>
+          <value>illumina</value>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="multiqc_title" minValues="1" maxValues="1" classification="USER">
+          <label>multiqc_title</label>
+          <description>MultiQC report title. Printed as page header, used for filename if not otherwise specified.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Full test dataset to check pipeline function'</value>
+        </parameter>
+        <parameter code="genome" minValues="0" maxValues="1" classification="USER">
+          <label>genome</label>
+          <description>Configure params.genome</description>
+          <stringType/>
+          <value>'GRCh37'</value>
+        </parameter>
+        <parameter code="mirtrace_species" minValues="0" maxValues="1" classification="USER">
+          <label>mirtrace_species</label>
+          <description>Configure params.mirtrace_species</description>
+          <stringType/>
+          <value>'hsa'</value>
+        </parameter>
+        <parameter code="ica_smoke_test" minValues="0" maxValues="1" classification="USER">
+          <label>ica_smoke_test</label>
+          <description>Boolean to trigger smoke test:</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

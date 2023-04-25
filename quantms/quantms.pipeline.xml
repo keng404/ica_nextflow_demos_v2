@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="quantms pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="project_dir" format="UNKNOWN" type="DIRECTORY" required="true" multiValue="true">
+      <label>project_dir</label>
+      <description>directory with additional files/input to run pipeline --- other files in your github project</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>URI/path to an [SDRF](https://github.com/bigbio/proteomics-metadata-standard/tree/master/annotated-projects) file (.sdrf.tsv) --OR-- [OpenMS-style experimental design](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/classOpenMS_1_1ExperimentalDesign.html#details) with paths to spectra files (.tsv)
+Input is specified by using a path or URI to a PRIDE Sample to Data Relation Format file (SDRF), e.g. as part of a submitted and
+annotated PRIDE experiment (see [here](https://github.com/bigbio/proteomics-metadata-standard/tree/master/annotated-projects) for examples). Input files will be downloaded and cached from the URIs specified in the SDRF file.
+An OpenMS-style experimental design will be generated based on the factor columns of the SDRF. The settings for the
+following parameters will currently be overwritten by the ones specified in the SDRF:
+
+    - fixed_mods,
+    - variable_mods,
+    - precursor_mass_tolerance,
+    - precursor_mass_tolerance_unit,
+    - fragment_mass_tolerance,
+    - fragment_mass_tolerance_unit,
+    - fragment_method,
+    - enzyme
+  You can also specify an [OpenMS-style experimental design](https://abibuilder.informatik.uni-tuebingen.de/archive/openms/Documentation/release/latest/html/classOpenMS_1_1ExperimentalDesign.html#details) directly (.tsv ending). In this case, the aforementioned parameters have to be specified or defaults will be used.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved.</description>
+          <stringType/>
+          <value>./results</value>
+        </parameter>
+        <parameter code="multiqc_title" minValues="1" maxValues="1" classification="USER">
+          <label>multiqc_title</label>
+          <description>MultiQC report title. Printed as page header, used for filename if not otherwise specified.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="root_folder" minValues="1" maxValues="1" classification="USER">
+          <label>root_folder</label>
+          <description>Root folder in which the spectrum files specified in the SDRF/design are searched
+This optional parameter can be used to specify a root folder in which the spectrum files specified in the SDRF/design are searched.
+It is usually used if you have a local version of the experiment already. Note that this option does not support recursive
+searching yet.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="local_input_type" minValues="1" maxValues="1" classification="USER">
+          <label>local_input_type</label>
+          <description>Overwrite the file type/extension of the filename as specified in the SDRF/design
+If the above [--root_folder](#params_root_folder) was given to load local input files, this overwrites the file type/extension of
+the filename as specified in the SDRF/design. Usually used in case you have an mzML-converted version of the files already. Needs to be
+one of 'mzML' or 'raw' (the letter cases should match your files exactly).</description>
+          <stringType/>
+          <value/>
+        </parameter>
+      </tool>
+    </step>
+    <step execution="MANDATORY" code="protein_database">
+      <label>protein_database</label>
+      <description>protein_database parameters</description>
+      <tool code="protein_database parameters">
+        <label>protein_database</label>
+        <description>protein_database parameters</description>
+        <parameter code="database" minValues="1" maxValues="1" classification="USER">
+          <label>database</label>
+          <description>The fasta protein database used during database search.
+Since the database is not included in an SDRF, this parameter always needs to be given to specify the input protein database
+when you run the pipeline. Remember to include contaminants (and decoys if not added in the pipeline with \-\-add-decoys)
+
+bash
+--database '[path to Fasta protein database]'</description>
+          <stringType/>
+          <value/>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

@@ -1,0 +1,1 @@
+2023-04-25 14:52:02	-	agitated_nobel	-	ccc1765471834096a4277368f8daaf1e	e6a7bf65-7c0f-4242-b55e-b4c101d74ed8	nextflow run main.nf -c nextflow.ica.config --input input.csv

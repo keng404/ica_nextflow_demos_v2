@@ -1,0 +1,1 @@
+2023-04-25 16:08:13	-	hungry_magritte	-	9401ddf68f96e9382d73aa2bef0f40aa	12dacbad-40d9-4531-bf5c-f4e6d62cae2a	nextflow run main.nf -c nextflow.ica.config --input input.csv

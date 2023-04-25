@@ -1,0 +1,1 @@
+2023-04-25 15:08:27	-	focused_mcnulty	-	9b0371b8ed4fe79cc9462e6981d41c8c	fefbac89-4c21-4a13-9504-91433cdd02e3	nextflow run main.nf -c nextflow.ica.config --input input.csv

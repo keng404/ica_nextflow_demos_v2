@@ -1,0 +1,96 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"],
+      "value": ["fil.2a81ad5f79374f67fe2508db35cc1152", "fil.d50ac398bca340a1fe2608db35cc1152", "fil.0a8040ae58f14640787308db306e30b8", "fil.d2b549bf79dd4045fe2c08db35cc1152", "fil.b93cffbcd2e942d15db908db45a409a8", "fil.b93cffbcd2e942d15db908db45a409a8", "fil.fecf8a6da08e42b0a91f08db459ecc74", "fil.3da7f2a9007940825d4208db45a409a8"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"],
+      "value": ["fol.45b17303439c4d8b5d9e08db45a409a8", "fol.c22db4f125b041d55d8d08db45a409a8", "fol.4b8f00d5e0cb424fa92008db459ecc74", "fol.4a1316facf334e33a8a908db459ecc74", "fol.f107c4b1acd14e615d3c08db45a409a8", "fol.6f8fcec0e97e470b5d3208db45a409a8", "fol.bf6c8aed7ce845e2611108db45af0257", "fol.fe1ad4aeb0004f76a89508db459ecc74", "fol.fdaf797113cc4a9f610108db45af0257"]
+    }
+  },
+  "parameters": {
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["'s3://nf-core-awsmegatests/viralrecon/input_data/210212_K00102_0557_AHKN3LBBXY/samplesheet.csv'"]
+    },
+    "platform": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["'illumina'"]
+    },
+    "protocol": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["'amplicon'"]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "config_profile_name": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test profile'"]
+    },
+    "config_profile_description": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'Full test dataset to check pipeline function'"]
+    },
+    "primer_set": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'artic'"]
+    },
+    "primer_set_version": {
+      "type": ["integerType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["3"]
+    },
+    "genome": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'MN908947.3'"]
+    },
+    "variant_caller": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'ivar'"]
+    },
+    "assemblers": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["'spades,unicycler,minia'"]
+    },
+    "skip_plasmidid": {
+      "type": ["stringType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true // Skip this by default to bypass Github Actions disk quota errors"]
+    },
+    "ica_smoke_test": {
+      "type": ["booleanType"],
+      "minValue": ["0"],
+      "maxValue": ["1"],
+      "value": ["true"]
+    }
+  }
+}

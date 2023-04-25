@@ -1,0 +1,48 @@
+{
+  "input": {
+    "input_files": {
+      "type": ["FILE"],
+      "required": ["false"],
+      "multiValue": ["true"],
+      "value": ["fil.d8fce2788d1742b4770008d9b69989fe", "fil.4a9683175d024ee076ff08d9b69989fe", "fil.7ada6d7dd92c4b4dabb708d9adf63314", "fil.5f94dbdbb6ef48a276fb08d9b69989fe", "fil.648b2955794242c15db208db45a409a8", "fil.648b2955794242c15db208db45a409a8", "fil.e3e2d58961164637a36708db459ecc74", "fil.b4be6466237f4698a32108db459ecc74"]
+    },
+    "project_dir": {
+      "type": ["DIRECTORY"],
+      "required": ["true"],
+      "multiValue": ["true"],
+      "value": ["fol.893cd866b94a4257a38208db459ecc74", "fol.dfab24253e6347a5a36c08db459ecc74", "fol.faefc8edb84441f357bb08db45a409a8", "fol.2d71e3555b6844bb578208db45a409a8", "fol.f61ce46a2ddb4358577f08db45a409a8", "fol.1ddc7d431ddd4e29577108db45a409a8", "fol.acd3f4cd9bc24f93576808db45a409a8", "fol.31e8ab8a0c5943b1a30d08db459ecc74", "fol.22ee29bbea744ca6a30708db459ecc74"]
+    }
+  },
+  "parameters": {
+    "input": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": [""]
+    },
+    "protocol": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "outdir": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "multiqc_title": {
+      "type": ["stringType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["STRING"]
+    },
+    "genome": {
+      "type": ["optionsType"],
+      "minValue": ["1"],
+      "maxValue": ["1"],
+      "value": ["GRCh38"]
+    }
+  }
+}

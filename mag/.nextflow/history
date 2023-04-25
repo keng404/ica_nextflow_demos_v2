@@ -1,0 +1,1 @@
+2023-04-25 15:34:36	-	nostalgic_einstein	-	363e8d382c0105aa4ecb38996d925d9c	b107ef18-3cc1-4cb5-b8df-de874f4e51a5	nextflow run main.nf -c nextflow.ica.config --input input.csv

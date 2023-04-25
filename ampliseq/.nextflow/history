@@ -1,0 +1,1 @@
+2023-04-25 14:02:00	-	cheesy_franklin	-	dd1df4241a033e3aca1f7f4015a8df8a	16ccbd34-b9b9-41b5-bdb5-d34c0f7df38b	nextflow run main.nf -c nextflow.ica.config --input input.csv

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="eager pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="project_dir" format="UNKNOWN" type="DIRECTORY" required="true" multiValue="true">
+      <label>project_dir</label>
+      <description>directory with additional files/input to run pipeline --- other files in your github project</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>Either paths or URLs to FASTQ/BAM data (must be surrounded with quotes). For paired end data, the path must use '{1,2}' notation to specify read pairs. Alternatively, a path to a TSV file (ending .tsv) containing file paths and sequencing/sample metadata. Allows for merging of multiple lanes/libraries/samples. Please see documentation for template.
+There are two possible ways of supplying input sequencing data to nf-core/eager. The most efficient but more simplistic is supplying direct paths (with wildcards) to your FASTQ or BAM files, with each file or pair being considered a single library and each one run independently  (e.g. for paired-end data: --input '/&lt;path/&lt;to/-_{R1,R2}_-.fq.gz'). TSV input requires creation of an extra file by the user (--input '/&lt;path/&lt;to/eager_data.tsv') and extra metadata, but allows more powerful lane and library merging.  Please see [usage docs](https://nf-co.re/eager/docs/usage#input-specifications) for detailed instructions and specifications.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+        <parameter code="udg_type" minValues="1" maxValues="1" classification="USER">
+          <label>udg_type</label>
+          <description>Specifies whether you have UDG treated libraries. Set to 'half' for partial treatment, or 'full' for UDG. If not set, libraries are assumed to have no UDG treatment ('none'). Not required for TSV input.
+Defines whether Uracil-DNA glycosylase (UDG) treatment was used to remove DNA
+damage on the sequencing libraries.
+
+Specify 'none' if no treatment was performed. If you have partial UDG treated
+data ([Rohland et al 2016](http://dx.doi.org/10.1098/rstb.2013.0624)), specify
+'half'. If you have complete UDG treated data ([Briggs et al.
+2010](https://doi.org/10.1093/nar/gkp1163)), specify 'full'. 
+
+When also using PMDtools specifying 'half' will use a different model for DNA
+damage assessment in PMDTools (PMDtools: --UDGhalf). Specify 'full' and the
+PMDtools DNA damage assessment will use CpG context only (PMDtools: --CpG).
+Default: 'none'.
+
+ --Tip--: You should provide a small decoy reference genome with pre-made indices, e.g.
+ the human mtDNA genome, for the mandatory parameter --fasta in order to
+ avoid long computational time for generating the index files of the reference
+ genome, even if you do not actually need a reference genome for any downstream
+ analyses.</description>
+          <optionsType>
+            <option>none</option>
+            <option>half</option>
+            <option>full</option>
+          </optionsType>
+          <value>none</value>
+        </parameter>
+        <parameter code="single_stranded" minValues="1" maxValues="1" classification="USER">
+          <label>single_stranded</label>
+          <description>Specifies that libraries are single stranded. Always affects MALTExtract but will be ignored by pileupCaller with TSV input. Not required for TSV input.
+Indicates libraries are single stranded.
+
+Currently only affects MALTExtract where it will switch on damage patterns
+calculation mode to single-stranded, (MaltExtract: --singleStranded) and
+genotyping with pileupCaller where a different method is used (pileupCaller:
+--singleStrandMode). Default: false
+
+Only required when using the 'Path' method of --input</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="single_end" minValues="1" maxValues="1" classification="USER">
+          <label>single_end</label>
+          <description>Specifies that the input is single end reads. Not required for TSV input.
+By default, the pipeline expects paired-end data. If you have single-end data, specify this parameter on the command line when you launch the pipeline. It is not possible to run a mixture of single-end and paired-end files in one run.
+
+Only required when using the 'Path' method of --input</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="colour_chemistry" minValues="1" maxValues="1" classification="USER">
+          <label>colour_chemistry</label>
+          <description>Specifies which Illumina sequencing chemistry was used. Used to inform whether to poly-G trim if turned on (see below). Not required for TSV input. Options: 2, 4.
+Specifies which Illumina colour chemistry a library was sequenced with. This informs whether to perform poly-G trimming (if --complexity_filter_poly_g is also supplied). Only 2 colour chemistry sequencers (e.g. NextSeq or NovaSeq) can generate uncertain poly-G tails (due to 'G' being indicated via a no-colour detection). Default is '4' to indicate e.g. HiSeq or MiSeq platforms, which do not require poly-G trimming. Options: 2, 4. Default: 4
+
+Only required when using the 'Path' method of input.</description>
+          <integerType/>
+          <value>4</value>
+        </parameter>
+        <parameter code="bam" minValues="1" maxValues="1" classification="USER">
+          <label>bam</label>
+          <description>Specifies that the input is in BAM format. Not required for TSV input.
+Specifies the input file type to --input is in BAM format. This will automatically also apply --single_end.
+
+Only required when using the 'Path' method of --input.</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>'Full test profile for nf-core/eager'</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>'Full test dataset to check nf-core/eager function'</value>
+        </parameter>
+        <parameter code="fasta" minValues="0" maxValues="1" classification="USER">
+          <label>fasta</label>
+          <description>Configure params.fasta</description>
+          <stringType/>
+          <value>'https://ftp.ncbi.nlm.nih.gov/genomes/refseq/vertebrate_other/Gadus_morhua/representative/GCF_902167405.1_gadMor3.0/GCF_902167405.1_gadMor3.0_genomic.fna.gz'</value>
+        </parameter>
+        <parameter code="bwaalnn" minValues="0" maxValues="1" classification="USER">
+          <label>bwaalnn</label>
+          <description>Configure params.bwaalnn</description>
+          <floatType/>
+          <value>0.04</value>
+        </parameter>
+        <parameter code="bwaalnl" minValues="0" maxValues="1" classification="USER">
+          <label>bwaalnl</label>
+          <description>Configure params.bwaalnl</description>
+          <integerType/>
+          <value>1024</value>
+        </parameter>
+        <parameter code="run_bam_filtering" minValues="0" maxValues="1" classification="USER">
+          <label>run_bam_filtering</label>
+          <description>Configure params.run_bam_filtering</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="bam_unmapped_type" minValues="0" maxValues="1" classification="USER">
+          <label>bam_unmapped_type</label>
+          <description>Configure params.bam_unmapped_type</description>
+          <stringType/>
+          <value>'discard'</value>
+        </parameter>
+        <parameter code="bam_mapping_quality_threshold" minValues="0" maxValues="1" classification="USER">
+          <label>bam_mapping_quality_threshold</label>
+          <description>Configure params.bam_mapping_quality_threshold</description>
+          <integerType/>
+          <value>25</value>
+        </parameter>
+        <parameter code="run_genotyping" minValues="0" maxValues="1" classification="USER">
+          <label>run_genotyping</label>
+          <description>Configure params.run_genotyping</description>
+          <booleanType/>
+          <value>true</value>
+        </parameter>
+        <parameter code="genotyping_tool" minValues="0" maxValues="1" classification="USER">
+          <label>genotyping_tool</label>
+          <description>Configure params.genotyping_tool</description>
+          <stringType/>
+          <value>'hc'</value>
+        </parameter>
+        <parameter code="genotyping_source" minValues="0" maxValues="1" classification="USER">
+          <label>genotyping_source</label>
+          <description>Configure params.genotyping_source</description>
+          <stringType/>
+          <value>'raw'</value>
+        </parameter>
+        <parameter code="gatk_ploidy" minValues="0" maxValues="1" classification="USER">
+          <label>gatk_ploidy</label>
+          <description>Configure params.gatk_ploidy</description>
+          <integerType/>
+          <value>2</value>
+        </parameter>
+        <parameter code="genome" minValues="1" maxValues="1" classification="USER">
+          <label>genome</label>
+          <description>Select Genome:</description>
+          <optionsType>
+            <option>GRCh37</option>
+            <option>GRCh38</option>
+            <option>GRCm38</option>
+            <option>TAIR10</option>
+            <option>EB2</option>
+            <option>UMD3.1</option>
+            <option>WBcel235</option>
+            <option>CanFam3.1</option>
+            <option>GRCz10</option>
+            <option>BDGP6</option>
+            <option>EquCab2</option>
+            <option>EB1</option>
+            <option>Galgal4</option>
+            <option>Gm01</option>
+            <option>Mmul_1</option>
+            <option>IRGSP-1.0</option>
+            <option>CHIMP2.1.4</option>
+            <option>Rnor_6.0</option>
+            <option>R64-1-1</option>
+            <option>EF2</option>
+            <option>Sbi1</option>
+            <option>Sscrofa10.2</option>
+            <option>AGPv3</option>
+            <option>hg38</option>
+            <option>hg19</option>
+            <option>mm10</option>
+            <option>bosTau8</option>
+            <option>ce10</option>
+            <option>canFam3</option>
+            <option>danRer10</option>
+            <option>dm6</option>
+            <option>equCab2</option>
+            <option>galGal4</option>
+            <option>panTro4</option>
+            <option>rn6</option>
+            <option>sacCer3</option>
+            <option>susScr3</option>
+          </optionsType>
+          <value>GRCh38</value>
+        </parameter>
+        <parameter code="ica_smoke_test" minValues="0" maxValues="1" classification="USER">
+          <label>ica_smoke_test</label>
+          <description>Boolean to trigger smoke test:</description>
+          <booleanType/>
+          <value>false</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>
