@@ -46,4 +46,4 @@ only port 80 and port 443 are exposed on ICA when running a pipeline.
 See the ['Network Settings'](https://help.ica.illumina.com/reference/r-networksettings) portion of the ICA documentation].
 
 As a result, you may run into issues downloading/staging data for your pipeline run.
-One option to overcome this is to download and upload this to ICA and reconfigure your pipeline to point to this new source.
+One option to overcome this is to download and upload this data to ICA and reconfigure your pipeline to point to this new source.
