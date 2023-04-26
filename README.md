@@ -12,27 +12,27 @@ This is not an official Illumina product, but is intended to make your nextflow 
 Your process may look like this:
 
 ```bash
-MY_AWESOME_PROCESS{
+process MY_AWESOME_PROCESS{
 container 'my_tool/my_container_reference'
 publishDir 'out'
 
 input:
-val(x)
-path(y)
+val x
+path y
 
 output:
-* into my_outputs
+path "my_newfile.txt" , emit: my_outputs
 
 script:
 """
-print ${x}
-print ${y}
+print ${x} > my_newfile.txt
+print ${y} >> my_newfile.txt
 """
-
+// you can delete everything from 'stub:' until the "}"
 stub:
 """
-print ${x}
-print ${y}
+print ${x} > my_newfile.txt
+print ${y} >> my_newfile.txt
 """
 }
 ```
