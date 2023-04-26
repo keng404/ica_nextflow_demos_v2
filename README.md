@@ -47,3 +47,5 @@ See the ['Network Settings'](https://help.ica.illumina.com/reference/r-networkse
 
 As a result, you may run into issues downloading/staging data for your pipeline run.
 One option to overcome this is to download and upload this data to ICA and reconfigure your pipeline to point to this new source.
+
+If this is SRA data, you may have luck trying the [following pipeline](https://github.com/keng404/ica_nextflow_demos/tree/master/sra_download_pipeline) or incorporating this pipeline into your pipeline of interest.
