@@ -70,28 +70,28 @@ If this is SRA data, you may have luck trying the [following pipeline](https://g
 # Current testing results
 
 ## succeded on test data set
-airrflow
-atacseq
-chipseq
-circdna
-eager
-epitopeprediction
-funcscan
-hlatyping
-isoseq
-methylseq
-rnaseq
-sarek
-smrnaseq
-viralrecon
+- airrflow
+- atacseq
+- chipseq
+- circdna
+- eager
+- epitopeprediction
+- funcscan
+- hlatyping
+- isoseq
+- methylseq
+- rnaseq
+- sarek
+- smrnaseq
+- viralrecon
 
 ## ran several processes with some issues with test dataset 
-ampliseq
-clipseq
-crisprseq
-demultiplex
-fetchngs
-pgdb
-proteinfold
-scrnaseq
+- ampliseq
+- clipseq
+- crisprseq
+- demultiplex
+- fetchngs
+- pgdb
+- proteinfold
+- scrnaseq
 
