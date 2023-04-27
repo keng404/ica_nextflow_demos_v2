@@ -66,3 +66,32 @@ As a result, you may run into issues downloading/staging data for your pipeline 
 One option to overcome this is to download and upload this data to ICA and reconfigure your pipeline to point to this new source.
 
 If this is SRA data, you may have luck trying the [following pipeline](https://github.com/keng404/ica_nextflow_demos/tree/master/sra_download_pipeline) or incorporating this pipeline into your pipeline of interest.
+
+# Current testing results
+
+## succeded on test data set
+airrflow
+atacseq
+chipseq
+circdna
+eager
+epitopeprediction
+funcscan
+hlatyping
+isoseq
+methylseq
+rnaseq
+sarek
+smrnaseq
+viralrecon
+
+## ran several processes with some issues with test dataset 
+ampliseq
+clipseq
+crisprseq
+demultiplex
+fetchngs
+pgdb
+proteinfold
+scrnaseq
+
