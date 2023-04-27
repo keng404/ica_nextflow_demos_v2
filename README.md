@@ -5,7 +5,7 @@ You may find that the XML files may need to be edited and a longer discussion of
 
 Metadata on which pipelines and what versions were ported are found in [this JSON](https://github.com/keng404/ica_nextflow_demos_v2/blob/main/nf-core.ica_conversion.metadata.json)
 
-It is best to use the ICA CLI to run these ported pipeline versions on ICA, there are [instructions](https://github.com/keng404/nextflow-to-icav2-config#prerequitsites) that will point to Illumina documentation (https://help.ica.illumina.com/) 
+It is best to use the ICA CLI to run these ported pipeline versions on ICA, there are [instructions](https://github.com/keng404/nextflow-to-icav2-config#prerequitsites) that will point to Illumina documentation (https://help.ica.illumina.com/). A 'CLI_Starter' Guide can be found [here](https://github.com/keng404/ica_nextflow_demos_v2/blob/main/CLI.md)
 
 Using the XML files found within this repo, along with any file with the name ```*.pipeline.cli_template.json``` gives some boiler plate settings that can be used launch pipeline runs after using the script to [create a pipeline in ICA](https://github.com/keng404/nextflow-to-icav2-config#step-6-to-create-a-pipeline-in-ica-you-can-use-the-following-helper-script-nf-corecreate_ica_pipeliner) and using the JSON file and the  ```--template-json {path/to/*.pipeline.cli_template.json}``` with the command referenced [here](https://github.com/keng404/nextflow-to-icav2-config#how-to-run-a-pipeline-in--ica-via-cli)
 
