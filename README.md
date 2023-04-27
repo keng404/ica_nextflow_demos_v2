@@ -54,6 +54,12 @@ print ${y} >> my_newfile.txt
 3) If your pipeline run or pipeline uses any data from an external source (i.e. http/ftp server), note that by current convention, 
 only port 80 and port 443 are exposed on ICA when running a pipeline. 
 
+An example of what this error may look like in your pipeline run log:
+```bash
+curl: (28) Failed to connect to ftp.sra.ebi.ac.uk port 21 after 131117 ms: Connection timed out
+Warning: Problem : timeout. Will retry in 4 seconds. 3 retries left.
+```
+
 See the ['Network Settings'](https://help.ica.illumina.com/reference/r-networksettings) portion of the ICA documentation].
 
 As a result, you may run into issues downloading/staging data for your pipeline run.
