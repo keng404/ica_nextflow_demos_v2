@@ -12,7 +12,15 @@ Using the XML files found within this repo, along with any file with the name ``
 This is not an official Illumina product, but is intended to make your nextflow experience in ICA more fruitful
 
 ## Known issues
-1) In some cases when running these pipelines on ICA you will get a Groovy compilation error that suggests a syntax error in a nextflow config (```nextflow.ica.config``` or ```conf/base.ica.config```). You may need to manually update these files.
+1) In some cases when running these pipelines on ICA you will get a Groovy compilation error that suggests a syntax error in a nextflow config (```nextflow.ica.config``` or ```conf/base.ica.config```). You may need to manually update these files. This has to do with the parsing that is carried out by the [conversion code here](https://github.com/keng404/nextflow-to-icav2-config)
+Typically if your configuration file has multi-line expressions associated to a parameter or a 'complex' expression, for example:
+```bash
+  // Input data for full size test
+  input_paths = [
+    ['cage 1', 'https://github.com/nf-core/test-datasets/raw/cageseq/testdata/cage1.fastq.gz'],
+    ['cage 2', 'https://github.com/nf-core/test-datasets/raw/cageseq/testdata/cage2.fastq.gz']
+  ]
+```
 2) 'stub' in a process within your workflow may throw an error. Deleting the stub will not impact any pipeline functionality.
 
 Your process may look like this:
