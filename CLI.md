@@ -2,10 +2,13 @@
 # General
 
 - ICA is project-centric
-- Enter project context / provide `--project-id`
-- Also provide `{data_id}`
-  - alphanumderic strings (fil.* or fol.*)
-    
+  - Each project has data, pipelines, and analyses associated to a project   
+- In order to enter project context / provide `--project-id`
+- Also provide `{data_id}`, `{analysis_id}`, `{pipeline_id}`
+  - `{data_id}` alphanumderic strings (fil.* or fol.*)
+  - `{analysis_id}` alphanumeric strings
+  - `{pipeline_id}` alphanumeric strings
+
 ## copy/upload
 
 - CLI
@@ -61,7 +64,9 @@
 # pipeline
 
 ## launch pipeline run
+Check out this [short guide](https://github.com/keng404/ica_nextflow_demos/blob/master/cli_demo.md)
 
 ## create new pipeline
 
-## monitor pipeline run
+## monitor/troubleshoot pipeline run
+These scripts can also be of help (https://github.com/keng404/monitor_ica_analysis_run)
