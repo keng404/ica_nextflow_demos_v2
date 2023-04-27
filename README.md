@@ -13,6 +13,7 @@ This is not an official Illumina product, but is intended to make your nextflow 
 
 ## Known issues
 1) In some cases when running these pipelines on ICA you will get a Groovy compilation error that suggests a syntax error in a nextflow config (```nextflow.ica.config``` or ```conf/base.ica.config```). You may need to manually update these files. This has to do with the parsing that is carried out by the [conversion code here](https://github.com/keng404/nextflow-to-icav2-config)
+
 Typically if your configuration file has multi-line expressions associated to a parameter or a 'complex' expression, for example:
 ```bash
   // Input data for full size test
