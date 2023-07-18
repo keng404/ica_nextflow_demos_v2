@@ -67,7 +67,9 @@ One option to overcome this is to download and upload this data to ICA and recon
 
 If this is SRA data, you may have luck trying the [following pipeline](https://github.com/keng404/ica_nextflow_demos/tree/master/sra_download_pipeline) or incorporating this pipeline into your pipeline of interest.
 
-3) You may see errors when you run your pipeline in ICA that requires you to troubleshoot a docker image of interest. This investigation will look into if the user ICA runs your docker image as leads to libraries/modules not being properly loaded. To 'closely' replicate the docker run command on ICA, try the following ```docker run``` command that will mimic the 1000:1000 gid:uid that is run on ICA:
+## Docker troubleshooting
+
+4) You may see errors when you run your pipeline in ICA that requires you to troubleshoot a docker image of interest. This investigation will look into if the user ICA runs your docker image as leads to libraries/modules not being properly loaded. To 'closely' replicate the docker run command on ICA, try the following ```docker run``` command that will mimic the 1000:1000 gid:uid that is run on ICA:
    ```bash
    docker run -itv `pwd`:`pwd` -e HOME=`pwd` -u 1000:1000 {DOCKER_IMAGE_OF_INTEREST} /bin/bash
    ```
