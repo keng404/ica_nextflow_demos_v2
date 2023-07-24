@@ -17,7 +17,7 @@ for (param in checkPathParamList) { if (param) { file(param, checkIfExists: true
     CONFIG FILES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-ch_multiqc_config          = Channel.fromPath("$projectDir/assets/multiqc_config.yml", checkIfExists: true)
+ch_multiqc_config          = Channel.fromPath("${workflow.launchDir}/assets/multiqc_config.yml", checkIfExists: true)
 ch_multiqc_custom_config   = params.multiqc_config ? Channel.fromPath( params.multiqc_config, checkIfExists: true ) : Channel.empty()
 ch_multiqc_logo            = params.multiqc_logo   ? Channel.fromPath( params.multiqc_logo, checkIfExists: true ) : Channel.empty()
 ch_multiqc_custom_methods_description = params.multiqc_methods_description ? file(params.multiqc_methods_description, checkIfExists: true) : file("$projectDir/assets/methods_description_template.yml", checkIfExists: true)
@@ -54,8 +54,8 @@ include { MULTIQC } from "../modules/nf-core/multiqc/main"
 */
 // Info required for completion email and summary
 // TODO: Are this channels still necessary?
-ch_output_docs = file("$projectDir/docs/output.md", checkIfExists: true)
-ch_output_docs_images = file("$projectDir/docs/images/", checkIfExists: true)
+ch_output_docs = file("${workflow.launchDir}/docs/output.md", checkIfExists: true)
+ch_output_docs_images = file("${workflow.launchDir}/docs/images/", checkIfExists: true)
 (protocol, chemistry, other_parameters) = WorkflowScrnaseq.formatProtocol(params.protocol, params.aligner)
 // general input and params
 ch_input = file(params.input)
@@ -68,7 +68,7 @@ ch_multiqc_star = Channel.empty()
 if (params.barcode_whitelist) {
     ch_barcode_whitelist = file(params.barcode_whitelist)
 } else if (params.protocol.contains("10X")) {
-    ch_barcode_whitelist = file("$baseDir/assets/whitelist/10x_${chemistry}_barcode_whitelist.txt.gz", checkIfExists: true)
+    ch_barcode_whitelist = file("${workflow.launchDir}/assets/whitelist/10x_${chemistry}_barcode_whitelist.txt.gz", checkIfExists: true)
 } else {
     ch_barcode_whitelist = []
 }
@@ -90,9 +90,9 @@ workflow SCRNASEQ {
     // Run FastQC
     ch_multiqc_fastqc = Channel.empty()
     if (!params.skip_fastqc){
-      FASTQC_CHECK ( ch_fastq )
-      ch_versions = ch_versions.mix(FASTQC_CHECK.out.fastqc_version)
-      ch_multiqc_fastqc    = FASTQC_CHECK.out.fastqc_multiqc.ifEmpty([])
+        FASTQC_CHECK ( ch_fastq )
+        ch_versions = ch_versions.mix(FASTQC_CHECK.out.fastqc_version)
+        ch_multiqc_fastqc    = FASTQC_CHECK.out.fastqc_multiqc.ifEmpty([])
     }
     ch_filter_gtf = GTF_GENE_FILTER ( ch_genome_fasta, ch_gtf ).gtf
     // Run kallisto bustools pipeline
@@ -176,16 +176,16 @@ workflow SCRNASEQ {
     ch_multiqc_files = ch_multiqc_files.mix(ch_methods_description.collectFile(name: 'methods_description_mqc.yaml'))
     ch_multiqc_files = ch_multiqc_files.mix(CUSTOM_DUMPSOFTWAREVERSIONS.out.mqc_yml.collect())
     ch_multiqc_files = ch_multiqc_files.mix(FASTQC_CHECK.out.fastqc_zip.collect{it[1]}.ifEmpty([]))
-    ch_multiqc_files = ch_multiqc_files.mix(ch_multiqc_alevin.collect{it[1]}.ifEmpty([])),
-    ch_multiqc_files = ch_multiqc_files.mix(ch_multiqc_star.collect{it[1]}.ifEmpty([])),
-    MULTIQC (
-        ch_multiqc_files.collect(),
-        ch_multiqc_config.collect().ifEmpty([]),
-        ch_multiqc_custom_config.collect().ifEmpty([]),
-        ch_multiqc_logo.collect().ifEmpty([])
-    )
-    multiqc_report = MULTIQC.out.report.toList()
-    ch_versions    = ch_versions.mix(MULTIQC.out.versions)
+    ch_multiqc_files = ch_multiqc_files.mix(ch_multiqc_alevin.collect{it[1]}.ifEmpty([]))
+    ch_multiqc_files = ch_multiqc_files.mix(ch_multiqc_star.collect{it[1]}.ifEmpty([]))
+//    MULTIQC (
+//        ch_multiqc_files.collect(),
+//        ch_multiqc_config.toList(),
+//        ch_multiqc_custom_config.toList(),
+//        ch_multiqc_logo.toList()
+//    )
+//    multiqc_report = MULTIQC.out.report.toList()
+//    ch_versions    = ch_versions.mix(MULTIQC.out.versions)
 }
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

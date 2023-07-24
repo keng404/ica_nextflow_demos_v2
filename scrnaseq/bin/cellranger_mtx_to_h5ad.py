@@ -2,6 +2,8 @@
 import scanpy as sc
 import argparse
 
+import os
+os.environ[ 'NUMBA_CACHE_DIR' ] = '/tmp/'
 
 def mtx_to_adata(mtx_h5: str, sample: str, verbose: bool = False):
 

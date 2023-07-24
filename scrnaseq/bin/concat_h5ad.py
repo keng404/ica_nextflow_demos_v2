@@ -2,7 +2,8 @@
 import scanpy as sc, anndata as ad, pandas as pd
 from pathlib import Path
 import argparse
-
+import os
+os.environ[ 'NUMBA_CACHE_DIR' ] = '/tmp/'
 
 def read_samplesheet(samplesheet):
     df = pd.read_csv(samplesheet)

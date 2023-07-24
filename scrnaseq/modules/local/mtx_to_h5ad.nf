@@ -3,7 +3,7 @@ process MTX_TO_H5AD {
     label 'process_medium'
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/scanpy:1.7.2--pyhdfd78af_0' :
-        'quay.io/biocontainers/scanpy:1.7.2--pyhdfd78af_0' }"
+        'keng404/scanpy:0.0.1' }"
     input:
     // inputs from cellranger nf-core module does not come in a single sample dir
     // for each sample, the sub-folders and files come directly in array.
