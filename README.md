@@ -92,6 +92,7 @@ If this is SRA data, you may have luck trying the [following pipeline](https://g
 - rnaseq
 - sarek
 - smrnaseq
+- scrnaseq --- multiqc process has been commented out.
 - viralrecon
 
 ## ran several processes with some issues with test dataset 
@@ -102,5 +103,3 @@ If this is SRA data, you may have luck trying the [following pipeline](https://g
 - fetchngs
 - pgdb
 - proteinfold
-- scrnaseq
-
