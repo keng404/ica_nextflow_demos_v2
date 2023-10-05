@@ -1,6 +1,6 @@
 # ICA nextflow demos
 
-A collection of nextflow pipelines ported to Illumina Connected Analytics (ICA). This is a starting point for porting these pipelines 
+A collection of nextflow pipelines ported to Illumina Connected Analytics (ICA). This is a starting point for porting these pipelines.
 You may find that the XML files may need to be edited and a longer discussion of the XML files can be found [here](https://github.com/keng404/nextflow-to-icav2-config/blob/main/XML.md)
 
 Metadata on which pipelines and what versions were ported are found in [this JSON](https://github.com/keng404/ica_nextflow_demos_v2/blob/main/nf-core.ica_conversion.metadata.json)
