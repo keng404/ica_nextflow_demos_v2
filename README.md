@@ -3,6 +3,20 @@
 A collection of nextflow pipelines ported to Illumina Connected Analytics (ICA). This is a starting point for porting these pipelines.
 You may find that the XML files may need to be edited and a longer discussion of the XML files can be found [here](https://github.com/keng404/nextflow-to-icav2-config/blob/main/XML.md)
 
+The method used to port these pipelines can be found in this [repository](https://github.com/keng404/nextflow-to-icav2-config?tab=readme-ov-file#what-do-these-scripts-do).
+This method at a high level reads in existing Nextflow pipelines and modifies configuratiion and pipeline files to make them more compatible with ICA.
+
+What does this method do to existing Nextflow pipelines:
+1) Parse configuration files and the Nextflow scripts (main.nf, workflows, subworkflows, modules) of a pipeline and update the configuration of the pipeline with pod directives to tell ICA what compute instance to run
+  - Strips out parameters that ICA utilizes for workflow orchestration
+  - Migrates manifest closure to ```conf/base.ica.config``` file
+  - Ensures that docker is enabled
+2) Adds ```workflow.onError``` (main.nf, workflows, subworkflows, modules) to aid troubleshooting
+3) Modifies the processes that reference scripts and tools in the ```bin/``` directory of a pipeline's ```projectDir```, so that when ICA orchestrates your Nextflow pipeline, it can find and properly execute your pipeline process
+4) Generates parameter XML file based on ```nextflow_schema.json, nextflow.config, conf/```
+`- Take a look at [this](https://github.com/keng404/nextflow-to-icav2-config/blob/main/XML.md) to understand a bit more of what's done with the XML, as you may want to make further edits to this file for better usability
+5) Additional edits to ensure your pipeline runs more smoothly on ICA
+
 Metadata on which pipelines and what versions were ported are found in [this JSON](https://github.com/keng404/ica_nextflow_demos_v2/blob/main/nf-core.ica_conversion.metadata.json)
 
 It is best to use the ICA CLI to run these ported pipeline versions on ICA, there are [instructions](https://github.com/keng404/nextflow-to-icav2-config#prerequitsites) that will point to Illumina documentation (https://help.ica.illumina.com/). A 'CLI_Starter' Guide can be found [here](https://github.com/keng404/ica_nextflow_demos_v2/blob/main/CLI.md)
