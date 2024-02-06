@@ -6,7 +6,7 @@ You may find that the XML files may need to be edited and a longer discussion of
 The method used to port these pipelines can be found in this [repository](https://github.com/keng404/nextflow-to-icav2-config?tab=readme-ov-file#what-do-these-scripts-do).
 This method at a high level reads in existing Nextflow pipelines and modifies configuratiion and pipeline files to make them more compatible with ICA.
 
-What does this method do to existing Nextflow pipelines:
+What does this method do to existing Nextflow pipelines?
 1) Parse configuration files and the Nextflow scripts (main.nf, workflows, subworkflows, modules) of a pipeline and update the configuration of the pipeline with pod directives to tell ICA what compute instance to run
   - Strips out parameters that ICA utilizes for workflow orchestration
   - Migrates manifest closure to ```conf/base.ica.config``` file
