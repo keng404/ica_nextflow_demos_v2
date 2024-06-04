@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline code="tests pipeline" version="1.0" xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="validate_params" minValues="1" maxValues="1" classification="USER">
+          <label>validate_params</label>
+          <description>Validate parameters?</description>
+          <booleanType/>
+          <value>TRUE</value>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.</description>
+          <stringType/>
+          <value></value>
+        </parameter>
+        <parameter code="test_data_base" minValues="1" maxValues="1" classification="USER">
+          <label>test_data_base</label>
+          <description>Base for test data directory</description>
+          <stringType/>
+          <value>https://raw.githubusercontent.com/nf-core/test-datasets/modules</value>
+        </parameter>
+        <parameter code="test_data" minValues="1" maxValues="1" classification="USER">
+          <label>test_data</label>
+          <description>Fake test data param</description>
+          <stringType/>
+          <value></value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>
