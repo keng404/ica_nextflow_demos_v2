@@ -3,6 +3,7 @@ process GTDBTK_DB_PREPARATION {
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/ubuntu:20.04' :
         'ubuntu:20.04' }"
+    publishDir "out/database"
     input:
     path(database)
     output:
