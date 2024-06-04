@@ -102,7 +102,9 @@ If this is SRA data, you may have luck trying the [following pipeline](https://g
 - funcscan
 - hlatyping
 - isoseq
+- mag
 - methylseq
+- oncoanalyser
 - rnaseq
 - sarek
 - smrnaseq
