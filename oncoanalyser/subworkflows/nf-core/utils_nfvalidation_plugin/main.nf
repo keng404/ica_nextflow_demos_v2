@@ -32,16 +32,16 @@ workflow UTILS_NFVALIDATION_PLUGIN {
     // Print help message if needed
     //
     //if (print_help) {
-    //   log.info pre_help_text + paramsHelp(workflow_command, parameters_schema: schema_filename) + post_help_text
+    //    log.info pre_help_text + paramsHelp(workflow_command, parameters_schema: schema_filename) + post_help_text
     //    System.exit(0)
     //}
     //
     // Print parameter summary to stdout
-    
+    //
     //log.info pre_help_text + paramsSummaryLog(workflow, parameters_schema: schema_filename) + post_help_text
-    
+    //
     // Validate parameters relative to the parameter JSON schema
-    
+    //
     //if (validate_params){
     //    validateParameters(parameters_schema: schema_filename)
     //}

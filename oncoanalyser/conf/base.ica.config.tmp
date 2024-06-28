@@ -1,3 +1,13 @@
+manifest {
+    name            = 'nf-core/oncoanalyser'
+    author          = """Stephen Watts"""
+    homePage        = 'https://github.com/nf-core/oncoanalyser'
+    description     = """A comprehensive cancer DNA/RNA analysis and reporting pipeline"""
+    mainScript      = 'main.nf'
+    nextflowVersion = '!>=21.04.3'
+    version         = '1.0.0'
+    doi             = ''
+}
 process {
 	withName:'CUSTOM_DUMPSOFTWAREVERSIONS' {
 	errorStrategy = 'ignore'

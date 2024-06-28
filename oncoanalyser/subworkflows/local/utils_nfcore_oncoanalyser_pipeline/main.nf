@@ -35,36 +35,36 @@ workflow PIPELINE_INITIALISATION {
     //
     // Print version and exit if required and dump pipeline parameters to JSON file
     //
-    UTILS_NEXTFLOW_PIPELINE (
-        version,
-        true,
-        outdir,
-        workflow.profile.tokenize(',').intersect(['conda', 'mamba']).size() >= 1
-    )
+    //UTILS_NEXTFLOW_PIPELINE (
+    //    version,
+    //    true,
+    //    outdir,
+    //    workflow.profile.tokenize(',').intersect(['conda', 'mamba']).size() >= 1
+    //)
     //
     // Validate parameters and generate parameter summary to stdout
     //
-    pre_help_text = 'hi' + '\n' // nfCoreLogo(monochrome_logs)
-    post_help_text = 'bye' + '\n' // '\n' + workflowCitation() + '\n' // + dashedLine(monochrome_logs)
-    def String workflow_command = "nextflow run ${workflow.manifest.name} -profile <docker/singularity/.../institute> --input samplesheet.csv --outdir <OUTDIR>"
-    UTILS_NFVALIDATION_PLUGIN (
-        help,
-        workflow_command,
-        pre_help_text,
-        post_help_text,
-        validate_params,
-       "nextflow_schema.json"
-    )
+    //pre_help_text = nfCoreLogo(monochrome_logs)
+    //post_help_text = '\n' + workflowCitation() + '\n' + dashedLine(monochrome_logs)
+    //def String workflow_command = "nextflow run ${workflow.manifest.name} -profile <docker/singularity/.../institute> --input samplesheet.csv --outdir <OUTDIR>"
+    //UTILS_NFVALIDATION_PLUGIN (
+    //    help,
+    //    workflow_command,
+    //    pre_help_text,
+    //    post_help_text,
+    //    validate_params,
+    //    "nextflow_schema.json"
+    //)
     //
     // Check config provided to the pipeline
     //
-    UTILS_NFCORE_PIPELINE (
-        nextflow_cli_args
-    )
+    //UTILS_NFCORE_PIPELINE (
+    //    nextflow_cli_args
+    //)
     //
     // Custom validation for pipeline parameters
     //
-    validateInputParameters()
+    //validateInputParameters()
     emit:
     versions    = ch_versions
 }

@@ -3,7 +3,7 @@ process GRIDSS_INDEX {
     label 'process_single'
     label 'process_medium_memory'
 
-    conda "${moduleDir}/environment.yml"
+    //conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/gridss:2.13.2--h50ea8bc_3' :
         'biocontainers/gridss:2.13.2--h50ea8bc_3' }"

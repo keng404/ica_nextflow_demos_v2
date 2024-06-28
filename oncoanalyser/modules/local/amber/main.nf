@@ -2,13 +2,14 @@ process AMBER {
     tag "${meta.id}"
     label 'process_medium'
 
+    //conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/hmftools-amber:4.0--hdfd78af_0' :
-        'biocontainers/hmftools-amber:4.0--hdfd78af_0' }"
+        'https://depot.galaxyproject.org/singularity/hmftools-amber:4.0.1--hdfd78af_0' :
+        'biocontainers/hmftools-amber:4.0.1--hdfd78af_0' }"
 
     input:
     tuple val(meta), path(tumor_bam), path(normal_bam), path(tumor_bai), path(normal_bai)
-    val ref_genome_ver
+    val genome_ver
     path heterozygous_sites
     path target_region_bed
 
@@ -36,7 +37,7 @@ process AMBER {
         ${reference_arg} \\
         ${reference_bam_arg} \\
         ${target_regions_bed_arg} \\
-        -ref_genome_version ${ref_genome_ver} \\
+        -ref_genome_version ${genome_ver} \\
         -loci ${heterozygous_sites} \\
         -threads ${task.cpus} \\
         -output_dir amber/

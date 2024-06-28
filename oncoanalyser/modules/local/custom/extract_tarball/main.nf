@@ -1,6 +1,7 @@
 process CUSTOM_EXTRACTTARBALL {
-    label 'process_low'
+    //label 'process_medium'
 
+    //conda "conda-forge::tar"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/ubuntu:20.04' :
         'quay.io/nf-core/ubuntu:20.04' }"
@@ -9,7 +10,7 @@ process CUSTOM_EXTRACTTARBALL {
     tuple val(meta), path(tarball)
 
     output:
-    path "${meta.id}/", emit: dir
+    path "${meta.id}/", emit: extracted_dir
 
     when:
     task.ext.when == null || task.ext.when

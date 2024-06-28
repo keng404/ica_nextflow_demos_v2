@@ -137,8 +137,8 @@ workflow TARGETED {
         ch_process_dna_tumor_out = ch_process_dna_tumor_out.mix(READ_PROCESSING.out.dna_tumor)
         ch_process_dna_normal_out = ch_process_dna_normal_out.mix(READ_PROCESSING.out.dna_normal)
     } else {
-        ch_process_dna_tumor_out = ch_inputs.map { meta -> [meta, []] }
-        ch_process_dna_normal_out = ch_inputs.map { meta -> [meta, []] }
+        ch_process_dna_tumor_out = ch_inputs.map { meta -> [meta, [], []] }
+        ch_process_dna_normal_out = ch_inputs.map { meta -> [meta, [], []] }
     }
     //
     // MODULE: Run Isofox to analyse RNA data

@@ -2,9 +2,10 @@ process GRIDSS_ASSEMBLE {
     tag "${meta.id}"
     label 'process_medium'
 
+    //conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/hmftools-sv-prep:1.2.3--hdfd78af_1' :
-        'biocontainers/hmftools-sv-prep:1.2.3--hdfd78af_1' }"
+        'https://depot.galaxyproject.org/singularity/hmftools-sv-prep:1.2.4--hdfd78af_0' :
+        'biocontainers/hmftools-sv-prep:1.2.4--hdfd78af_0' }"
 
     input:
     tuple val(meta), path(bams), path(bams_filtered), path(preprocess_dirs), val(labels)
@@ -57,7 +58,7 @@ process GRIDSS_ASSEMBLE {
             # NOTE(SW): ideally we would get the relative path using the --relative-to but this is only
             # supported for GNU realpath and fails for others such as BusyBox, which is used in Biocontainers
             symlinkpath=\$(realpath \${filepath_src})
-            ln -s \${symlinkpath} \${filepath_dst};
+            ln -s "\${symlinkpath}" \${filepath_dst};
         done
         if [[ -L "\${src##*/}" ]]; then
             rm "\${src}"
@@ -68,7 +69,7 @@ process GRIDSS_ASSEMBLE {
     done
 
     # Symlink indices next to assembly FASTA
-    ln -s \$(find -L ${genome_gridss_index} -type f) ./
+    ln -s \$(find -L ${genome_gridss_index} -regex '.*\\.\\(amb\\|ann\\|pac\\|gridsscache\\|sa\\|bwt\\|img\\|alt\\)') ./
 
     # Run
     gridss_svprep \\

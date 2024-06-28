@@ -2,6 +2,7 @@ process COBALT {
     tag "${meta.id}"
     label 'process_medium'
 
+    //conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/hmftools-cobalt:1.16--hdfd78af_0' :
         'biocontainers/hmftools-cobalt:1.16--hdfd78af_0' }"

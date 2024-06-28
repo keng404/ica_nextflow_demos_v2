@@ -79,10 +79,10 @@ workflow {
     //    params.version,
     //    params.help,
     //    params.validate_params,
-    //   params.monochrome_logs,
+    //    params.monochrome_logs,
     //    args,
     //    params.outdir,
-    // )
+    //)
     //
     // WORKFLOW: Run main workflow
     //
@@ -90,14 +90,14 @@ workflow {
     //
     // SUBWORKFLOW: Run completion tasks
     //
-    // PIPELINE_COMPLETION(
-    //   params.email,
+    //PIPELINE_COMPLETION(
+    //    params.email,
     //    params.email_on_fail,
     //    params.plaintext_email,
     //    params.outdir,
     //    params.monochrome_logs,
     //    params.hook_url,
-    // )
+    //)
 }
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

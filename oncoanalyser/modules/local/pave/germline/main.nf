@@ -2,10 +2,13 @@
 //  - https://github.com/hartwigmedical/pipeline5/blob/v5.33/cluster/src/main/java/com/hartwig/pipeline/tertiary/pave/PaveGermline.java#L36-L41
 //  - https://github.com/hartwigmedical/pipeline5/blob/v5.33/cluster/src/main/java/com/hartwig/pipeline/tertiary/pave/PaveArguments.java#L31-L43
 
+import nextflow.Nextflow
+
 process PAVE_GERMLINE {
     tag "${meta.id}"
     label 'process_medium'
 
+    //conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/hmftools-pave:1.6--hdfd78af_0' :
         'biocontainers/hmftools-pave:1.6--hdfd78af_0' }"
@@ -41,7 +44,7 @@ process PAVE_GERMLINE {
         gnomad_args = "-gnomad_freq_dir ${gnomad_resource}"
     } else {
         log.error "got bad genome version: ${genome_ver}"
-        System.exit(1)
+        Nextflow.exit(1)
     }
 
     """

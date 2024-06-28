@@ -2,6 +2,7 @@ process PURPLE {
     tag "${meta.id}"
     label 'process_low'
 
+    //conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/hmftools-purple:4.0.2--hdfd78af_0' :
         'biocontainers/hmftools-purple:4.0.2--hdfd78af_0' }"

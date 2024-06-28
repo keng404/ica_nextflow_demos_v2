@@ -1,8 +1,9 @@
 process BWAMEM2_INDEX {
     tag "$fasta"
-    label 'process_low'
+    label 'process_single'
     label 'process_high_memory'
 
+    //conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/bwa-mem2:2.2.1--he513fc3_0' :
         'biocontainers/bwa-mem2:2.2.1--he513fc3_0' }"

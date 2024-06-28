@@ -2,9 +2,10 @@ process GRIDSS_PREPROCESS {
     tag "${meta.id}"
     label 'process_medium'
 
+    //conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/hmftools-sv-prep:1.2.3--hdfd78af_1' :
-        'biocontainers/hmftools-sv-prep:1.2.3--hdfd78af_1' }"
+        'https://depot.galaxyproject.org/singularity/hmftools-sv-prep:1.2.4--hdfd78af_0' :
+        'biocontainers/hmftools-sv-prep:1.2.4--hdfd78af_0' }"
 
     input:
     tuple val(meta), path(bam), path(bam_filtered)
@@ -28,7 +29,7 @@ process GRIDSS_PREPROCESS {
 
     """
     # Symlink indices next to assembly FASTA
-    ln -s \$(find -L ${genome_gridss_index} -type f) ./
+    ln -s \$(find -L ${genome_gridss_index} -regex '.*\\.\\(amb\\|ann\\|pac\\|gridsscache\\|sa\\|bwt\\|img\\|alt\\)') ./
 
     gridss_svprep \\
         ${args} \\

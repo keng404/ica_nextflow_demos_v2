@@ -59,7 +59,7 @@ workflow PREPARE_REFERENCE {
             ch_genome_bwamem2_index_inputs = Channel.fromPath(params.ref_data_genome_bwamem2_index)
                 .map { [[id: "bwa-mem2_index_${it.name.replaceAll('\\.tar\\.gz$', '')}"], it] }
             DECOMP_BWAMEM2_INDEX(ch_genome_bwamem2_index_inputs)
-            ch_genome_bwamem2_index = DECOMP_BWAMEM2_INDEX.out.dir
+            ch_genome_bwamem2_index = DECOMP_BWAMEM2_INDEX.out.extracted_dir
         } else {
             ch_genome_bwamem2_index = getRefFileChannel('ref_data_genome_bwamem2_index')
         }
@@ -87,7 +87,7 @@ workflow PREPARE_REFERENCE {
             ch_genome_gridss_index_inputs = Channel.fromPath(params.ref_data_genome_gridss_index)
                 .map { [[id: "gridss_index_${it.name.replaceAll('\\.tar\\.gz$', '')}"], it] }
             DECOMP_GRIDSS_INDEX(ch_genome_gridss_index_inputs)
-            ch_genome_gridss_index = DECOMP_GRIDSS_INDEX.out.dir
+            ch_genome_gridss_index = DECOMP_GRIDSS_INDEX.out.extracted_dir
         } else {
             ch_genome_gridss_index = getRefFileChannel('ref_data_genome_gridss_index')
         }
@@ -108,7 +108,7 @@ workflow PREPARE_REFERENCE {
             ch_genome_star_index_inputs = Channel.fromPath(params.ref_data_genome_star_index)
                 .map { [[id: "star_index_${it.name.replaceAll('\\.tar\\.gz$', '')}"], it] }
             DECOMP_STAR_INDEX(ch_genome_star_index_inputs)
-            ch_genome_star_index = DECOMP_STAR_INDEX.out.dir
+            ch_genome_star_index = DECOMP_STAR_INDEX.out.extracted_dir
         } else {
             ch_genome_star_index = getRefFileChannel('ref_data_genome_star_index')
         }
@@ -122,7 +122,7 @@ workflow PREPARE_REFERENCE {
             ch_virusbreakenddb_inputs = Channel.fromPath(params.ref_data_virusbreakenddb_path)
                 .map { [[id: it.name.replaceAll('\\.tar\\.gz$', '')], it] }
             DECOMP_VIRUSBREAKEND_DB(ch_virusbreakenddb_inputs)
-            ch_virusbreakenddb = DECOMP_VIRUSBREAKEND_DB.out.dir
+            ch_virusbreakenddb = DECOMP_VIRUSBREAKEND_DB.out.extracted_dir
         } else {
             ch_virusbreakenddb = Channel.fromPath(params.ref_data_virusbreakenddb_path)
         }
@@ -136,7 +136,7 @@ workflow PREPARE_REFERENCE {
         ch_hmf_data_inputs = Channel.fromPath(params.ref_data_hmf_data_path)
             .map { [[id: "hmf_data_${it.name.replaceAll('\\.tar\\.gz$', '')}"], it] }
         DECOMP_HMF_DATA(ch_hmf_data_inputs)
-        ch_hmf_data = DECOMP_HMF_DATA.out.dir
+        ch_hmf_data = DECOMP_HMF_DATA.out.extracted_dir
             .collect()
             .map { dir_list ->
                 assert dir_list.size() == 1
@@ -157,7 +157,7 @@ workflow PREPARE_REFERENCE {
             ch_panel_data_inputs = Channel.fromPath(params.ref_data_panel_data_path)
                 .map { [[id: "panel_data_${it.name.replaceAll('\\.tar\\.gz$', '')}"], it] }
             DECOMP_PANEL_DATA(ch_panel_data_inputs)
-            ch_panel_data = DECOMP_PANEL_DATA.out.dir
+            ch_panel_data = DECOMP_PANEL_DATA.out.extracted_dir
                 .collect()
                 .map { dir_list ->
                     assert dir_list.size() == 1

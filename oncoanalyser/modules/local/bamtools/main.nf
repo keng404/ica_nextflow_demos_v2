@@ -2,6 +2,7 @@ process BAMTOOLS {
     tag "${meta.id}"
     label 'process_medium'
 
+    //conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/hmftools-bam-tools:1.2.1--hdfd78af_0' :
         'biocontainers/hmftools-bam-tools:1.2.1--hdfd78af_0' }"

@@ -4,6 +4,7 @@ process VIRUSBREAKEND {
     tag "${meta.id}"
     label 'process_high'
 
+    //conda "${moduleDir}/environment.yml"
     container "nf-core/gridss:2.13.2--1"
 
     input:
@@ -28,7 +29,7 @@ process VIRUSBREAKEND {
 
     """
     # Symlink indices next to assembly FASTA
-    ln -s \$(find -L ${genome_gridss_index} -type f) ./
+    ln -s \$(find -L ${genome_gridss_index} -regex '.*\\.\\(amb\\|ann\\|pac\\|gridsscache\\|sa\\|bwt\\|img\\|alt\\)') ./
 
     virusbreakend \\
         ${args} \\

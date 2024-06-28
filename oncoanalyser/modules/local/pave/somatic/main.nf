@@ -1,7 +1,10 @@
+import nextflow.Nextflow
+
 process PAVE_SOMATIC {
     tag "${meta.id}"
     label 'process_medium'
 
+    //conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/hmftools-pave:1.6--hdfd78af_0' :
         'biocontainers/hmftools-pave:1.6--hdfd78af_0' }"
@@ -42,7 +45,7 @@ process PAVE_SOMATIC {
         gnomad_args = "-gnomad_freq_dir ${gnomad_resource}"
     } else {
         log.error "got bad genome version: ${genome_ver}"
-        System.exit(1)
+        Nextflow.exit(1)
     }
 
     // Targeted mode

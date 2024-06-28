@@ -2,13 +2,14 @@ process CUPPA {
     tag "${meta.id}"
     label 'process_low'
 
+    //conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
         'https://depot.galaxyproject.org/singularity/hmftools-cuppa:1.8.1--hdfd78af_0' :
         'biocontainers/hmftools-cuppa:1.8.1--hdfd78af_0' }"
 
     input:
     tuple val(meta), path(isofox_dir), path(purple_dir), path(linx_dir), path(virusinterpreter_dir)
-    val ref_genome_ver
+    val genome_ver
     path cuppa_resources, stageAs: 'cuppa_reference_data'
     val classifier
 
@@ -50,7 +51,7 @@ process CUPPA {
         -sample_data_dir sample_data/ \\
         -categories ${classifier} \\
         -ref_data_dir ${cuppa_resources} \\
-        -ref_genome_version ${ref_genome_ver} \\
+        -ref_genome_version ${genome_ver} \\
         -create_pdf \\
         -output_dir cuppa/
 

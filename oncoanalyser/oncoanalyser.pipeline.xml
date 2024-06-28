@@ -1,68 +1,63 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<pd:pipeline xmlns:pd="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="oncoanalyser pipeline" version="1.0">
-    <pd:dataInputs>
-        <pd:dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
-            <pd:label>input_files</pd:label>
-            <pd:description>input files for pipeline.
-All files will be staged in workflow.launchDir</pd:description>
-        </pd:dataInput>
-        <pd:dataInput code="project_dirs" format="UNKNOWN" type="DIRECTORY" required="false" multiValue="true">
-            <pd:label>project_dirs</pd:label>
-            <pd:description>project_dirs for pipeline.
-All files will be staged in workflow.launchDir</pd:description>
-        </pd:dataInput>
-    </pd:dataInputs>
-    <pd:steps>
-        <pd:step execution="MANDATORY" code="input_output_options">
-            <pd:label>input_output_options</pd:label>
-            <pd:description>input_output_options parameters</pd:description>
-            <pd:tool code="input_output_options parameters">
-                <pd:label>input_output_options</pd:label>
-                <pd:description>input_output_options parameters</pd:description>
-                <pd:parameter code="input" minValues="1" maxValues="1" classification="USER">
-                    <pd:label>input</pd:label>
-                    <pd:description>Path to comma-separated file containing information about the samples in the experiment.
-You will need to create a design file with information about the samples in your experiment before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with 3 columns, and a header row. See [usage docs](https://nf-co.re/oncoanalyser/usage#samplesheet-input).</pd:description>
-                    <pd:stringType/>
-                    <pd:value></pd:value>
-                </pd:parameter>
-                <pd:parameter code="ref_data_virusbreakenddb_path" minValues="1" maxValues="1" classification="USER">
-                    <pd:label>ref_data_virusbreakenddb_path</pd:label>
-                    <pd:description>The path where the ref_data_virusbreakenddb_path will be located</pd:description>
-                    <pd:stringType/>
-                    <pd:value>https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/virusbreakend/virusbreakenddb_test-24.04.0.tar.gz</pd:value>
-                </pd:parameter>
-                <pd:parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
-                    <pd:label>config_profile_name</pd:label>
-                    <pd:description>Configure params.config_profile_name</pd:description>
-                    <pd:stringType/>
-                    <pd:value>'Full test profile'</pd:value>
-                </pd:parameter>
-                <pd:parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
-                    <pd:label>config_profile_description</pd:label>
-                    <pd:description>Configure params.config_profile_description</pd:description>
-                    <pd:stringType/>
-                    <pd:value>'Full test dataset to check pipeline function'</pd:value>
-                </pd:parameter>
-                <pd:parameter code="mode" minValues="0" maxValues="1" classification="USER">
-                    <pd:label>mode</pd:label>
-                    <pd:description>Configure params.mode</pd:description>
-                    <pd:stringType/>
-                    <pd:value>'wgts'</pd:value>
-                </pd:parameter>
-                <pd:parameter code="genome" minValues="0" maxValues="1" classification="USER">
-                    <pd:label>genome</pd:label>
-                    <pd:description>Configure params.genome</pd:description>
-                    <pd:stringType/>
-                    <pd:value>'GRCh38_hmf'</pd:value>
-                </pd:parameter>
-                <pd:parameter code="max_fastq_records" minValues="0" maxValues="1" classification="USER">
-                    <pd:label>max_fastq_records</pd:label>
-                    <pd:description>Configure params.max_fastq_records</pd:description>
-                    <pd:integerType/>
-                    <pd:value>0</pd:value>
-                </pd:parameter>
-            </pd:tool>
-        </pd:step>
-    </pd:steps>
-</pd:pipeline>
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="oncoanalyser pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>input_files</label>
+      <description>input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="input" minValues="1" maxValues="1" classification="USER">
+          <label>input</label>
+          <description>Path to comma-separated file containing information about the samples in the experiment.
+You will need to create a design file with information about the samples in your experiment before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with 3 columns, and a header row. See [usage docs](https://nf-co.re/oncoanalyser/usage#samplesheet-input).</description>
+          <stringType/>
+          <value>https://pub-349bcb8decb44bf7acbddf90b270a061.r2.dev/simulated_reads/24.0/samplesheets/fastq_eval.subject_a-subject_b.wgts.tndna_trna.1.csv</value>
+        </parameter>
+        <parameter code="outdir" minValues="1" maxValues="1" classification="USER">
+          <label>outdir</label>
+          <description>The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.</description>
+          <stringType/>
+          <value>./out</value>
+        </parameter>
+        <parameter code="config_profile_name" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_name</label>
+          <description>Configure params.config_profile_name</description>
+          <stringType/>
+          <value>Full test profile</value>
+        </parameter>
+        <parameter code="config_profile_description" minValues="0" maxValues="1" classification="USER">
+          <label>config_profile_description</label>
+          <description>Configure params.config_profile_description</description>
+          <stringType/>
+          <value>Full test dataset to check pipeline function</value>
+        </parameter>
+        <parameter code="mode" minValues="0" maxValues="1" classification="USER">
+          <label>mode</label>
+          <description>Configure params.mode</description>
+          <stringType/>
+          <value>wgts</value>
+        </parameter>
+        <parameter code="genome" minValues="0" maxValues="1" classification="USER">
+          <label>genome</label>
+          <description>Configure params.genome</description>
+          <stringType/>
+          <value>GRCh38_hmf</value>
+        </parameter>
+        <parameter code="max_fastq_records" minValues="0" maxValues="1" classification="USER">
+          <label>max_fastq_records</label>
+          <description>Configure params.max_fastq_records</description>
+          <integerType/>
+          <value>0</value>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>
