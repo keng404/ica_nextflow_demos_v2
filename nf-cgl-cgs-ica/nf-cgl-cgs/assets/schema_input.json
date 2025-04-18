@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/Clinical-Genomics-Laboratory/nf-cgl-cgs/main/assets/schema_input.json",
+    "title": "Clinical-Genomics-Laboratory/nf-cgl-cgs pipeline - params.input schema",
+    "description": "Schema for the file provided with params.input",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "RGID": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "The read group for the sample and cannot contain spaces"
+            },
+            "RGSM": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "Sample name must be provided and cannot contain spaces"
+            },
+            "RGLB": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "Library information must be provided and cannot contain spaces"
+            },
+            "Lane": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "The flowcell lane information for the sample and cannot contain sapces"
+            },
+            "Read1File": {
+                "type": "string",
+                "format": "file-path",
+                "exists": true,
+                "pattern": "^\\S+\\.f(ast)?q\\.gz$",
+                "errorMessage": "FastQ file for reads 1 must be provided, cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'"
+            },
+            "Read2File": {
+                "type": "string",
+                "format": "file-path",
+                "exists": true,
+                "pattern": "^\\S+\\.f(ast)?q\\.gz$",
+                "errorMessage": "FastQ file for reads 2 cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'"
+            },
+            "Flowcell ID": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "The flowcell lane information for the sample and cannot contain sapces"
+            },
+            "Content_Desc": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "Sample name must be provided and cannot contain spaces"
+            },
+            "Index": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "The indexes used during library prep in the format of 'Index1-Index2' and cannot contain spaces"
+            },
+            "Exceptions": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "Exceptions identified for the sample"
+            }
+        }
+    }
+}

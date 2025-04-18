@@ -1,0 +1,38 @@
+lint:
+  files_exist:
+    - .github/ISSUE_TEMPLATE/config.yml
+    - .github/workflows/awsfulltest.yml
+    - .github/workflows/awstest.yml
+    - assets/nf-core-nf-cgl-cgs_logo_light.png
+    - CODE_OF_CONDUCT.md
+    - docs/images/nf-core-nf-cgl-cgs_logo_dark.png
+    - docs/images/nf-core-nf-cgl-cgs_logo_light.png
+  files_unchanged:
+    - .github/CONTRIBUTING.md
+    - .github/ISSUE_TEMPLATE/bug_report.yml
+    - .github/PULL_REQUEST_TEMPLATE.md
+    - .github/workflows/awsfulltest.yml
+    - .github/workflows/awstest.yml
+    - .github/workflows/branch.yml
+    - .gitignore
+    - assets/email_template.html
+    - assets/nf-core-nf-cgl-cgs_logo_light.png
+    - assets/sendmail_template.txt
+    - CODE_OF_CONDUCT.md
+    - docs/images/nf-core-nf-cgl-cgs_logo_dark.png
+    - docs/images/nf-core-nf-cgl-cgs_logo_light.png
+    - subworkflows/nf-core/utils_nfcore_pipeline/main.nf
+  multiqc_config: false
+  nextflow_config:
+    - manifest.homePage
+    - manifest.name
+  pipeline_name_conventions: false
+  readme:
+    - nextflow_badge
+nf_core_version: 2.14.1
+module_tests: false
+repository_type: pipeline
+template:
+  name: Clinical-Genomics-Laboratory/nf-cgl-cgs
+  prefix: Clinical-Genomics-Laboratory
+  skip: []

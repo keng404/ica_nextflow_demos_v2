@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pipeline xmlns="xsd://www.illumina.com/ica/cp/pipelinedefinition" code="nf-cgl-cgs pipeline" version="1.0">
+  <dataInputs>
+    <dataInput code="input" format="UNKNOWN" type="FILE" required="false" multiValue="false">
+      <label>input</label>
+      <description>input sampleheet</description>
+    </dataInput>
+    <dataInput code="sample_info" format="UNKNOWN" type="FILE" required="false" multiValue="false">
+      <label>sample_info</label>
+      <description>Path to samplesheet containing sample information</description>
+    </dataInput>
+    <dataInput code="fastqs" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>FASTQ files</label>
+      <description>input FASTQ files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="fastq_list" format="UNKNOWN" type="FILE" required="false" multiValue="false">
+      <label>fastq_list</label>
+      <description>fastq list</description>
+    </dataInput>
+    <dataInput code="adapter1" format="FASTA" type="FILE" required="false" multiValue="false">
+      <label>FASTA for R1 Adapter trimming</label>
+      <description>FASTA for R1 Adapter trimming</description>
+    </dataInput>
+    <dataInput code="adapter2" format="FASTA" type="FILE" required="false" multiValue="false">
+      <label>FASTA for R2 Adapter trimming</label>
+      <description>FASTA for R1 Adapter trimming</description>
+    </dataInput>
+    <dataInput code="qc_coverage_region" format="BED" type="FILE" required="false" multiValue="false">
+      <label>QC BED</label>
+      <description>BED file defining regions for QC</description>
+    </dataInput>
+    <dataInput code="additional_files" format="UNKNOWN" type="FILE" required="false" multiValue="true">
+      <label>additional_files</label>
+      <description>additional input files for pipeline.
+All files will be staged in workflow.launchDir</description>
+    </dataInput>
+    <dataInput code="refdir" format="UNKNOWN" type="DIRECTORY" required="false" multiValue="false">
+      <label>refdir</label>
+      <description>DRAGEN reference hash directory.</description>
+    </dataInput>
+    <dataInput code="illumina_rundir" format="UNKNOWN" type="DIRECTORY" required="false" multiValue="false">
+      <label>illumina_rundir</label>
+      <description>Path to Illumina run directory.</description>
+    </dataInput>
+    <dataInput code="input_folders" format="UNKNOWN" type="DIRECTORY" required="false" multiValue="true">
+      <label>input_folders</label>
+      <description>input folders for pipeline.
+All folders will be staged in workflow.launchDir</description>
+    </dataInput>
+  </dataInputs>
+  <steps>
+    <step execution="MANDATORY" code="input_output_options">
+      <label>input_output_options</label>
+      <description>input_output_options parameters</description>
+      <tool code="input_output_options parameters">
+        <label>input_output_options</label>
+        <description>input_output_options parameters</description>
+        <parameter code="batch_name" minValues="1" maxValues="1" classification="USER">
+          <label>batch_name</label>
+          <description>Name of sequence batch. If not provided, it will be in the format of &lt;year&lt;month&lt;day_CGS.</description>
+          <stringType/>
+          <value/>
+        </parameter>
+      </tool>
+    </step>
+  </steps>
+</pipeline>

@@ -1,0 +1,39 @@
+{
+  "pipeline": {
+    "id": ["ea723e8b-7d91-4144-b524-1cadd1d4db4d"],
+    "timeCreated": ["2025-04-14T15:29:23Z"],
+    "timeModified": ["2025-04-14T15:29:23Z"],
+    "ownerId": ["f6bcca1a-4fff-310a-9963-d8125df8a5f0"],
+    "tenantId": ["59be0d2d-a83a-43a4-87a7-7ccd87cda1a9"],
+    "tenantName": ["isc-baltimore"],
+    "code": ["test_pipeline_nf-cgl-cgs"],
+    "urn": ["urn:ilmn:ica:pipeline:ea723e8b-7d91-4144-b524-1cadd1d4db4d#test_pipeline_nf-cgl-cgs"],
+    "description": ["     <source media= prefers-color-scheme: dark  srcset=docs/images/nf-core-nf-cgl-cgs_logo_dark.png>\\n    <img alt=Clinical-Genomics-Laboratory/nf-cgl-cgs src=docs/images/nf-core-nf-cgl-cgs_logo_light.png>\\n> If you are new to Nextflow and nf-core, please refer to  this page  https://nf-co.re/docs/usage/installation  on how\\n> to set-up Nextflow. Make sure to  test your setup  https://nf-co.re/docs/usage/introductionhow-to-run-a-pipeline \\n> see  docs  https://nf-co.re/usage/configurationcustom-configuration-files .\\nFor more details and further functionality, please refer to the  usage documentation  docs/usage  and the  parameter documentation  docs/parameters .\\n output documentation  docs/output . "],
+    "status": ["DRAFT"],
+    "language": ["NEXTFLOW"],
+    "languageVersion": {
+      "id": ["b1585d18-f88c-4ca0-8d47-34f6c01eb6f3"],
+      "name": ["22.04.3"],
+      "language": ["NEXTFLOW"]
+    },
+    "pipelineTags": {
+      "technicalTags": []
+    },
+    "analysisStorage": {
+      "id": ["6e1b6c8f-f913-48b2-9bd0-7fc13eda0fd0"],
+      "timeCreated": ["2021-11-05T10:28:20Z"],
+      "timeModified": ["2023-05-31T16:38:26Z"],
+      "ownerId": ["8ec463f6-1acb-341b-b321-043c39d8716a"],
+      "tenantId": ["f91bb1a0-c55f-4bce-8014-b2e60c0ec7d3"],
+      "tenantName": ["ica-cp-admin"],
+      "name": ["Small"],
+      "description": ["1.2TB"]
+    },
+    "proprietary": [false],
+    "inputFormType": ["XML"]
+  },
+  "projectId": ["c78835ab-a488-4b97-848d-e606b0f31772"],
+  "bundleLinks": {
+    "items": []
+  }
+}
